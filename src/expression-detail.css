@@ -1,0 +1,9 @@
+.expression-meaning { display:flex;flex-direction:column;gap:14px; }
+.expression-meaning>p { font-size:15px;line-height:1.7; }
+.expression-meaning blockquote { margin:0;padding:16px 18px;border-left:3px solid var(--accent);border-radius:0 12px 12px 0;background:var(--soft); }
+.expression-meaning blockquote>span { font-size:11px;color:var(--muted); }
+.expression-meaning blockquote p { margin-top:7px;font-size:14px;line-height:1.7; }
+.expression-media { display:flex;flex-direction:column;gap:14px; }
+.expression-media .video-empty { margin:0;aspect-ratio:1.8; }
+.expression-media>p { font-size:13px;line-height:1.7;overflow-wrap:anywhere; }
+.expression-related { display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid var(--line); }

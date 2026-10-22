@@ -1,0 +1,31 @@
+/* The planning board renders the production components with their original geometry. */
+html[data-line-mode="true"],html.line-mode{color-scheme:light;--brand:#202020;--soft:#fff;--accent:#fff;--brand-hover:#111}
+:is(html[data-line-mode="true"],html.line-mode) *,
+:is(html[data-line-mode="true"],html.line-mode) *::before,
+:is(html[data-line-mode="true"],html.line-mode) *::after{animation:none!important;transition:none!important;box-shadow:none!important;text-shadow:none!important;scroll-behavior:auto!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(.mobile-app,.seed-kit-root,:is(.admin-app,.admin-shell)){--brand:#202020!important;--soft:#fff!important;--accent:#fff!important;--brand-hover:#111!important;--muted:#555!important;--line:#aaa!important;--seed-color-bg-brand-solid:#fff;--seed-color-fg-on-brand-solid:#111;--seed-color-bg-brand-weak:#fff;--seed-color-fg-brand:#111;--seed-color-stroke-neutral-muted:#999}
+:is(html[data-line-mode="true"],html.line-mode) body{background:#fff!important;color:#111!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(.mobile-app,:is(.admin-app,.admin-shell)) *{background-color:transparent!important;background-image:none!important;color:#222!important;border-color:#999!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(.mobile-app,:is(.admin-app,.admin-shell)){background:#fff!important;color:#111!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(button,input,textarea,select,[role="button"],.seed-kit-field-control){background:#fff!important;color:#111!important;border-color:#777!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(.seed-kit-button,.seed-kit-chip,.google-login-button,.kakao-login-button,.admin-primary,.admin-secondary){border:1px solid #333!important;background:#fff!important;color:#111!important}
+:is(html[data-line-mode="true"],html.line-mode) :is([data-selected="true"],[aria-pressed="true"],[aria-current="page"],.seed-chip[data-checked],.seed-chip[data-selected]){outline:1px solid #222;outline-offset:-2px;background:#fff!important;font-weight:750!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(button:disabled,input:disabled){opacity:.45!important;border-style:dashed!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(.featured-word,.lesson-teaser,.dp-hero,.dp-card,.learning-summary,.word-icon,.video-empty,.upload-area,.profile-stats,.result-art,.brand-symbol,.fp-purpose-option,.fp-user-type,.fp-terms-all,.fp-delete-scope,.admin-card,.admin-stat,.admin-empty,.admin-confirm,.app-toast,.avatar,.sua-profile-avatar){border:1px solid #888!important;background:#fff!important}
+:is(html[data-line-mode="true"],html.line-mode) svg{color:#222!important}
+:is(html[data-line-mode="true"],html.line-mode) svg [stroke]:not([stroke="none"]){stroke:#333!important}
+:is(html[data-line-mode="true"],html.line-mode) svg [fill]:not([fill="none"]){fill:#fff!important;stroke:#333!important;stroke-width:1.1px}
+:is(html[data-line-mode="true"],html.line-mode) svg [opacity]{opacity:1!important}
+:is(html[data-line-mode="true"],html.line-mode) :is(.signal i,.battery i,.home-indicator span,.notification-dot){background:#222!important}
+:is(html[data-line-mode="true"],html.line-mode) .kakao-login-button img{filter:grayscale(1) contrast(2);mix-blend-mode:multiply}
+:is(html[data-line-mode="true"],html.line-mode) .mobile-app :is(input[type="radio"],input[type="checkbox"]){accent-color:#222}
+:is(html[data-line-mode="true"],html.line-mode) :focus-visible{outline:2px solid #111!important;outline-offset:3px}
+@media print{:is(html[data-line-mode="true"],html.line-mode) .mobile-app{height:844px!important}}
+
+:is(html[data-line-mode="true"],html.line-mode) .sua-brand-mark{background:#222!important}
+:is(html[data-line-mode="true"],html.line-mode) .google-login-button img{filter:grayscale(1) contrast(2)}
+:is(html[data-line-mode="true"],html.line-mode) .seed-kit-field-control{border:1px solid #777!important;border-radius:12px}
+:is(html[data-line-mode="true"],html.line-mode) :is(.seed-checkbox__control,.auth-progress-track,.study-station-symbol){border:1px solid #666!important}
+:is(html[data-line-mode="true"],html.line-mode) .auth-panel__progress{border:1px solid #888!important}
+:is(html[data-line-mode="true"],html.line-mode) .auth-panel__progress>span{background:#444!important}
+

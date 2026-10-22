@@ -1,0 +1,194 @@
+.points-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  width: 100%;
+  min-width: 0;
+  padding: 2px 0 10px;
+}
+.points-balance {
+  position: relative;
+  min-height: 93px;
+  padding: 20px 20px 18px;
+  border-radius: var(--card-radius, 16px);
+  background: var(--soft);
+  color: var(--brand);
+}
+.points-balance-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 650;
+}
+.points-balance-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 4px !important;
+  font-variant-numeric: tabular-nums;
+}
+.points-balance-value strong { font-size: 37px; font-weight: 750; line-height: 1.25; letter-spacing: -.045em; }
+.points-balance-value span { font-size: 15px; font-weight: 700; }
+.points-section { min-width: 0; }
+.points-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.mobile-app .points-section-heading h2 { font-size: 15px; }
+.points-section-heading > span { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.points-task-list,
+.points-history-list { list-style: none; margin: 0; padding: 0; }
+.points-task-list { border-top: 1px solid var(--line); }
+.points-task {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  min-height: 81px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+.points-task-mark,
+.points-history-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 13px;
+  background: var(--soft);
+  color: var(--brand);
+}
+.points-task.is-complete .points-task-mark { background: var(--accent); }
+.points-task-copy,
+.points-history-copy { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
+.points-task-copy strong,
+.points-history-copy strong { overflow: hidden; font-size: 13px; font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+.points-history-copy small { overflow: hidden; color: var(--muted); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.points-task-side { display: flex; flex: 0 0 auto; flex-direction: column; align-items: flex-end; gap: 4px; }
+.points-task-side > b { color: var(--brand); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.points-task-action {
+  min-width: 44px;
+  min-height: 44px;
+  margin: -4px -7px -4px 0;
+  padding: 0 7px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.points-task-action:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; }
+.points-task-action:active { color: var(--brand); }
+.points-task-complete { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.points-history { padding-top: 2px; }
+.points-history-list { border-top: 1px solid var(--line); }
+.points-history-row { display: flex; align-items: center; gap: 11px; min-height: 66px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.points-history-mark { flex-basis: 34px; width: 34px; height: 34px; border-radius: 11px; background: #f3f5f6; color: var(--muted); }
+.points-history-mark.is-earned { background: var(--soft); color: var(--brand); }
+.points-history-copy small { font-size: 10px; }
+.points-history-amount { flex: 0 0 auto; font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.points-history-amount.is-earned { color: var(--brand); }
+.points-history-amount.is-spent { color: var(--muted); }
+.points-history-empty { padding: 17px 0 4px; color: var(--muted); font-size: 12px; }
+
+.points-wardrobe { gap: 20px; }
+.wardrobe-preview {
+  padding: 17px 18px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius, 16px);
+}
+.wardrobe-preview-label { display: block; margin-bottom: 14px; color: var(--muted); font-size: 11px; }
+.wardrobe-preview-identity { display: flex; align-items: center; gap: 17px; min-width: 0; }
+.wardrobe-preview-identity > div:last-child { display: flex; min-width: 0; flex-direction: column; gap: 3px; }
+.wardrobe-preview-identity strong { overflow-wrap: anywhere; font-size: 17px; }
+.wardrobe-preview-identity > div:last-child > span { color: var(--muted); font-size: 11px; }
+.wardrobe-balance { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 1px; border-bottom: 1px solid var(--line); }
+.wardrobe-balance > span { color: var(--muted); font-size: 12px; }
+.wardrobe-balance > strong { color: var(--brand); font-size: 14px; font-variant-numeric: tabular-nums; }
+.wardrobe-tabs { display: flex; gap: 8px; overflow-x: auto; margin: -2px 0 13px; padding: 2px 0 4px; scrollbar-width: none; }
+.wardrobe-tabs::-webkit-scrollbar { display: none; }
+.wardrobe-tabs > * { flex: 0 0 auto; }
+.wardrobe-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.mobile-app .wardrobe-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  min-width: 0;
+  min-height: 124px;
+  padding: 11px 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  color: inherit;
+}
+.mobile-app .wardrobe-item.is-selected { border: 2px solid var(--brand); padding: 10px 5px 8px; background: var(--soft); }
+.wardrobe-item-art { display: grid; place-items: center; width: 52px; height: 52px; flex: 0 0 52px; }
+.wardrobe-tone-swatch { display: grid; place-items: center; width: 39px; height: 39px; border-radius: 50%; color: var(--brand); font-size: 15px; font-weight: 700; }
+.wardrobe-frame-swatch { display: grid; place-items: center; width: 39px; height: 39px; border: 1px solid var(--line); border-radius: 50%; color: var(--brand); }
+.wardrobe-frame-swatch.profile-avatar-ring { border: 2px solid var(--brand); box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--brand); }
+.wardrobe-frame-swatch.profile-avatar-dashed { border: 2px dashed var(--brand); }
+.wardrobe-badge-swatch { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--brand); color: #fff; font-size: 25px; line-height: 1; }
+.wardrobe-item > strong { max-width: 100%; overflow: hidden; font-size: 11px; font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+.wardrobe-item-status { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.wardrobe-item-status.is-applied { color: var(--brand); font-weight: 650; }
+.wardrobe-action { gap: 5px; padding-top: 0; }
+.wardrobe-action .seed-kit-button,
+.wardrobe-action .astryx-button { min-height: 48px; }
+.wardrobe-shortfall { margin: 0; color: var(--muted); font-size: 11px; text-align: center; }
+
+.profile-avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  flex: 0 0 var(--profile-avatar-size, 76px);
+  width: var(--profile-avatar-size, 76px);
+  height: var(--profile-avatar-size, 76px);
+  border: 0 solid transparent;
+  border-radius: 50%;
+  font-size: 29px;
+  font-weight: 650;
+  line-height: 1;
+}
+.profile-avatar-ring { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--brand); }
+.profile-avatar-dashed { border: 2px dashed var(--brand); }
+.profile-avatar-initial-icon { width: 40%; height: 40%; }
+.profile-avatar-badge {
+  position: absolute;
+  right: -2px;
+  bottom: -1px;
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+}
+.system-astryx .points-balance,
+.system-astryx .wardrobe-preview { border-radius: 12px; }
+.system-astryx .points-task-mark { border-radius: 11px; }
+.system-astryx .wardrobe-item { border-radius: 10px; }
+
+@media (max-width: 370px) {
+  .points-task { gap: 8px; }
+  .points-task-mark { flex-basis: 34px; width: 34px; height: 34px; }
+  .points-task-copy strong { font-size: 12px; }
+  .points-task-action { font-size: 9px; }
+  .wardrobe-grid { gap: 6px; }
+  .mobile-app .wardrobe-item { padding-inline: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .points-task-action { transition: none; }
+}

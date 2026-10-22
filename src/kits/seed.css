@@ -1,0 +1,86 @@
+.seed-kit-root {
+  --seed-font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+  min-width: 0;
+  color: var(--seed-color-fg-neutral);
+  color-scheme: light;
+  font-family: var(--seed-font-family);
+}
+
+.seed-kit-root .seed-kit-button {
+  width: 100%;
+  min-height: 52px;
+  white-space: normal;
+}
+
+.seed-kit-field {
+  width: 100%;
+  min-width: 0;
+}
+
+.seed-kit-field-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--seed-color-fg-neutral);
+  font-size: var(--seed-font-size-t3);
+  font-weight: var(--seed-font-weight-medium);
+  line-height: var(--seed-line-height-t3);
+}
+
+.seed-kit-root .seed-kit-field-control {
+  min-height: 52px;
+}
+
+.seed-kit-root .seed-kit-field-control-multiline {
+  min-height: 120px;
+  align-items: stretch;
+}
+
+.seed-kit-root .seed-kit-input,
+.seed-kit-root .seed-kit-textarea {
+  font-size: 16px;
+}
+
+.seed-kit-root .seed-kit-textarea {
+  min-height: 120px;
+  padding-block: 14px;
+}
+
+.seed-kit-field-error {
+  margin: 6px 0 0;
+  color: var(--seed-color-fg-critical);
+  font-size: var(--seed-font-size-t2);
+  line-height: var(--seed-line-height-t2);
+}
+
+.seed-kit-root .seed-kit-check {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+}
+
+.seed-kit-root .seed-kit-check-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.seed-kit-root .seed-kit-check .seed-checkbox__label--size_large {
+  margin-top: 0;
+}
+
+.seed-kit-check-description {
+  color: var(--seed-color-fg-neutral-subtle);
+  font-size: var(--seed-font-size-t2);
+  line-height: var(--seed-line-height-t2);
+}
+
+.seed-kit-root .seed-kit-chip {
+  height: 44px;
+  min-height: 44px;
+  --seed-color-bg-neutral-solid: var(--seed-color-bg-brand-solid);
+  --seed-color-bg-neutral-solid-pressed: var(--seed-color-bg-brand-solid-pressed);
+  --seed-color-fg-on-neutral-solid: var(--seed-color-fg-on-brand-solid);
+}

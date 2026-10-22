@@ -1,0 +1,111 @@
+.mobile-app {
+  --motion-press: 110ms;
+  --motion-state: 160ms;
+  --motion-enter: 190ms;
+  --motion-ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* A short entrance, with no delay before the new screen becomes usable. */
+.mobile-app .app-content {
+  animation: sua-screen-enter var(--motion-enter) var(--motion-ease) both;
+}
+@keyframes sua-screen-enter {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Keep each library's own button shape, colours and press feedback. */
+.mobile-app :is(.seed-kit-button,.astryx-button) {
+  transition: box-shadow var(--motion-state) ease,
+    background-color var(--motion-state) ease,
+    border-color var(--motion-state) ease,
+    outline-color var(--motion-state) ease,
+    scale var(--motion-press) var(--motion-ease);
+}
+.mobile-app .seed-kit-button {
+  transition: box-shadow var(--motion-state) ease,
+    background-color var(--seed-duration-color-transition) var(--seed-timing-function-easing),
+    outline-color var(--seed-duration-d3) var(--seed-timing-function-easing),
+    scale var(--seed-duration-pressed-scale) var(--seed-timing-function-pressed-scale);
+}
+.mobile-app .astryx-button:active:not(:disabled):not([aria-disabled="true"]) { scale: .985; }
+.mobile-app :is(.seed-kit-button,.astryx-button)[data-kind="primary"]:not(:disabled):not([aria-disabled="true"]) {
+  box-shadow: 0 2px 5px color-mix(in srgb,var(--brand) 13%,transparent);
+}
+.mobile-app :is(.seed-kit-button,.astryx-button):disabled,
+.mobile-app :is(.seed-kit-button,.astryx-button)[aria-disabled="true"] {
+  box-shadow: none;
+}
+
+.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button) {
+  transition: transform var(--motion-press) var(--motion-ease),
+    background-color var(--motion-state) ease,
+    box-shadow var(--motion-state) ease,
+    color var(--motion-state) ease;
+  transform-origin: center;
+}
+.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.home-search,.kakao-login-button,.google-login-button):active:not(:disabled) {
+  transform: scale(.985);
+  box-shadow: none;
+}
+.mobile-app :is(.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button):active:not(:disabled) {
+  transform: scale(.975);
+}
+
+.mobile-app :is(.seed-kit-chip,.astryx-chip,.fp-goal) {
+  transition: background-color var(--motion-state) ease,
+    color var(--motion-state) ease,
+    border-color var(--motion-state) ease;
+}
+.mobile-app :is(.seed-kit-field-control,.astryx-field input,.astryx-field textarea) {
+  transition: border-color var(--motion-state) ease,
+    box-shadow var(--motion-state) ease;
+}
+.mobile-app .app-tabs>button {
+  transition: color var(--motion-state) ease;
+}
+.mobile-app .app-tabs>button:active>span { transform: scale(.94); }
+.mobile-app .app-tabs>button>span { transition: background-color var(--motion-state) ease,transform var(--motion-press) var(--motion-ease); }
+
+.mobile-app :is(.term-heading>.icon-button,.reaction-row>button)[aria-pressed="true"]>svg {
+  animation: sua-save-in 170ms var(--motion-ease);
+}
+@keyframes sua-save-in {
+  from { transform: scale(.85); }
+  to { transform: scale(1); }
+}
+.mobile-app .app-toast {
+  animation: sua-toast-in 180ms var(--motion-ease) both;
+}
+@keyframes sua-toast-in {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.mobile-app .fp-reasons summary svg { transition: transform var(--motion-state) var(--motion-ease); }
+.mobile-app .fp-reasons[open]>div { animation: sua-screen-enter 160ms var(--motion-ease); }
+
+@media(hover:hover) and (pointer:fine) {
+  .mobile-app :is(.seed-kit-button,.astryx-button)[data-kind="primary"]:hover:not(:disabled):not([aria-disabled="true"]) {
+    box-shadow: 0 4px 11px color-mix(in srgb,var(--brand) 20%,transparent);
+  }
+  .mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in srgb,var(--brand) 8%,transparent);
+  }
+  .mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card):active { transform: scale(.985);box-shadow:none; }
+  .mobile-app :is(.dp-expression,.story-row,.app-row,.pp-row):hover {
+    background-color: color-mix(in srgb,var(--soft) 60%,transparent);
+  }
+  .mobile-app .icon-button:hover { background-color: var(--soft); }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .mobile-app,.mobile-app *,.mobile-app *::before,.mobile-app *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button),
+  .mobile-app .app-tabs>button>span { transform: none !important; }
+  .mobile-app :is(.seed-kit-button,.astryx-button,.seed-kit-chip,.astryx-chip) { scale: 1 !important;transform: none !important; }
+}

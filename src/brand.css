@@ -1,0 +1,5 @@
+.sua-brand-mark{display:inline-block;flex-shrink:0;background:currentColor;mask:url('/brand/sueoyeok/symbol.svg') center/contain no-repeat;-webkit-mask:url('/brand/sueoyeok/symbol.svg') center/contain no-repeat;vertical-align:middle}
+.sua-brand-logo{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;line-height:1;color:inherit;font-size:23px;font-weight:750;letter-spacing:-.055em}
+.sua-brand-logo-compact{gap:5px;font-size:17px}
+.lab-brand>.sua-brand-logo{font-size:21px;color:#233b30;border:0;margin:0;padding:0}
+.app-header>b:has(>.sua-brand-logo){display:flex;justify-content:center;color:var(--brand)}

@@ -1,0 +1,379 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>수어역 · 제품 기획 v2</title><style>
+:root{font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",sans-serif;color:#222;background:#f8f9f6;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,a,select{font:inherit}a{color:inherit;text-underline-offset:4px}button{cursor:pointer}button:focus-visible,a:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid #435c47;outline-offset:4px}[hidden]{display:none!important}.top{border-bottom:1px solid #daddd5;background:white;padding:26px max(28px,calc((100vw - 1420px)/2));display:flex;gap:24px;align-items:center;justify-content:space-between}.identity{display:flex;align-items:center;gap:13px}.mark{width:35px;height:35px;border:2px solid #344b38;border-radius:10px;display:grid;place-items:center;color:#344b38;font-weight:800}.identity b{font-size:19px}.identity small{display:block;color:#697065;font-size:11px;margin-top:5px;letter-spacing:.1em}.top-links{display:flex;gap:20px;font-size:12px}.shell{max-width:1420px;margin:auto;padding:40px 28px}.intro{display:flex;gap:30px;align-items:end;justify-content:space-between;margin-bottom:28px}.eyebrow{font-size:11px;letter-spacing:.14em;color:#596e55;font-weight:700}.intro h1{font-size:34px;letter-spacing:-.055em;line-height:1.3;margin:12px 0}.intro p{font-size:14px;color:#62695e;line-height:1.8;max-width:740px}.version{font-size:12px;border:1px solid #d8ded2;background:#fff;padding:10px 14px;border-radius:8px;white-space:nowrap;margin-bottom:20px}.tabs{display:flex;gap:5px;border-bottom:1px solid #cfd5c8;overflow:auto;margin-bottom:30px;position:sticky;top:0;z-index:5;background:#f8f9f6;padding-top:10px}.tabs button{border:0;background:none;padding:15px 20px;font-size:14px;color:#66705f;white-space:nowrap;border-bottom:3px solid transparent}.tabs button[aria-selected=true]{color:#263d2a;border-bottom-color:#405b3b;font-weight:750}.prose{max-width:1120px;background:#fff;padding:40px;border:1px solid #e0e4d9;border-radius:14px}.prose h1{font-size:28px;letter-spacing:-.04em;margin:0 0 18px}.prose h2{font-size:19px;margin:35px 0 14px;letter-spacing:-.025em}.prose p{font-size:14px;line-height:1.95;word-break:keep-all;overflow-wrap:anywhere;margin:12px 0;color:#424a3d}.table-scroll{overflow:auto;margin:18px 0}table{border-collapse:collapse;width:100%;min-width:560px;font-size:12px;line-height:1.8}td,th{padding:13px 15px;border:1px solid #e0e4da;text-align:left;vertical-align:top}th{background:#f2f5ef;font-weight:750;white-space:nowrap}td:first-child{font-weight:600}tr:nth-child(even){background:#fcfdfb}.board-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.board-heading h2{font-size:25px;letter-spacing:-.04em;margin:0 0 12px}.board-heading p,.board-note{font-size:13px;line-height:1.85;color:#636c5e;max-width:840px}.board-controls{display:flex;gap:14px;align-items:center;margin:24px 0;flex-wrap:wrap}.board-controls label{font-size:12px;color:#505a49}.board-controls select{padding:11px 38px 11px 13px;border:1px solid #bbc7b2;border-radius:8px;background:#fff}.board-controls button{border:1px solid #cbd3c4;border-radius:8px;padding:11px 15px;background:white;font-size:12px}.frame-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:30px;align-items:start}.frame-card{min-width:0}.frame-caption{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:13px}.frame-caption a{font-size:11px;color:#5f6958}.frame-caption code{font-size:10px;font-weight:400;color:#7a8374;margin-left:6px}.phone-wrap{width:100%;max-width:390px;height:844px;margin:auto;background:#fff;border:1px solid #9b9f96;border-radius:26px;overflow:hidden;position:relative}.phone-wrap iframe{width:390px;height:844px;border:0;display:block;transform-origin:top left;background:white}.desktop-card{grid-column:1/-1}.desktop-wrap{height:770px;border-radius:12px;border:1px solid #999;overflow:auto;background:white}.desktop-wrap iframe{width:1240px;height:768px;border:0;display:block}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.legend span{border:1px solid #ccd4c4;background:white;padding:6px 10px;border-radius:5px;font-size:10px;color:#626e58}.flow{padding:18px 0;border-bottom:1px solid #d9e0d3}.flow h3{font-size:13px;color:#40583b;margin:0 0 12px}.flow-nodes{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.flow-nodes span{background:#fff;border:1px solid #909f87;border-radius:8px;padding:10px 13px;font-size:11px}.flow-nodes b{font-size:15px;font-weight:400;color:#8b9882}.flows{margin-bottom:35px}.footer{font-size:11px;color:#7b8475;border-top:1px solid #dbe0d5;margin-top:40px;padding-top:20px;line-height:1.8}.download{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;font-size:11px}.skip{position:absolute;left:20px;top:-100px;background:white;padding:15px;z-index:20}.skip:focus{top:10px}@media(max-width:700px){.top{padding:20px;align-items:start}.top-links{flex-direction:column;gap:10px}.shell{padding:25px 16px}.intro{display:block}.intro h1{font-size:28px}.version{display:inline-block;margin:0}.tabs button{padding:14px 12px;font-size:12px}.prose{padding:25px 19px}.prose h1{font-size:24px}.board-heading{display:block}.frame-grid{grid-template-columns:minmax(0,1fr)}.phone-wrap{max-width:390px}.desktop-wrap{height:620px}}@media print{body{background:white}.top-links,.tabs,.board-controls,.download,.skip,.version{display:none!important}.shell{padding:0}.top{padding:0 0 15px}.intro{margin:15px 0}.intro h1{font-size:22px}.prose{border:0;padding:0;max-width:none}.prose p{font-size:10pt}.prose h2{break-after:avoid}tr{break-inside:avoid}.phone-wrap{break-inside:avoid}.frame-grid{display:block}.frame-card{break-inside:avoid;margin:20px 0;page-break-after:always}.desktop-wrap{overflow:hidden}.board-note{font-size:10pt}a{text-decoration:none}.footer{margin-top:20px}}
+</style></head><body><a class="skip" href="#content">본문으로 건너뛰기</a><header class="top"><div class="identity"><span class="mark" aria-hidden="true">역</span><div><b>수어역 · 제품 기획</b><small>PRODUCT PLANNING / VERSION 2</small></div></div><nav class="top-links" aria-label="바로가기"><a href="/">앱 열기 ↗</a><a href="/admin.html">운영 화면 ↗</a><a id="download-pdf" href="pdf/sueoyeok-combined.pdf" download="수어역_통합기획서.pdf" aria-label="통합 PDF 다운로드">통합 PDF 다운로드</a><a href="#" id="print">현재 탭 인쇄</a></nav></header><main class="shell" id="content"><section class="intro"><div><span class="eyebrow">찾고 · 배우고 · 함께 쓰는 수어</span><h1>제품의 기준과 실제 화면을 한곳에.</h1><p>회의 원문에서 출발해 현재 웹 구현과 다음 출시 과제를 정리했습니다.<br>와이어프레임과 Astryx 그린 버전의 실제 화면을 함께 볼 수 있습니다.</p></div><span class="version">2026.10.22 · v2</span></section><nav class="tabs" role="tablist" aria-label="기획 문서"><button role="tab" id="tab-prd" aria-controls="panel-prd" aria-selected="true" tabindex="0" data-tab="prd">PRD</button><button role="tab" id="tab-spec" aria-controls="panel-spec" aria-selected="false" tabindex="-1" data-tab="spec">기능명세서</button><button role="tab" id="tab-flow" aria-controls="panel-flow" aria-selected="false" tabindex="-1" data-tab="flow">유저플로우</button><button role="tab" id="tab-todo" aria-controls="panel-todo" aria-selected="false" tabindex="-1" data-tab="todo">향후 TODO</button><button role="tab" id="tab-source" aria-controls="panel-source" aria-selected="false" tabindex="-1" data-tab="source">원문 대조</button><button role="tab" id="tab-future" aria-controls="panel-future" aria-selected="false" tabindex="-1" data-tab="future">향후 · AI 수어 대화</button><button role="tab" id="tab-ui" aria-controls="panel-ui" aria-selected="false" tabindex="-1" data-tab="ui">와이어프레임</button><button role="tab" id="tab-example" aria-controls="panel-example" aria-selected="false" tabindex="-1" data-tab="example">UI 예시 · Astryx</button></nav><section role="tabpanel" tabindex="0" id="panel-prd" aria-labelledby="tab-prd" ><article class="prose"><h1>수어역 PRD</h1>
+<p>2026-10-22 · v2 · 현재 웹 프로토타입과 출시 목표를 구분한 제품 기준</p>
+<h2>제품 정의</h2>
+<p>수어를 찾고, 배우고, 기록하며 서로 묻고 답하는 참여형 수어 위키다. 사전역·배움역·소통역·마이페이지를 하나의 동선으로 연결한다. 이번 기준 구현은 design-lab 웹 앱이다. 이전 Expo 앱 현황 문서는 별도 구현의 기록이며 이 웹 앱 완료 근거로 사용하지 않는다.</p>
+<h2>문제와 사용자</h2>
+<p>입문자는 빠른 손동작과 방향을 이해하기 어렵고, 기존 단어 검색으로 해결하지 못하는 질문이 있다. 수어 사용자는 자신의 표현과 맥락을 나누고 싶다. 운영자는 표현 차이와 유해 콘텐츠를 구분하면서 참여를 유지해야 한다.</p>
+<p>가입 화면의 사용자 유형은 농인·청인·수어통역사·기타 4종이다. 수어 경험은 처음이에요·조금 알아요·어느 정도 할 수 있어요·익숙하게 사용해요 4단계다. 목적은 배우기·모르는 수어 찾기·아는 수어 나누기·소통하기를 복수 선택한다. 이 선택은 자기소개이며 전문 자격이나 정확성 인증이 아니다. 공개 표시 범위와 별도의 신원·자격 검증은 미결이다.</p>
+<h2>현재 범위</h2>
+<div class="table-scroll"><table>
+<tr><th>영역</th><th>현재 웹 동작</th><th>출시까지 남은 범위</th></tr>
+<tr><td>시작</td><td>이메일 입력 → 프로필 → 경험 → 목적 → 약관의 5단계와 완료, 로그인·복구 화면</td><td>인증 서버, 메일 발송, OAuth, 전역 닉네임 중복 검사</td></tr>
+<tr><td>수어 검색 · 글자로 찾기</td><td>홈 → 위키 검색; 표현명·뜻 설명·분류·초성 검색, 결과 수·상세·분류·정렬·저장 필터</td><td>현재 샘플 표현 20개 대상. 검토된 위키 전체 데이터와 서버 검색 연결</td></tr>
+<tr><td>수어 검색 · 수어로 찾기</td><td>실시간 카메라·기기 내 MediaPipe 좌표 추출·자체 추론 서버 어댑터 구현</td><td>추론 서버 주소·모델 입력/출력 계약·신뢰도/안정 판정 합의와 실제 추론 검증</td></tr>
+<tr><td>표현 탐색</td><td>최근 본 표현·저장한 표현, 표현 상세·연관 표현</td><td>검토된 수어 영상·콘텐츠 운영</td></tr>
+<tr><td>기여</td><td>사용자 촬영본 선택·권리 확인·방향/사투리 표시·보관·재생</td><td>서버 업로드·검증·공개 범위·대표/랜덤 선정</td></tr>
+<tr><td>AI 얼굴 변경 · 선택 기능</td><td>우리 팀 연구·시험 기록 있음, 앱 등록 연동은 미구현</td><td>얼굴 노출을 원하지 않는 기여자가 선택 → 자체 AI 변환 → 결과 확인 → 변경본 등록. 표정·입모양·수어 의미 보존을 출시 조건으로 검증</td></tr>
+<tr><td>질문</td><td>질문 작성·목록·답변·신고, 같은 브라우저 운영 화면</td><td>공유 DB, 권한·스팸 방어·이의 처리</td></tr>
+<tr><td>학습</td><td>일상선 20역과 각 표현 상세 연결</td><td>Day 1 5문항·해설·결과·재학습</td></tr>
+<tr><td>소통</td><td>글 작성·수정·삭제·댓글·공감·스크랩</td><td>서버 커뮤니티, 대댓글·댓글 공감·첨부</td></tr>
+<tr><td>내 활동</td><td>프로필, 내 글/영상/저장/스크랩, 포인트·꾸미기·활동 알림</td><td>서버 원장·기기 간 동기화·푸시</td></tr>
+<tr><td>운영</td><td>회원·글·영상·질문·신고의 브라우저 로컬 관리</td><td>운영자 인증·역할, 감사 이력·접수/이의 체계</td></tr>
+</table></div>
+<p>로컬은 같은 브라우저·같은 웹 주소의 저장소를 뜻한다. 다른 사람이나 다른 기기와 공유하는 서비스가 아니다. 예시 표현과 수어역 안내 글은 샘플 콘텐츠다. 빈 질문·영상 목록과 직접 진입한 미선택 상세는 실제 빈 상태로 유지한다. 현재 화면·입력 검사는 실제 인증이나 보안 검증을 뜻하지 않는다.</p>
+<h2>논의필요 범위</h2>
+<p>수어 인식·한국어 → 수어 생성/아바타·AI 얼굴 변경은 sua_research의 연구 코드·실험 기록과 별도 얼굴 변경 시험을 바탕으로 제품 적용 범위를 논의한다. 자체 연구 결과를 활용하는 방향이며, 최종 구현 범위·담당·제품화 순서·일정은 확정 전이다.</p>
+<div class="table-scroll"><table>
+<tr><th>기능</th><th>논의할 구현 범위</th><th>현재 제품 연결 상태</th></tr>
+<tr><td>수어 검색·해석</td><td>좌표/영상 입력 정합, 수어 → 후보 표현/한국어 추론, 어휘 매핑·신뢰도·모델 평가, 자체 추론 API와 앱 연동</td><td>앱 카메라·좌표 추출·어댑터 구현. 연구 코드와 앱의 실제 추론 연결·계약 검증은 남음</td></tr>
+<tr><td>한국어 → 수어 아바타</td><td>한국어 → 수어 표현/포즈 생성, 손·몸·비수지 표현과 구간 연결, 모션·아바타 출력·앱 연결</td><td>양방향·생성 연구 코드/실험 기록 있음. 앱 아바타 화면과 제품 품질 검증은 남음</td></tr>
+<tr><td>AI 얼굴 변경</td><td>영상의 얼굴 외형 변경 파이프라인, 손 가림·표정/입모양 보존 평가, 비공개 작업 처리·미리보기·등록</td><td>별도 로컬 시험 기록 있음. 수어용 품질·익명성·앱 업로드 연동은 미검증/미완료</td></tr>
+<tr><td>AI 대화 연습</td><td>상황·턴·학습 목표·힌트·복습 제어와 자체 수어 입출력 연결</td><td>제품 확장 계획. 기반 LLM·실행 방식은 구성 요소 수준에서 결정</td></tr>
+</table></div>
+<p>자체 추론 서버(앱과 별도)를 활용하는 안을 기준으로 지원 어휘/문장 범위, 모델 버전·좌표 계약, 품질 기준·운영 담당·서버 자원·비용·출시 순서를 논의한다. 연구 기록의 시험 성공과 제품 전체 연동 완료는 구분한다.</p>
+<h2>제품 목표와 지표</h2>
+<p>첫 사용자가 필요한 표현에 도달하고, 맥락을 확인하고, 모르는 표현을 질문하거나 자신의 영상을 남길 수 있게 한다. 학습은 짧고 반복 가능한 성취 경험을 목표로 한다. 초기 제한 베타에서 검색 후 재생률, 검색 0건 비율, 첫 영상 등록 완료율, 질문 응답률, Day 1 완료율, 7일 재방문, 미처리 신고 수·처리 시간을 측정한다. 목표 수치는 아직 정하지 않았으며 현재 웹 앱에 분석 수집 서비스는 연결하지 않았다.</p>
+<h2>MVP와 후속</h2>
+<p>P0는 실제 인증·권한·저장소, 검토된 초기 콘텐츠, 업로드 실패 복구, 신고·운영, 삭제 처리, 접근성이다. 수어로 찾기는 실시간 카메라 기반으로 구현하며 자체 추론 서버 연결을 별도의 통합 조건으로 둔다. P1은 출시 범위 확정 후 Day 1 5문항, 대댓글·댓글 공감, 보상 원장, 알림 동기화를 연결한다. AI 얼굴 변경은 영상 등록 시 선택하는 기능으로 계획한다. 수어 의미 보존·처리 시간·비용 검증은 출시 조건이며 일정은 미정이다. 자유 시점 3D, AI 문장 변환, 결제·구독·랭킹 경쟁은 후속 검토다.</p>
+<p>20역 노선은 현재 탐색 UI이며 20개 강의 또는 학습 완료·평가 구현으로 세지 않는다. 수어로 찾기는 실시간 카메라 → 기기 내 MediaPipe Holistic으로 좌표 추출 → 자체 추론 서버 처리 → 결과 표시의 구조다. MediaPipe는 손·몸·얼굴 랜드마크를 검출하며 그 자체가 수어의 의미를 판별하는 모델은 아니다. 원본 영상 업로드를 기본 경로로 사용하지 않고 좌표는 세션 메모리에서 일시 처리한다. 서버 주소와 정확한 모델 계약이 제공되지 않아 실제 서버 추론·인식 정확도는 아직 검증하지 않았다. 입력 동영상 파일 선택은 수어 기록 record 기능에만 유지한다.</p>
+<h2>정책 결정이 필요한 항목</h2>
+<div class="table-scroll"><table>
+<tr><th>결정</th><th>현재 기준 / 결정 전 주의</th></tr>
+<tr><td>인증·비회원</td><td>로컬 체험과 실제 계정 구분, 공개 읽기·작성 권한표 확정</td></tr>
+<tr><td>대표 영상</td><td>초반 TOP3를 최종안으로 쓰지 않음. 후반 대표 1개+랜덤·단어당 5개 안의 적용 단위와 노출 수 미결</td></tr>
+<tr><td>기여 자격</td><td>모두 기여 방향. 사전 반응 전 영상 등록 조건·삭제 후 자격·가중치 미결</td></tr>
+<tr><td>신고</td><td>3건은 내부 검토 방향. 자동 삭제·정지 기준으로 확정하지 않음</td></tr>
+<tr><td>공개·AI</td><td>영상 공개·얼굴 변경 처리·AI 학습 이용의 동의를 구분. 얼굴 변경 선택을 학습 이용 허락으로 취급하지 않음</td></tr>
+<tr><td>AI 얼굴 변경</td><td>논의필요 범위. 연구 후보의 제품 적용 범위·담당·처리 위치·자원·비용·품질·보관/삭제 기간 논의. 변경본 확인 전 원본 자동 공개 금지</td></tr>
+<tr><td>보상</td><td>현재 30/20/50/30점은 프로토타입 규칙. 회의 확정 수치가 아님</td></tr>
+<tr><td>운영</td><td>정지·숨김·복원 사유, 기간·범위, 재검토·이의 창구·보관기간 확정</td></tr>
+<tr><td>실시간 수어 검색</td><td>좌표 입력의 손/몸/얼굴 구성·순서·정규화·시간창, 전송 방식·빈도·응답 식별자, 어휘 매핑·신뢰도·안정 판정 임계값 합의</td></tr>
+<tr><td>이름·출시</td><td>수어역 가칭, Sage 현재 시안. 회의의 11월 중순은 희망 시점</td></tr>
+</table></div>
+<h2>출시 수용 기준</h2>
+<p>서버가 사용자별 소유권과 운영 역할을 강제하고 비밀번호·토큰을 안전하게 다뤄야 한다. 업로드 취소·재시도·용량 초과·네트워크 단절을 복구해야 한다. 검토된 영상·학습 정답·해설을 확보해야 한다. 신고 유지·숨김·복원과 작성자 안내·이의 처리, 탈퇴·보관/삭제, 모바일·키보드·화면낭독 검증을 완료해야 한다. 현재 프로토타입을 이 조건을 충족한 출시본으로 선언하지 않는다.</p>
+<h2>향후 P2 · AI 수어 대화와 한국어 → 수어 아바타</h2>
+<p>스픽의 AI 튜터·상황별 대화 경험을 참고하여 배움역의 학습 표현을 대화로 연습하는 기능을 계획한다. 한국어 문장 또는 AI 답변을 한국수어 아바타로 보여주는 출력 기능을 먼저 검증하고, 이를 상황별 AI 에이전트와 연결한다. 현재 기능 구현이나 스픽 서비스 연동을 뜻하지 않는다.</p>
+<p>초기 입력은 한국어 텍스트이며 한국어 의미 확인 → 한국수어 표현 계획 → 검토된 모션/아바타 → 자막·느리게·반복으로 구성한다. 다음 단계에서 상황·목표 선택, 맥락을 유지한 AI 응답, 힌트·다시 시도·복습을 추가한다. 카메라 수어 응답은 연속 문장 해석과 사용자 의미 확인을 검증한 후의 확장이다. 현재 MediaPipe 추출이나 단어 검색을 문장 번역·수어 생성 기능으로 간주하지 않는다.</p>
+<p>한국어 단어를 일대일로 붙이는 방식 대신 한국수어 의미·문법·얼굴/몸 표현을 검토한다. 농인·한국수어 전문가의 이해도 검증을 통과한 지원 상황부터 제공한다. 번역·모션·대화는 논의필요 범위로 두며, 연구 후보의 제품 적용 범위·담당·API 계약·비용·보관 정책·출시 일정은 미정이다. 상세 기획은 ‘향후 · AI 수어 대화’ 탭과 06번 문서에 정리한다.</p></article></section><section role="tabpanel" tabindex="0" id="panel-spec" aria-labelledby="tab-spec" hidden><article class="prose"><h1>수어역 기능명세서</h1>
+<p>2026-10-22 · v2 · 화면 ID는 실제 웹 앱과 동일</p>
+<h2>상태 표기</h2>
+<p>로컬 구현: 브라우저 안에서 동작하는 기능. 샘플: 제품 설명을 위한 고정 콘텐츠. 준비/TODO: 화면이 있거나 제안되었으나 실제 서비스 연결이 없는 기능. 이 구분은 회원·운영 UI에도 동일하게 적용한다.</p>
+<h2>기능 계약</h2>
+<div class="table-scroll"><table>
+<tr><th>ID</th><th>화면·기능</th><th>입력·정상 처리</th><th>예외·수용 기준</th><th>현재 상태</th></tr>
+<tr><td>A01</td><td>signup·login</td><td>이메일 형식·비밀번호 길이 확인 후 다음 화면</td><td>빈 값·형식 오류 표시; 실제 인증 성공 문구로 오해하지 않기</td><td>입력·이동 로컬, 실제 인증 TODO</td></tr>
+<tr><td>A02</td><td>profileSetup</td><td>닉네임 1~20자, 유형 4개 중 1개 선택</td><td>미선택 안내, 수정 시 기존 값 보존</td><td>로컬 프로필</td></tr>
+<tr><td>A03</td><td>knowledge</td><td>경험 4단계 중 단일 선택</td><td>선택 전 계속 비활성</td><td>로컬</td></tr>
+<tr><td>A04</td><td>purpose</td><td>목적 4개 복수 선택</td><td>0개일 때 계속 비활성</td><td>로컬</td></tr>
+<tr><td>A05</td><td>terms·policy</td><td>이용약관·개인정보 필수, 소식 선택</td><td>필수 2개만 동의해도 진행 가능; 정책 왕복 상태 보존</td><td>UI 로컬, 실제 정책문 TODO</td></tr>
+<tr><td>A06</td><td>recover</td><td>이메일 검사·재설정 요청 진입</td><td>메일 발송·유효 링크가 없는 준비 안내</td><td>준비</td></tr>
+<tr><td>D01</td><td>수어 검색 · 글자로 찾기 / home·wiki</td><td>표현명·뜻 설명·분류·초성 입력 → 결과 수·목록 → 표현 상세; 분류·정렬·저장 필터</td><td>검색어 지우기, 0건 안내·전체 표현 보기, 상세 왕복</td><td>로컬 검색 구현 · 샘플 표현 20개</td></tr>
+<tr><td>D02</td><td>term</td><td>표현 설명·연관 표현·보관 영상·북마크</td><td>촬영본 없으면 빈 상태, 연관/영상 왕복 맥락 유지</td><td>로컬·샘플 설명</td></tr>
+<tr><td>D03</td><td>record</td><td>영상 파일, 표현·설명·방향·사투리·권리 확인</td><td>영상 형식·35MB 한도, 파일 누락·권리 미동의는 저장 불가</td><td>로컬 보관, 공개 업로드 TODO</td></tr>
+<tr><td>D04</td><td>videoDetail</td><td>본인 선택 파일 재생·느리게 보기·삭제·표현 연결</td><td>미선택/삭제/숨김 대상을 재생하지 않음</td><td>로컬; 브라우저 저장 연동</td></tr>
+<tr><td>D05</td><td>수어 검색 · 수어로 찾기 / signSearch</td><td>카메라 시작 → 기기 내 MediaPipe Holistic 좌표 추출 → 자체 추론 서버 추론 → 결과·표현 연결</td><td>카메라 거부/미지원·좌표 미검출·서버 미설정/오류/미확신·중단 처리, 인식 결과를 지어내지 않음</td><td>프런트·어댑터 구현, 실제 서버 추론 미확인</td></tr>
+<tr><td>D06</td><td>wiki · 표현 탐색</td><td>최근 본 표현·최근 기록 지우기·저장한 표현 보기</td><td>최근/저장 0건 처리, 검색·분류 조건과 함께 적용</td><td>화면 인스턴스 메모리</td></tr>
+<tr><td>D07</td><td>영상 등록 · AI 얼굴 변경</td><td>선택 동의 → 비공개 원본 처리 → 자체 AI 얼굴 변경 → 미리보기·확인 → 변경본 등록</td><td>선택하지 않아도 등록 가능. 처리 중/실패/취소에는 원본을 자동 공개하지 않음; 표정·입모양·손 가림 검증</td><td>우리 팀 연구·시험, 제품화·앱 연동 TODO</td></tr>
+<tr><td>Q01</td><td>questions·questionCompose</td><td>표현·질문 입력 후 저장하고 상세 이동</td><td>빈 값·저장 실패 표시, 0건 안내</td><td>로컬</td></tr>
+<tr><td>Q02</td><td>question</td><td>답변·신고, 질문으로 복귀</td><td>직접 진입 시 선택 질문 없음, 숨김은 목록에서 제외</td><td>로컬</td></tr>
+<tr><td>L01</td><td>learn</td><td>첫인사역~부탁역 일상선 20개 역 → 표현 상세</td><td>하단 종착역까지 스크롤 가능, 역 순서 유지</td><td>탐색 로컬</td></tr>
+<tr><td>L02</td><td>Day 1</td><td>5문항·객관식·첫 제출·정오답·해설·결과</td><td>4/5=80%, 재학습 중복 보상 금지</td><td>TODO</td></tr>
+<tr><td>C01</td><td>community·compose</td><td>분류, 제목 80자·본문 2000자, 글 CRUD</td><td>제목/본문 공백 차단, 작성자 소유권은 서버에서 재검증 필요</td><td>로컬</td></tr>
+<tr><td>C02</td><td>post</td><td>댓글 2000자, 글 공감·스크랩</td><td>빈 댓글 차단, 삭제 글의 오래된 링크 처리</td><td>로컬; 대댓글·댓글 공감 TODO</td></tr>
+<tr><td>P01</td><td>profile·collection</td><td>내 영상·글·표현 저장·스크랩별 목록</td><td>빈 목록에서 해당 작성/탐색으로 연결</td><td>로컬</td></tr>
+<tr><td>P02</td><td>points</td><td>프로필 30·첫 저장 20·첫 영상 50·첫 글 30점</td><td>같은 보상 1회, 잔액 부족 구매 차단, 보유 재장착 무과금</td><td>로컬 규칙·상태</td></tr>
+<tr><td>P03</td><td>wardrobe</td><td>색·테두리·배지 구입·장착</td><td>구매 원장·소유·장착 동시 갱신</td><td>로컬</td></tr>
+<tr><td>P04</td><td>notifications</td><td>활동 알림 목록·읽음·모두 읽음·원문 이동</td><td>삭제된 콘텐츠 알림 참조 정리</td><td>로컬; 외부 푸시 TODO</td></tr>
+<tr><td>P05</td><td>settings·account</td><td>정보 수정·로그아웃·탈퇴 진입</td><td>복구·OAuth·서버 세션 없음 명시</td><td>로컬 UI</td></tr>
+<tr><td>P06</td><td>withdraw~withdrawDone</td><td>안내 확인·최종 확인·로컬 기록 정리</td><td>취소 경로·질문 정리 롤백·미디어 준비·메타데이터 정리, 실제 서버 재인증·탈퇴는 TODO</td><td>로컬 체험 정리</td></tr>
+<tr><td>M01</td><td>admin members</td><td>현재 브라우저 회원 조회·검색·상태 확인·정지/복원</td><td>되돌릴 수 있는 조치, 다른 기기에는 적용되지 않음</td><td>로컬 운영</td></tr>
+<tr><td>M02</td><td>admin posts·videos</td><td>같은 저장소의 글·영상 조회·숨김/복원</td><td>삭제와 숨김 구분, 앱 목록과 상태 일치</td><td>로컬 운영</td></tr>
+<tr><td>M03</td><td>admin questions·reports</td><td>질문·답변·신고 상세와 숨김/복원·검토</td><td>조치 확인·취소, 미선택·0건·저장 실패</td><td>로컬 운영</td></tr>
+</table></div>
+<h2>영상 등록 · AI 얼굴 변경</h2>
+<p>얼굴 노출을 원하지 않는 기여자를 위한 선택 기능이다. 등록 단계의 ‘AI 얼굴 변경’은 기본 해제로 두고, 선택하지 않으면 일반 영상 등록 경로를 따른다. 현재 앱은 영상 파일을 로컬에 보관하며 얼굴 변경 UI·연구 모델·처리 서버는 아직 앱에 연결하지 않았다. 아래는 향후 구현 계약이다.</p>
+<div class="table-scroll"><table>
+<tr><th>단계</th><th>기능·수용 기준</th></tr>
+<tr><td>선택·동의</td><td>영상 선택 후 AI 얼굴 변경 선택. 처리 목적·전송 대상·원본 보관 기준을 확인한 후 시작. 영상 공개·모델 학습 동의와 구분</td></tr>
+<tr><td>처리</td><td>비공개 원본 → 변환 작업. 대기·처리 중·완료·실패·취소 상태를 구분하고 실제 진행 정보만 표시. 중복 등록과 취소 후 늦은 완료 결과 반영 차단</td></tr>
+<tr><td>결과 확인</td><td>본인만 원본/변경본을 비교 재생하고 표정·눈썹·시선·입모양과 얼굴 앞 손동작을 확인. 마음에 들지 않으면 재시도 또는 취소</td></tr>
+<tr><td>등록</td><td>사용자가 변경본을 확인한 뒤 해당 파일만 공개 등록. AI 변경 영상임을 표시하고 표준 표현·정확성 인증으로 오해하지 않게 함</td></tr>
+<tr><td>실패·이탈</td><td>원본을 대신 자동 공개하지 않음. 비공개 임시 보관·재시도·삭제/취소 경로 제공. 원본 공개로 전환하려면 별도 명시 선택 필요</td></tr>
+<tr><td>품질</td><td>얼굴 외형 변경 중에도 수어 의미·표정·입모양·손/몸·재생 시간/프레임 연속성이 유지되는지 농인·한국수어 전문가와 검증. 품질 미달 결과는 공개 차단</td></tr>
+<tr><td>데이터</td><td>원본과 변경본의 접근 권한 분리, 원본 공개 URL 차단, 임시 파일·작업 취소·탈퇴/삭제 시 정리 기준 확정. 얼굴 변경만으로 음성·배경 등을 포함한 완전한 익명성을 보장한다고 표시하지 않음</td></tr>
+</table></div>
+<p>얼굴 변경 파이프라인과 처리 API는 논의필요 범위다. 별도 로컬 시험을 바탕으로 제품 적용 범위·담당·모델/외형·처리 위치·예상 처리 시간·비용·재시도 한도·보관 기간을 논의한다. 실시간 수어 검색의 MediaPipe 추출이나 한국어 → 수어 아바타 생성과 별도 기능으로 관리한다.</p>
+<h2>저장·권한 경계</h2>
+<p>회원·프로필·커뮤니티 글·질문 메타데이터는 같은 origin 브라우저 저장소를 공유한다. 영상 Blob은 IndexedDB를 사용한다. 화면과 운영 콘솔이 같은 로컬 기록을 바라보는 구조이며 서버 DB·미디어 CDN이 아니다. 댓글·공감·스크랩·북마크·최근 표현·포인트·꾸미기·활동 알림은 현재 화면 인스턴스의 메모리 상태이며 새로고침·다른 프레임에서 그대로 이어지지 않는다. 회원/글/영상 저장과 구분해 검토한다. 비밀번호는 실제 인증 정보로 저장하지 않는다. 임의로 로컬 저장소를 바꿀 수 있으므로 본인·운영자 표시를 보안 권한으로 보지 않는다. 운영 숨김은 복원 가능한 상태 전이이고 사용자 삭제·탈퇴와 다르다.</p>
+<p>회원 레코드는 가입 완료·프로필 수정·첫 게시 기여 시 생성한다. 정지된 회원은 작성이 제한되고 작성한 콘텐츠는 비노출된다. 단순 화면 초기화로 새 식별자를 발급하여 정지를 우회하지 않는다. 탈퇴 시 질문 정리의 실패 복구를 준비하고 영상 파일 정리 준비와 메타데이터 정리를 수행한다. 탈퇴한 회원은 닉네임·이메일·유형·경험·목적 등 개인 필드를 지우고 탈퇴 상태의 이력만 남긴다. 탈퇴 뒤 새 가입은 새 로컬 식별자를 사용한다. 이는 동일 브라우저 안의 상태 관리이며 실제 신원·계정 차단을 보장하지 않는다.</p>
+<h2>상태와 오류</h2>
+<p>공통 상태는 초기 로딩, 정상, 0건, 입력 오류, 저장 실패, 없거나 접근 불가능한 상세, 준비 중이다. 업로드의 서버 대기/처리/실패/재시도·재인증·세션 만료·실시간 충돌은 출시 구현 대상으로 남긴다. 예시 데이터로 빈 상태를 채우거나 미구현 AI·메일·공개 접수를 성공으로 표시하지 않는다.</p>
+<h2>수어 검색</h2>
+<p>수어 검색은 핵심 기능이며 두 가지 입력 경로를 제공한다. 글자로 찾기는 한국어로 원하는 수어 표현을 조회하고, 수어로 찾기는 사용자의 실제 수어 동작으로 후보 표현을 찾는다. 영상 기록·질문 작성·향후 한국어 → 수어 아바타와 구분한다.</p>
+<div class="table-scroll"><table>
+<tr><th>경로</th><th>검색 대상·처리</th><th>현재 구현과 잔여</th></tr>
+<tr><td>글자로 찾기 · D01</td><td>표현명·뜻 설명·분류의 부분 일치, 초성만 입력하면 표현명 초성 일치. 공백·대소문자 정규화</td><td>샘플 표현 20개에서 동작. 전체 위키 데이터·서버 검색은 미연결</td></tr>
+<tr><td>결과 탐색 · D01/D02/D06</td><td>결과 수·목록, 분류·가나다순·저장 필터, 표현 상세·최근 본 표현</td><td>로컬 동작. 0건이면 안내와 전체 표현 보기, 저장/최근 기록은 새로고침 후 유지되지 않음</td></tr>
+<tr><td>수어로 찾기 · D05</td><td>실시간 카메라 → 기기 MediaPipe 좌표 → 자체 추론 서버 의미 추론 → 후보 표현 → 위키 상세</td><td>카메라 화면·추출 구조·서버 어댑터 구현. 자체 추론 서버가 없어 실제 의미 검색은 아직 불가</td></tr>
+</table></div>
+<p>글자 검색의 현재 수용 예시는 ‘안녕’으로 ‘안녕하세요’를 찾고, ‘ㅇㄴㅎㅅㅇ’로 같은 표현을 찾으며, 없는 검색어는 0건으로 표시하는 것이다. 자동완성·오타 교정·동의어 확장·인기 검색어는 현재 구현 범위가 아니다.</p>
+<h2>실시간 수어 검색 계약</h2>
+<p>입력은 사용자가 허용한 실시간 카메라 영상이다. 마이크는 요청하지 않는다. 기기에서 MediaPipe Holistic으로 손·몸·얼굴 좌표를 추출하고 자체 추론 서버에는 합의된 좌표 시계열만 보낸다. 기본 경로에서 원본 영상·음성·얼굴 이미지를 업로드하거나 좌표를 영구 보관하지 않는다. 개발/운영 로그에도 좌표 전체를 기본 복제하지 않는다. 랜드마크 추출 성공과 수어 의미 인식 성공은 서로 다른 상태다.</p>
+<p>전송 규약은 제안·미확정이다. 각 프레임의 단조 증가 타임스탬프와 시퀀스, 요청/응답 상관 식별자, 입력 스키마 버전을 포함하는 방향을 제안한다. 손/몸/얼굴의 입력 배열 순서·누락값·좌우 기준·영상/월드 좌표·정규화, 프레임률·시간창·전송 주기·동시 요청 수와 전송 방식은 모델 담당과 합의해야 한다. 추출 스케줄과 서버 응답의 속도가 다를 때는 대기열을 제한하고 오래된 프레임/응답을 버리는 역압력 정책을 둔다. 정지·화면 이탈 시 카메라 트랙·추출 루프를 종료하고 진행 중 요청을 취소하며 늦게 도착한 응답을 반영하지 않는다.</p>
+<p>응답의 후보 어휘 ID·신뢰도·최종/중간 판정 형식, 지원 어휘와 사전 ID 매핑, 신뢰도 임계값·연속 안정 판정 기준도 미결이다. MediaPipe 검출 신뢰도와 서버 수어 분류 신뢰도를 같은 값으로 취급하지 않는다. 미설정·시간 초과·잘못된 응답·모르는 어휘·낮은 신뢰도에는 인식 실패/미확신을 안내하고 텍스트 검색으로 이동할 수 있게 한다. 추론 엔드포인트 없이 샘플 단어를 인식 결과로 표시하지 않는다. 실제 카메라·좌표 추출·서버 통합의 통과 여부는 실행 검증 뒤 기록한다.</p>
+<h2>검증 행렬</h2>
+<div class="table-scroll"><table>
+<tr><th>시나리오</th><th>기대 결과</th><th>확인 수준</th></tr>
+<tr><td>가입 필수 누락 / 선택 마케팅 미동의</td><td>필수 차단 / 선택 동의 없이 진행</td><td>UI 시나리오 확인 대상</td></tr>
+<tr><td>등록 → 새로고침 → 내 목록 → 운영 목록</td><td>같은 브라우저 기록과 파일 유지</td><td>통합 브라우저 확인 대상</td></tr>
+<tr><td>회원 정지 → 복원</td><td>상태 변경·복구·로컬 범위 확인</td><td>통합 브라우저 확인 대상</td></tr>
+<tr><td>글·영상 숨김 → 앱 재확인 → 복원</td><td>비노출과 재노출 일치</td><td>통합 브라우저 확인 대상</td></tr>
+<tr><td>삭제 후 상세·알림·뒤로 가기</td><td>삭제 대상을 다시 표시하지 않음</td><td>통합 브라우저 확인 대상</td></tr>
+<tr><td>포인트 중복·잔액 부족·재장착</td><td>중복 지급·음수 잔액·재구매 없음</td><td>단위 테스트 대상</td></tr>
+<tr><td>수어 검색 카메라·중단</td><td>권한 거부·미지원·좌표 미검출 처리, 중단/이탈 시 트랙·루프·요청 종료</td><td>구현 후 UI·기기 확인 대상</td></tr>
+<tr><td>수어 검색 서버 계약</td><td>순서/좌표계/누락값·전송창·역압력·식별자·늦은 응답, 어휘/임계값 합의</td><td>계약·실서버 통합 미확인</td></tr>
+<tr><td>수어 검색 미설정·소셜 로그인·복구</td><td>가짜 성공 없이 미설정/준비 상태</td><td>UI 확인 대상</td></tr>
+<tr><td>390px·320px·키보드·모달·프린트</td><td>가로 잘림·포커스 유실 없음</td><td>렌더링 확인 대상</td></tr>
+</table></div>
+<p>이 표는 수용 기준이다. 실제 실행한 검증 결과는 변경 작업의 결과 보고와 검증 기록으로 별도 제시하며 표의 존재만으로 통과를 주장하지 않는다.</p>
+<h2>향후 기능 명세 · 논의필요 범위 / 제품 연동 전</h2>
+<div class="table-scroll"><table>
+<tr><th>ID</th><th>계획 기능</th><th>예정 입력·출력</th><th>완료 기준·선행 조건</th><th>상태</th></tr>
+<tr><td>F01</td><td>한국어 → 한국수어 아바타</td><td>문장·맥락 → 수어 표현 계획 → 동작·한국어 자막</td><td>검토된 지원 표현, 문법·수형·표정·전환의 이해도 평가, 미지원 표현 안내</td><td>향후 P2 기획</td></tr>
+<tr><td>F02</td><td>아바타 재생·학습 제어</td><td>정지·반복·느리게·구간 다시 보기·위키 연결</td><td>얼굴·두 손·상체 가시성, 자막과 동작 일치, 실패/취소 후 복구</td><td>F01 이후</td></tr>
+<tr><td>F03</td><td>상황별 AI 대화</td><td>상황·목표·텍스트 응답 → AI 다음 답변·힌트·수어 아바타</td><td>이전 턴 문맥, 재시도·중단, 답변 ID별 번역/모션 일치, 텍스트만으로 동작 정확도 평가 금지</td><td>F01 품질 검증 후</td></tr>
+<tr><td>F04</td><td>카메라 수어 대화 응답</td><td>MediaPipe 좌표 → 자체 문장/의미 해석 → 사용자 확인 → AI 응답</td><td>단어 검색과 별개로 연속 문장·발화 구간·확신 기준 검증, 텍스트 대안</td><td>후속 확장</td></tr>
+<tr><td>F05</td><td>복습·운영</td><td>동의한 기록·표현 다시 보기, 오류 표현 신고·수정</td><td>보관/삭제·학습 이용 동의 분리, 콘텐츠·모델 버전 추적</td><td>정책/서버 설계 필요</td></tr>
+</table></div>
+<p>F01~F05는 현재 화면 ID나 실행 가능한 API가 아니다. 현재 와이어프레임·UI 예시의 32개 구현 화면에 포함하지 않는다. 번역 지연·모션 생성 실패·미지원 표현·낮은 인식 확신·오래된 턴 결과·네트워크 단절을 명세하고, 해당 턴을 완료/정답으로 꾸며 표시하지 않는다. 텍스트·좌표·대화·영상 보관은 각각 범위와 동의를 정한다.</p></article></section><section role="tabpanel" tabindex="0" id="panel-flow" aria-labelledby="tab-flow" hidden><article class="prose"><div class="flows"><section class="flow"><h3>가입</h3><div class="flow-nodes"><span>signup</span><b aria-hidden="true">→</b><span>profileSetup</span><b aria-hidden="true">→</b><span>knowledge</span><b aria-hidden="true">→</b><span>purpose</span><b aria-hidden="true">→</b><span>terms</span><b aria-hidden="true">→</b><span>welcome</span><b aria-hidden="true">→</b><span>home</span></div></section><section class="flow"><h3>수어 검색 · 글자로 찾기</h3><div class="flow-nodes"><span>home / wiki</span><b aria-hidden="true">→</b><span>표현·뜻·초성 입력</span><b aria-hidden="true">→</b><span>결과 목록 · 필터</span><b aria-hidden="true">→</b><span>term</span><b aria-hidden="true">→</b><span>뒤로 · 검색 유지</span></div></section><section class="flow"><h3>글자 검색 · 결과 없음</h3><div class="flow-nodes"><span>검색 0건</span><b aria-hidden="true">→</b><span>검색어 수정 / 전체 표현 보기</span><b aria-hidden="true">→</b><span>결과 목록</span></div></section><section class="flow"><h3>사전·기록</h3><div class="flow-nodes"><span>wiki</span><b aria-hidden="true">→</b><span>term</span><b aria-hidden="true">→</b><span>record · 파일 선택</span><b aria-hidden="true">→</b><span>collection</span><b aria-hidden="true">→</b><span>videoDetail</span></div></section><section class="flow"><h3>수어로 찾기 · 실시간</h3><div class="flow-nodes"><span>wiki</span><b aria-hidden="true">→</b><span>signSearch · 카메라</span><b aria-hidden="true">→</b><span>기기 MediaPipe 좌표</span><b aria-hidden="true">→</b><span>자체 추론 서버 추론 · 연결 대기</span><b aria-hidden="true">→</b><span>결과 · 어휘 매핑</span><b aria-hidden="true">→</b><span>term</span></div></section><section class="flow"><h3>수어 검색 중단·실패</h3><div class="flow-nodes"><span>권한 거부 / 미검출 / 서버 오류</span><b aria-hidden="true">→</b><span>안내 · 재시도 / 텍스트 검색</span><b aria-hidden="true">→</b><span>정지 · 카메라/루프 종료</span><b aria-hidden="true">→</b><span>요청 취소 · 좌표 해제</span></div></section><section class="flow"><h3>질문</h3><div class="flow-nodes"><span>wiki</span><b aria-hidden="true">→</b><span>questions</span><b aria-hidden="true">→</b><span>questionCompose</span><b aria-hidden="true">→</b><span>question</span><b aria-hidden="true">→</b><span>답변·신고</span></div></section><section class="flow"><h3>배움역</h3><div class="flow-nodes"><span>learn · 20역</span><b aria-hidden="true">→</b><span>term</span><b aria-hidden="true">→</b><span>learn</span></div></section><section class="flow"><h3>소통역</h3><div class="flow-nodes"><span>community</span><b aria-hidden="true">→</b><span>compose</span><b aria-hidden="true">→</b><span>post</span><b aria-hidden="true">→</b><span>댓글·공감·스크랩</span></div></section><section class="flow"><h3>내 활동</h3><div class="flow-nodes"><span>profile</span><b aria-hidden="true">→</b><span>points</span><b aria-hidden="true">→</b><span>wardrobe</span><b aria-hidden="true">→</b><span>profile</span></div></section><section class="flow"><h3>계정</h3><div class="flow-nodes"><span>settings</span><b aria-hidden="true">→</b><span>account</span><b aria-hidden="true">→</b><span>withdraw</span><b aria-hidden="true">→</b><span>withdrawConfirm</span><b aria-hidden="true">→</b><span>withdrawDone</span></div></section><section class="flow"><h3>운영</h3><div class="flow-nodes"><span>앱 로컬 기록</span><b aria-hidden="true">→</b><span>동일 저장소</span><b aria-hidden="true">→</b><span>admin 목록</span><b aria-hidden="true">→</b><span>조치 확인</span><b aria-hidden="true">→</b><span>앱 반영</span><b aria-hidden="true">→</b><span>복원</span></div></section><section class="flow"><h3>AI 얼굴 변경 · 논의필요 범위</h3><div class="flow-nodes"><span>영상 선택</span><b aria-hidden="true">→</b><span>AI 얼굴 변경 · 선택 동의</span><b aria-hidden="true">→</b><span>비공개 변환 처리</span><b aria-hidden="true">→</b><span>변경본 비교 · 확인</span><b aria-hidden="true">→</b><span>변경본 등록</span></div></section><section class="flow"><h3>얼굴 변경 실패·취소 · 계획</h3><div class="flow-nodes"><span>실패 / 품질 미달 / 취소</span><b aria-hidden="true">→</b><span>재시도 / 비공개 임시 보관 / 취소</span><b aria-hidden="true">→</b><span>원본 자동 공개 없음</span></div></section><section class="flow"><h3>한국어 → 수어 아바타 · 향후</h3><div class="flow-nodes"><span>한국어 문장</span><b aria-hidden="true">→</b><span>의미 확인</span><b aria-hidden="true">→</b><span>한국수어 표현 계획</span><b aria-hidden="true">→</b><span>모션·아바타</span><b aria-hidden="true">→</b><span>자막·반복</span></div></section><section class="flow"><h3>AI 수어 대화 · 향후</h3><div class="flow-nodes"><span>배움역 · 계획</span><b aria-hidden="true">→</b><span>상황·목표</span><b aria-hidden="true">→</b><span>AI 질문·아바타</span><b aria-hidden="true">→</b><span>사용자 텍스트 답변</span><b aria-hidden="true">→</b><span>AI 응답·아바타</span><b aria-hidden="true">→</b><span>힌트·복습</span></div></section><section class="flow"><h3>카메라 대화 응답 · 후속</h3><div class="flow-nodes"><span>카메라·좌표</span><b aria-hidden="true">→</b><span>자체 문장 해석</span><b aria-hidden="true">→</b><span>사용자 의미 확인</span><b aria-hidden="true">→</b><span>AI 대화</span><b aria-hidden="true">→</b><span>수어 아바타</span></div></section></div><h1>수어역 유저플로우</h1>
+<p>2026-10-22 · v2 · 실제 화면 ID와 복귀·예외 동선</p>
+<h2>가입과 계정</h2>
+<p>signup → profileSetup → knowledge → purpose → terms → welcome → home. signup은 1/5, 프로필 2/5, 경험 3/5, 목적 4/5, 약관 5/5다. 유형·경험은 단일 선택, 목적은 복수 선택이다. 입력 오류는 같은 단계에 남고 필수값을 보완한다. 약관 상세 policy를 열고 돌아와 동의한다. login ↔ signup, login → recover → login이 보조 동선이다. 소셜 로그인·복구 메일은 준비 안내에서 끝난다.</p>
+<h2>수어 검색 · 글자로 찾기</h2>
+<p>home의 수어 검색 또는 wiki → 표현명/뜻 설명/분류/초성 입력 → 검색 결과 수·목록 → term → 뒤로 → 원래 검색 화면이다. 분류·저장 필터·가나다순 정렬을 함께 사용할 수 있다. 결과 0건 → 검색어 수정 또는 전체 표현 보기로 복귀한다. 검색어 지우기는 입력 조건만 제거하고, 전체 표현 보기는 검색·분류·저장 필터를 초기화한다. 질문 작성은 위키의 별도 질문 영역에서 시작한다.</p>
+<h2>탐색과 기여</h2>
+<p>home 또는 wiki → 검색/분류 → term → 연관 term 또는 record → 영상 선택·정보·권리 확인 → collection → videoDetail. 상세에서 뒤로 가면 직전 표현/영상·원래 진입 화면으로 돌아간다. 저장한 표현은 profile → collection에서 다시 연다. record의 촬영본 선택·보관은 실시간 수어 검색과 별도 동선이다.</p>
+<p>영상 없는 표현은 빈 상태에서 첫 기록으로 연결한다. 영상 미선택·형식/용량 오류·권리 미동의는 저장 전 처리한다. 영상 삭제 후 선택 상태·알림 참조를 정리한다. 공개 서버 전송과 얼굴 변환은 이 동선에 연결되지 않았다.</p>
+<h2>영상 등록 · AI 얼굴 변경 (계획)</h2>
+<p>영상 선택 → AI 얼굴 변경 선택 → 처리 동의 → 비공개 처리 대기/진행 → 변경본 미리보기·원본 비교 → 본인 확인 → 변경본 등록이다. 선택하지 않으면 일반 등록으로 진행한다. 현재 로컬 record 동선에 이 기능이 구현된 것은 아니다.</p>
+<p>처리 실패/품질 미달 → 재시도 또는 비공개 임시 보관/취소. 미리보기에서 취소하거나 화면을 떠나면 공개하지 않는다. 취소 후 늦은 작업 결과는 등록하지 않는다. 원본 공개로 전환하려면 사용자의 명시 선택을 다시 받으며 원본을 대체 공개하지 않는다.</p>
+<h2>실시간 수어로 찾기</h2>
+<p>wiki → signSearch → 카메라 권한 안내·사용자 시작 → 기기 카메라 미리보기 → MediaPipe Holistic 랜드마크 추출 → 좌표 시계열을 자체 추론 서버로 전달 → 후보/인식 결과 → 사전 표현 연결이다. 좌표 추출은 수어 의미 인식이 아니다. 서버 주소·입출력 규약이 미제공이므로 실제 추론 성공은 아직 확인하지 않았다.</p>
+<p>카메라 거부·미지원·모델 로드 실패·좌표 미검출은 재시도 또는 텍스트 검색으로 연결한다. 서버 미설정·실패·미확신에는 결과를 꾸며 표시하지 않는다. 정지/뒤로/화면 이탈 → 카메라 트랙 종료·추출 루프 종료·요청 취소·좌표 메모리 해제 → wiki/이전 화면이다. 새 세션과 맞지 않는 늦은 응답은 무시한다. 마이크 권한은 불필요하며 원본 영상 업로드를 기본으로 하지 않는다.</p>
+<h2>질문과 운영</h2>
+<p>wiki 질문 영역 → questions → questionCompose → question → 답변/신고. 표현에서 질문을 시작했다면 표현 맥락을 전달한다. 선택 질문 없이 question URL로 들어가면 빈 상세다. 운영자는 admin questions/reports → 상세 → 확인 → 숨김/복원/검토 완료 → 앱 질문 목록을 확인한다. 숨김은 복원 가능하며 신고가 곧 자동 삭제를 뜻하지 않는다.</p>
+<h2>배움역</h2>
+<p>learn → 일상선 20역 탐색 → 선택한 term → 뒤로 → learn. 첫인사역부터 부탁역까지 하나의 긴 노선이다. 스크롤 아래의 역도 같은 상세 동선을 쓴다. 현재는 역 탐색이며 정답 평가·학습 완료 판정을 하지 않는다. 향후 Day 1은 시작 → 영상 → 5문항 → 각 정오답·해설 → 결과 → 복습으로 별도 구현한다.</p>
+<h2>소통역</h2>
+<p>community → compose → post → 댓글/공감/스크랩 → community. 본인 글은 post → compose(수정) → post, 삭제 후 community로 돌아간다. profile → collection의 내 글·스크랩에서도 상세를 연다. 서버 소유권과 동시 수정, 대댓글·댓글 공감·첨부는 후속이다.</p>
+<h2>내 활동과 탈퇴</h2>
+<p>profile → profileSetup(수정) → knowledge/purpose → profile. profile → points → 활동 화면 → 포인트 확인 → wardrobe → 구입/장착 → profile. notifications → 활동 원문 → 직전 화면으로 복귀한다. settings → account → withdraw → withdrawConfirm → withdrawDone → signup이며 최종 실행 전 취소가 가능하다. 현재 로컬 체험 데이터 정리이고 실제 계정 재인증·서버 탈퇴와 구분한다.</p>
+<h2>운영 연동</h2>
+<p>앱에서 생성한 로컬 회원·글·영상·질문 → 동일 origin 저장소 → admin 목록 → 정지/숨김 확인 → 앱에서 변경 확인 → 복원 확인이다. 콘솔은 같은 브라우저 데이터만 관리한다. 사용자 역할·다중 기기·실제 운영 접근 제어를 보장하지 않는다.</p>
+<h2>플로우 그림 읽기</h2>
+<p>통합 HTML의 유저플로우 탭에는 위 동선을 노드와 화살표로 표시한다. 와이어프레임 탭은 그 노드에 대응하는 실제 앱을 흑백 윤곽선으로 보여준다. UI 예시 · Astryx 탭은 같은 화면을 그린 라임 소프트 컬러로 보여주며 주요 화면·기능별 묶음으로 전환할 수 있다. 상세의 빈 상태도 현재 구현의 일부이며 내용을 꾸며 채우지 않는다.</p>
+<h2>향후 · 한국어 → 수어 아바타</h2>
+<p>배움역의 아바타 연습 진입(향후) → 한국어 문장 입력 → 모호한 의미 확인 → 한국수어 번역/표현 계획 → 모션·아바타와 한국어 자막 → 느리게/반복·위키 연결. 미지원·생성 실패는 다른 표현 입력 또는 검토된 표현으로 이동한다. 문장을 수정하면 이전 요청을 취소하고 늦게 도착한 아바타는 표시하지 않는다.</p>
+<h2>향후 · AI 수어 대화</h2>
+<p>배움역 → AI 수어 대화(향후) → 상황·목표 선택 → AI 질문과 수어 아바타 → 사용자 한국어 텍스트 답변 → 맥락을 유지한 AI 답변 → 한국수어 변환·아바타 → 힌트/다시 시도 → 종료·동의한 내용 복습이다. 초기에는 마이크·카메라가 필수 입력이 아니다.</p>
+<p>후속 카메라 응답은 권한·시작 → 기기 좌표 추출 → 자체 연속 수어 해석 → 사용자가 해석 의미 확인/수정 → AI 대화로 이어진다. 낮은 확신·미검출에는 다시 보여주기 또는 텍스트 대안을 제공한다. 이 세 동선은 계획이며 현재 앱에서 실행되지 않는다.</p></article></section><section role="tabpanel" tabindex="0" id="panel-todo" aria-labelledby="tab-todo" hidden><article class="prose"><h1>향후 TODO와 출시 수용 기준</h1>
+<p>2026-10-22 · v2 · 우선순위는 실행 제안, 완료 선언 아님</p>
+<h2>P0 공개 서비스 이전</h2>
+<div class="table-scroll"><table>
+<tr><th>과제</th><th>완료 기준</th></tr>
+<tr><td>인증·권한·계정</td><td>실제 가입/로그인·메일 복구·OAuth 범위 확정, 서버 소유권·운영 역할·세션/재인증 검증</td></tr>
+<tr><td>데이터와 미디어</td><td>서버 DB·비공개 원본·공개본 분리, 업로드 검사·취소·재시도·중복/충돌·오프라인·용량 부족 검증</td></tr>
+<tr><td>수어 검색 · 글자로 찾기</td><td>샘플 20개를 검토된 위키 데이터로 교체하고 서버 검색 연결; 표현명·뜻·초성·분류, 결과 상세·0건·로딩·오류·필터 조합 검증</td></tr>
+<tr><td>실시간 수어 검색 연결</td><td>카메라→기기 좌표→자체 추론→결과 동선; 엔드포인트·모델 규약 제공 후 실제 추론·오류·중단/취소·좌표 미보관 검증</td></tr>
+<tr><td>콘텐츠</td><td>초기 사전·영상 권리·당사자 검토·설명·방향/사투리 기준 확보</td></tr>
+<tr><td>신뢰·운영</td><td>신고 유효 집계·유지/숨김/복원·사유·작성자 알림·이의·처리 담당·감사 이력</td></tr>
+<tr><td>정책·삭제</td><td>실제 이용약관·처리방침·동의 버전·보관기간·철회·탈퇴·백업 삭제 기준 검증</td></tr>
+<tr><td>접근성·기기</td><td>iOS/Android 촬영·권한 거부/복귀, 키보드·화면낭독·확대·저사양·무음 사용 QA</td></tr>
+</table></div>
+<h2>P1 MVP 세부 완성</h2>
+<div class="table-scroll"><table>
+<tr><th>과제</th><th>완료 기준</th></tr>
+<tr><td>Day 1</td><td>5문항·정답·해설·결과·재학습, 4정답=80%, 중복 제출/보상 방지</td></tr>
+<tr><td>대표와 랜덤</td><td>0/1/2/5개·숨김/삭제·동률·지역 변형 검증; 한도 의미 확정</td></tr>
+<tr><td>참여와 프로필</td><td>사전 반응 자격·사용자 공개 범위·닉네임 중복·프로필 사진 정책</td></tr>
+<tr><td>커뮤니티</td><td>첨부·대댓글·댓글 공감·댓글 삭제·댓글 단 글·차단 범위</td></tr>
+<tr><td>보상·알림</td><td>지급/차감/취소 서버 원장, 기기 간 동기화, 채널·수신 동의·읽음 일치</td></tr>
+<tr><td>계측</td><td>검색·재생·등록·질문·학습·재방문·운영 이벤트, 개인정보 최소화</td></tr>
+</table></div>
+<h2>조건부·후속</h2>
+<p>AI 얼굴 변경은 영상 등록의 선택 기능으로 계획했다. 아래 품질·데이터·작업 처리 조건을 검증한 후 출시하며 일정은 미정이다. 3D 시점·AI 문장 변환·결제·구독·경쟁형 랭킹은 별도 과제다. 실시간 수어 검색은 이번 구현 대상이며 MediaPipe 좌표 추출과 서버 의미 추론의 수용 기준을 각각 검증한다. 파일 선택이나 준비 화면으로 실제 추론을 완료 처리하지 않는다.</p>
+<h2>AI 얼굴 변경 · 구현 TODO</h2>
+<div class="table-scroll"><table>
+<tr><th>과제</th><th>완료 기준</th></tr>
+<tr><td>선택 UI·동의·미리보기</td><td>기본 해제, 일반 등록 유지, 처리 동의 분리, 원본/변경본 비교 후 최종 확인, AI 변경 표시</td></tr>
+<tr><td>자체 얼굴 변경 파이프라인 제품화</td><td>기존 로컬 시험을 바탕으로 적용 모델·지원 외형·처리 API·서버 자원·지연·비용·용량 한도 확정. 실제 영상 처리 검증</td></tr>
+<tr><td>수어 품질 검증</td><td>표정·입모양·시선·눈썹·얼굴 앞 손동작·몸·시간 연속성, 당사자와 전문가의 의미 이해도 확인. 품질 미달 공개 차단</td></tr>
+<tr><td>작업·복구</td><td>대기/처리/완료/실패/취소, 재시도·중복 요청·네트워크 단절·화면 이탈·늦은 결과, 확인 전 자동 등록 없음</td></tr>
+<tr><td>공개·삭제 경계</td><td>변경본만 공개, 원본 비공개 접근 제어, 임시 파일/취소 작업/탈퇴 삭제, 보관 기간·학습 이용 동의 분리 검증</td></tr>
+</table></div>
+<h2>수어 검색 모델 담당과 확정할 계약</h2>
+<p>서버 주소·인증/허용 origin·전송 방식, 좌표의 손/몸/얼굴 구성과 배열 순서·누락/좌우·정규화, 시계열 프레임률·시간창·호출 주기·동시성·역압력, 시퀀스/시간/요청 상관 식별자·버전, 결과 어휘 ID·사전 매핑·신뢰도 임계값·연속 안정 판정, 오류/시간 초과·취소·보관/로그를 합의한다. 결정 전 어댑터 스키마는 제안으로만 표기한다. 카메라 권한 거부·모델 로드 실패·좌표 미검출·미설정 서버·무응답·스키마 오류·늦은 응답·정지 후 응답·화면 이탈을 검증 행렬에 포함한다.</p>
+<h2>회귀 검증 묶음</h2>
+<p>가입 5단계 왕복과 선택값 보존; 위키→표현→영상→원래 화면; 20역 탐색 하단; 글 CRUD와 새로고침; 영상 재생·삭제·저장 실패; 질문 답변·신고·운영 숨김/복원; 회원 정지/복원; 포인트 중복/부족/재장착; 탈퇴 취소·최종 정리; 320/390px·데스크톱·인쇄를 확인한다. 로컬 통합 통과와 실제 서버·보안 검증은 별도 기록한다.</p>
+<h2>P2 · AI 수어 대화와 한국어 → 수어 아바타</h2>
+<div class="table-scroll"><table>
+<tr><th>순서</th><th>다음 과제</th><th>검증·완료 기준</th></tr>
+<tr><td>1</td><td>농인·한국수어 전문가와 초기 상황/표현·평가 세트 선정</td><td>지원 범위·검토 책임·권리·평가 기준 확정</td></tr>
+<tr><td>2</td><td>한국어 의미→한국수어 번역→아바타 연구</td><td>검토된 의미 전달, 손·얼굴·몸·모션 전환 품질, 미지원/실패 안내</td></tr>
+<tr><td>3</td><td>텍스트 응답 기반 상황별 AI 대화 베타</td><td>문맥·힌트·재시도·복습, 턴별 자막/동작 일치와 취소·재연결</td></tr>
+<tr><td>4</td><td>카메라로 수어 응답하는 양방향 확장</td><td>연속 문장·발화 구간 해석, 의미 확인/수정, 실기기·텍스트 대안</td></tr>
+<tr><td>5</td><td>운영·비용·보관 정책과 오류 수정 도구</td><td>버전 관리, 이해도·지연·실패율·비용 측정, 동의 철회·삭제 검증</td></tr>
+</table></div>
+<p>기존 MVP와 실시간 검색 서버 완성을 우선하며 아바타 연구는 별도 실험으로 병행할 수 있다. 수치 목표·가격·출시일은 미정이다. 영상 등록 시 선택하는 AI 얼굴 변경(D07)과 한국어 → 수어 아바타 생성을 별개의 과제로 관리한다. 연구 코드·시험과 별개로 실행 화면·모델·서버의 앱 연동은 아직 완료하지 않았다.</p></article></section><section role="tabpanel" tabindex="0" id="panel-source" aria-labelledby="tab-source" hidden><article class="prose"><h1>원문 대조와 v2 변경 기록</h1>
+<p>2026-10-22 · source A 수어역.txt, source B 새로운 노트.txt</p>
+<h2>원문 해석</h2>
+<p>원문은 2026-10-21 회의 녹취다. 자동 전사의 수업·수학·노인·농민 등은 맥락이 명확할 때 수어·농인으로 정리한다. 수치·시장·경쟁사 발언을 검증된 사실로 재사용하지 않는다. 의도적인 갈등 유발·탈퇴 숨기기 등의 발언은 제품 정책으로 채택하지 않는다. 탈퇴는 찾을 수 있고 취소 가능한 동선을 유지한다.</p>
+<h2>수어 검색 반영 현황</h2>
+<p>수어 검색은 현재 기능에 포함돼 있다. 기존 명세의 ‘탐색’ 항목을 두 가지 검색 경로로 명시했다.</p>
+<div class="table-scroll"><table>
+<tr><th>핵심 기능</th><th>현재 상태</th><th>남은 일</th></tr>
+<tr><td>글자로 수어 찾기 · D01</td><td>홈/위키에서 표현명·뜻 설명·분류·초성 검색, 결과 목록·상세 연결</td><td>현재 샘플 표현 20개. 전체 위키 데이터·서버 검색 연결</td></tr>
+<tr><td>수어 동작으로 찾기 · D05</td><td>실시간 카메라 화면·기기 MediaPipe 좌표 추출·자체 추론 서버 어댑터</td><td>서버 주소·입출력 규격 미제공. 실제 의미 인식·검색 결과 검증 대기</td></tr>
+</table></div>
+<p>원문 회의의 검색·분류 요구와 후속 사용자의 실시간 카메라 검색 요구를 각각 추적한다. 두 경로를 같은 구현 완료 상태로 취급하지 않는다.</p>
+<h2>원문→현재→잔여</h2>
+<div class="table-scroll"><table>
+<tr><th>원문 근거</th><th>회의 방향</th><th>v2 반영·남은 일</th></tr>
+<tr><td>A 00:11~02:04</td><td>이용 목적 복수 선택</td><td>4목적 복수 선택, 경험/유형은 현재 UI 기준 구분</td></tr>
+<tr><td>A 02:29~06:45</td><td>검색·분류·느린 재생·방향 표시</td><td>수어 검색 D01: 글자/초성 검색·분류·결과·상세 로컬 구현; 전체 위키 데이터·서버 검색 잔여. 재생·방향 반영; 3D 후속</td></tr>
+<tr><td>A 07:16~10:49</td><td>지역 공개 우려·사투리·설명</td><td>예/아니요/모름; 거주지 노출 강제하지 않음</td></tr>
+<tr><td>A 10:49~23:55</td><td>누구나 기여·참여형 위키·승인 부담</td><td>유형별 자동 제한 없음; 콘텐츠 검토 체계 TODO</td></tr>
+<tr><td>A 24:00~31:32</td><td>TOP3 → 대표1·랜덤·5개안</td><td>초반 TOP3를 최종 합의로 기록하지 않음</td></tr>
+<tr><td>A 31:32~44:10</td><td>신고3건 검토·열람 제한 철회·기여 반응</td><td>자동 삭제/정지로 해석하지 않음; 기여 자격 미결</td></tr>
+<tr><td>A 45:03~50:30</td><td>포인트·문장 요청·AI 준비</td><td>포인트 로컬, 질문 로컬, AI 준비</td></tr>
+<tr><td>A 51:01~58:25</td><td>얼굴 변환 대기·의미 훼손 우려</td><td>후속 사용자 요청으로 영상 등록의 선택 기능 D07로 계획. 수어 의미 보존은 출시 조건, 처리 SLA·모델 연결은 미확정</td></tr>
+<tr><td>A 58:44~1:08:39</td><td>Day1·5문항·해설·결과</td><td>현재 20역 탐색과 분리해 TODO로 유지</td></tr>
+<tr><td>A 1:08:50~1:14:41</td><td>분류·추천 질문·사전 연계·꾸미기</td><td>분류·꾸미기 로컬; 운영 추천/편입 TODO</td></tr>
+<tr><td>A 1:14:49~1:17:23</td><td>글·첨부·신고·댓글·대댓글·공감</td><td>글/댓글 로컬, 첨부·대댓글·댓글공감 잔여</td></tr>
+<tr><td>A 1:17:23~1:24:37</td><td>닉네임 중복·사진·내활동·스크랩·탈퇴</td><td>로컬 목록·스크랩, 전역 중복·사진·댓글 단 글 TODO</td></tr>
+<tr><td>B 08:18~12:21,13:26~14:10</td><td>수어역 후보·지하철·색 후보</td><td>가칭·일상선·현재 Sage 시안, 최종 확정 아님</td></tr>
+</table></div>
+<h2>이전 문서에서 갱신한 부분</h2>
+<p>후속 범위 정정: 사용자의 최신 요청에 따라 수어 인식·생성 및 얼굴 변경 관련 기능을 ‘논의필요 범위’로 표기했다. sua_research의 양방향 기준선·한국어↔포즈 연구/실험 코드와 별도 face-anonymization-test의 실행 기록을 참고하되, 제품 구현 범위·담당·일정을 확정하지 않는다. 연구/시험 기록과 앱 연동 완료를 구분한다. 연구 파일·학습 데이터·원본 영상은 이 기획 사이트에 복사하지 않았다.</p>
+<p>2026-10-22 후속 사용자가 얼굴 노출을 원하지 않는 영상 기여자를 위해 AI 얼굴 변경을 넣겠다고 명시했다. 이를 영상 등록의 선택 기능 D07로 반영하고 PRD·기능명세·계획 플로우·TODO를 동기화했다. 선택 → 동의 → 비공개 처리 → 비교 미리보기 → 확인 → 변경본 등록으로 계획하며 실패 시 원본을 자동 공개하지 않는다. 기존 회의의 표정·입모양 등 의미 훼손 우려는 출시 전 품질 검증 조건으로 유지한다. 실제 UI·모델·서버 구현 완료를 뜻하지 않는다.</p>
+<p>이전 2026-10-22 문서는 제품 목표와 별도 Expo 체험을 함께 기록했다. v2는 현재 design-lab 웹을 기준으로 5단계 가입·4유형·4경험·4목적, 20역, 질문/운영, 포인트/꾸미기/알림, 같은 브라우저 기록 연동을 반영한다. 기존 장기 요구를 UI 구현만으로 완료 처리하지 않았다.</p>
+<p>후속 사용자 정정으로 수어로 찾기를 파일 선택형에서 실시간 카메라 → 기기 MediaPipe 좌표 추출 → 자체 추론 → 결과 표시로 수정했다. 이는 원문 회의의 AI 준비 아이디어를 그대로 확정한 것이 아니라 현재 사용자의 명시적 추가 요구다. record의 영상 선택/보관은 유지한다. 사용자가 자체 추론 서버와 입출력 규격은 아직 없다고 확인했다. 실제 서버 연결은 대기 상태다. 프런트 추출·어댑터 구현과 실서버 추론 완료를 구분한다.</p>
+<p>기술 근거는 <a href="https://developers.google.com/edge/mediapipe/solutions/vision/holistic_landmarker/web_js" target="_blank" rel="noopener">Google MediaPipe Holistic 웹 가이드</a>다. 공식 가이드는 얼굴·손·몸의 랜드마크 검출과 카메라 등 영상 프레임 처리를 설명한다. 이를 수어 의미 인식 모델의 제공으로 해석하지 않는다. 이 문서의 전송·결과 스키마와 임계값은 서버 담당과 합의해야 하는 설계 제안이다.</p>
+<p>와이어프레임은 실제 앱 레이아웃에 흑백 윤곽선을 적용한다. 별도 UI 예시 · Astryx 탭은 기존 Astryx 컴포넌트와 그린 라임 소프트(sage) 팔레트를 그대로 사용한다. 실제 버튼·SVG·입력·빈 상세를 재사용하며 390×844 뷰포트로 표시한다. 운영 화면은 넓은 데스크톱 프레임이다. 색·그림자·애니메이션을 제거했으므로 컬러 대비·움직임 평가용 자료는 아니다. 화면의 상호작용은 실제 로컬 기록에 반영될 수 있다.</p>
+<h2>미완료를 명확히 남기는 항목</h2>
+<p>실제 인증/OAuth/메일, 서버 공유·다중 사용자, 수어 인식·얼굴 변환·AI, 푸시, Day1 평가, 운영 접근 통제와 보안 검증, 실제 정책·콘텐츠 검토·스토어 출시는 완료하지 않았다. 통합 화면은 로컬 프로토타입의 현재 UX 검토 자료다.</p>
+<p>수어로 찾기의 실시간 카메라·MediaPipe 추출·어댑터는 이번 수정 구현 범위다. 합성 무인 영상으로 실제 Holistic 모델 초기화·추출(365ms, 미검출 빈 좌표) 및 초기화 취소 AbortError를 브라우저에서 확인했다. 응답 검증·안전한 URL·원본/쿠키 미전송·오류 처리 4개와 기존 28개 테스트가 통과했다. Astra가 초기화 취소 경로를 검토했고 수정 후 추가 차단 결함이 없었다. 실제 카메라 하드웨어/권한과 사람 수어의 검출·의미 인식 정확도, 자체 추론 서버 end-to-end는 미검증이다.</p>
+<h2>통합 확인 기록</h2>
+<p>아래는 이번 통합 작업에서 실제 확인한 범위다. 실행 담당이 전달한 브라우저 확인과 자동 검증을 구분하며, 예정된 확인을 통과로 기록하지 않는다.</p>
+<div class="table-scroll"><table>
+<tr><th>항목</th><th>현재 확인 결과</th><th>한계</th></tr>
+<tr><td>회원 저장·운영 반영</td><td>앱 회원 저장 후 별도 관리자 화면에 반영 확인</td><td>같은 브라우저·같은 origin</td></tr>
+<tr><td>회원 정지·복원</td><td>정지 시 앱 작성 콘텐츠 비노출, 정지 해제 확인</td><td>서버 권한·새 기기 우회 방지 검증 아님</td></tr>
+<tr><td>커뮤니티 연동</td><td>글 저장·숨김 후 내 목록 0건·복원 확인</td><td>댓글/공감/스크랩은 별도 메모리 상태</td></tr>
+<tr><td>영상 저장·운영 반영</td><td>IndexedDB 저장 후 앱·관리자 각 1건 반영 확인</td><td>새로고침 후 같은 기록과 영상 재생 확인; 실제 기기 검증 아님</td></tr>
+<tr><td>탈퇴 수정 검토</td><td>탈퇴 후 재가입·질문 부분 삭제 실패에 대한 P2 수정, Astra 집중 재검토에서 차단 사항 없음</td><td>정적 검토는 실행 시나리오 통과와 다름</td></tr>
+<tr><td>자동 검증</td><td>질문·콘텐츠·활동·포인트 28개 테스트와 타입 검사 통과</td><td>실제 서버·운영 권한 검증 대체 아님</td></tr>
+<tr><td>허브 구조</td><td>HTML 태그 균형·ID·탭·MD 복제·화면 ID·JS 구문 검사 통과</td><td>실제 UI/서버/보안 전체 검증 대체 아님</td></tr>
+<tr><td>그림 라인 렌더</td><td>가입·프로필·수어 경험 및 운영 대시보드의 실제 브라우저 렌더 확인</td><td>32화면 전수 조작·모바일 기기 검증 아님</td></tr>
+</table></div>
+<h2>최종 검증 기록</h2>
+<p>아래는 이번 작업에서 실제 실행한 결과다. 서버·기기 검증과 구분한다.</p>
+<div class="table-scroll"><table>
+<tr><th>확인 항목</th><th>명령·환경</th><th>결과·근거</th></tr>
+<tr><td>전체 자동 테스트</td><td>node --test scripts/managed-content.test.mjs scripts/questions.test.mjs scripts/activity.test.mjs scripts/points.test.mjs</td><td>28/28 통과</td></tr>
+<tr><td>최종 타입 검사·프로덕션 빌드</td><td>배포 소스에서 npm run build</td><td>TypeScript 및 Vite 빌드 통과, admin.html·planning/index.html 포함</td></tr>
+<tr><td>IndexedDB 영상 실제 재생</td><td>IAB, activity-test-video.webm, 관리자 영상 미리보기 재생 버튼</td><td>readyState=4, 320×240, paused=false, currentTime=0.23초, 오류 없음</td></tr>
+<tr><td>새로고침 뒤 영상·메타데이터 유지</td><td>앱 프로필 재진입·관리자 새로고침 후 목록/상세</td><td>회원1·글1·영상1 유지; 미리보기 파일 다시 불러오기·재생 확인</td></tr>
+<tr><td>탈퇴·재가입·저장 실패 복구</td><td>Node 단위 테스트: IndexedDB 접근 실패·메타데이터 쓰기 실패·정상 탈퇴 후 새 식별자</td><td>질문 보존·롤백·다른 회원 보존·정지 우회 차단 통과; 새로고침 가입 경로는 Astra 소스 검토</td></tr>
+<tr><td>실제 기기·서버·운영 접근 제어</td><td>공개 서비스 연결 후 별도 확인</td><td>미실행</td></tr>
+<tr><td>실시간 카메라·좌표·중단/이탈</td><td>권한·기기·추출·자원 종료 조건 기록</td><td>미기록</td></tr>
+<tr><td>자체 수어 추론·모델 계약</td><td>실제 엔드포인트·스키마·어휘·신뢰도 기준 기록</td><td>미제공·미확인</td></tr>
+</table></div>
+<h2>후속 사용자 요청 · AI 수어 대화와 아바타</h2>
+<p>2026-10-22 사용자가 스픽처럼 AI 에이전트와 대화하는 기능, 한국어 → 수어 아바타를 향후 계획에 넣어 달라고 요청했다. 이를 원문 회의의 확정 요구나 이미 구현된 기능으로 합치지 않고 P2 기획으로 추가했다. 06번 상세 계획, PRD·기능명세·계획 플로우·TODO를 함께 갱신했다.</p>
+<p>스픽 공식 Speak Tutor/Free Talk 문서는 대화·상황 연습 패턴의 참고 자료다. 한국어→한국수어 아바타와 카메라 양방향 수어 대화는 수어역의 계획이다. 제3자 API 사용·제휴·캐릭터 복제·실제 모델 연결을 주장하지 않는다. 한국수어 언어 특성은 국립국어원 안내를 참고하고, 전문가/농인 검증을 선행 조건으로 정했다. 기능 정확도·모델/API·실기기·대화 성능을 새로 시험하거나 구현 완료로 기록하지 않았다.</p></article></section><section role="tabpanel" tabindex="0" id="panel-future" aria-labelledby="tab-future" hidden><article class="prose"><h1>향후 기능 · AI 수어 대화와 한국어 → 수어 아바타</h1>
+<p>2026-10-22 · 자체 연구개발 · 앱·API 연동 미완료</p>
+<h2>기획 요약</h2>
+<p>수어역의 향후 학습 기능으로, AI 에이전트와 상황별 대화를 연습하고 한국어 문장이나 AI의 답변을 한국수어 아바타로 확인하는 경험을 추가한다. 배움역에서 익힌 표현을 대화 속에서 반복해 쓰도록 확장하는 방향이다. 가칭은 ‘AI 수어 대화’이며, 배움역 안의 진입점으로 검토한다. 새 하단 탭·가격·출시 일정은 확정하지 않았다.</p>
+<p>사용자 요청은 향후 계획을 정리하는 것이다. 이 문서는 현재 구현 완료를 뜻하지 않으며 실제 대화 에이전트, 한국어→한국수어 번역기, 수어 모션·아바타 렌더러는 아직 연결하지 않았다.</p>
+<h2>논의필요 범위</h2>
+<p>수어 인식·한국어 → 수어 생성/아바타·영상의 AI 얼굴 변경은 sua_research의 양방향·생성 연구와 별도 얼굴 변경 시험을 바탕으로 제품 적용 범위를 논의한다. 자체 연구 결과를 활용하는 방향이며 입력 정합·모델 적용/학습·추론 API·평가·앱 연동의 최종 범위·담당·일정은 확정 전이다.</p>
+<p>연구 코드·시험 기록은 존재하지만 앱의 대화/아바타 연동과 제품 품질 검증이 끝난 것은 아니다. 자체 추론 서버 활용안, 지원 표현·품질 기준·모델/좌표 계약·운영 담당·서버 자원·비용·제품화 순서를 논의한다. 대화 에이전트의 턴·상황·힌트 제어와 기반 LLM도 제품 구성 논의에 포함한다.</p>
+<h2>스픽에서 참고하는 경험</h2>
+<p>스픽의 Speak Tutor에서 참고할 부분은 학습자에게 맞춘 대화와 연습이며, Free Talk에서는 상황·역할을 정해 상대와 주고받고 필요할 때 힌트·다시 시도를 제공하는 흐름을 참고한다. 수어역은 이 대화 연습 구조를 수어 학습에 맞춰 설계한다. 스픽의 기능·캐릭터·콘텐츠를 복제하거나 스픽 API를 연동한다는 의미가 아니다.</p>
+<p>근거: <a href="https://help.speak.com/en/articles/11396739-what-is-speak-tutor" target="_blank" rel="noopener">Speak Tutor 공식 안내</a>, <a href="https://help.speak.com/en/articles/13182402-free-talk-immersive-roleplay" target="_blank" rel="noopener">Free Talk 공식 안내</a>. 스픽의 음성 중심 방식을 수어역의 필수 입력 방식으로 가져오지 않는다. 수어역은 한국어 텍스트 입력을 먼저 제공하고, 음성 입력과 카메라 수어 응답은 별도 단계로 검토한다.</p>
+<h2>두 기능의 역할</h2>
+<div class="table-scroll"><table>
+<tr><th>기능</th><th>사용자의 목적</th><th>입력 → 출력</th><th>다른 기능과의 관계</th></tr>
+<tr><td>한국어 → 수어 아바타</td><td>내가 쓴 말이 수어로 어떻게 표현되는지 이해하기</td><td>한국어 문장 → 의미 확인·한국수어 표현 계획 → 아바타 동작</td><td>단독 연습 기능이면서 AI 대화의 출력 엔진</td></tr>
+<tr><td>AI 수어 대화</td><td>배운 표현을 상황 속에서 주고받기</td><td>상황·목표·사용자 메시지 → AI 답변·힌트 → 수어 아바타와 한국어 자막</td><td>한국어→수어 아바타 품질 확보 후 연결</td></tr>
+<tr><td>카메라 수어 응답</td><td>직접 수어로 AI에게 답하기</td><td>실시간 카메라 → MediaPipe 좌표 → 자체 수어 해석 → 사용자 의미 확인 → AI 답변</td><td>후속 확장; 현재 수어 검색의 단어 후보만으로 문장 대화가 가능하다고 가정하지 않음</td></tr>
+</table></div>
+<p>현재 수어로 찾기는 수어 입력을 표현 후보로 연결하는 방향이고, 한국어→아바타는 그 반대 방향의 생성 기능이다. MediaPipe 좌표만으로 한국어 문장을 수어 동작으로 만들 수 있다고 가정하지 않는다. 영상 등록 시 선택하는 AI 얼굴 변경(D07)은 촬영 영상의 얼굴 외형을 바꾸는 별도 계획 기능이다. 한국어에서 새 수어 동작을 생성하는 이 아바타 기능과 목적·입력·출력이 다르다.</p>
+<h2>1단계 · 한국어 → 수어 아바타</h2>
+<p>초기에는 검토한 짧은 생활 표현과 지원 상황부터 다룬다. 예를 들어 한국어 ‘물 한 잔 주세요’를 입력하면, 필요할 때 맥락을 확인하고 검토된 해당 의미의 수어 표현을 아바타로 보여 주는 경험이다. 이 문서는 그 문장의 정답 수어 동작이나 번역을 제시하지 않는다.</p>
+<div class="table-scroll"><table>
+<tr><th>항목</th><th>계획</th></tr>
+<tr><td>입력</td><td>한국어 텍스트 우선. 문장이 바뀌면 이전 생성 요청을 취소</td></tr>
+<tr><td>의미 확인</td><td>생략·다의어·고유명사 등 불명확한 부분을 사용자에게 확인</td></tr>
+<tr><td>번역</td><td>문장의 의미·맥락을 한국수어 표현 계획으로 변환</td></tr>
+<tr><td>동작</td><td>검토한 모션 자산 또는 검증된 생성 결과를 아바타에 적용</td></tr>
+<tr><td>화면</td><td>얼굴·두 손·상체가 함께 보이는 아바타, 대응하는 한국어 자막, 일시정지·반복·느리게·구간 다시 보기</td></tr>
+<tr><td>미지원</td><td>임의 동작을 만들지 않고 다른 표현 입력·검토된 표현 보기로 안내. 지문자 대체는 적용 기준을 정한 뒤 제공</td></tr>
+<tr><td>연결</td><td>관련 위키 표현·학습역으로 이동. 저장·재방문 범위는 별도 동의·보관 정책 확정 후 구현</td></tr>
+</table></div>
+<p>한국수어를 한국어 단어 순서대로 이어 붙이는 방식으로 설계하지 않는다. 한국수어의 언어적 특성과 의미를 반영하고 수형·위치·방향·움직임뿐 아니라 얼굴 표정·시선·몸의 표현까지 검토한다. 수어 이해 가능성과 정확성을 아바타의 사실적인 외형보다 우선한다. 한국수어가 한국어와 다른 문법 체계를 가진다는 점은 <a href="https://korean.go.kr/front/page/pageView.do?mn_id=202&amp;page_id=P000300" target="_blank" rel="noopener">국립국어원 안내</a>를 참고한다.</p>
+<h2>2단계 · AI 에이전트와 상황별 대화</h2>
+<p>초기 상황 후보는 인사·자기소개, 카페 주문, 길 묻기처럼 짧은 일상 대화다. 사용자는 상황과 연습 목표를 고르고, AI는 상대 역할을 맡아 대화를 이어 간다. 가입 시 선택한 수어 경험과 목표를 활용하되, 사용자가 이번 연습의 난이도·자막·힌트 방식을 조정할 수 있게 한다.</p>
+<p>배움역 → AI 수어 대화(향후) → 상황·목표 선택 → AI 첫 질문과 수어 아바타 → 사용자 한국어 답변 → AI가 문맥을 이어 답변 → 답변을 한국수어로 변환·재생 → 필요 시 힌트·다시 시도 → 종료·복습의 흐름이다.</p>
+<div class="table-scroll"><table>
+<tr><th>기능</th><th>기획 범위</th><th>처음부터 보장하지 않는 것</th></tr>
+<tr><td>대화 이어 가기</td><td>이전 발화·상황·연습 목표를 참고한 답변</td><td>어떤 주제든 정확한 자유 대화·실시간 통역</td></tr>
+<tr><td>이해 도움</td><td>한국어 자막, 느리게·반복, 상황 힌트, 지원 표현 안내</td><td>모든 수어 변형·사투리 자동 판별</td></tr>
+<tr><td>다시 시도</td><td>방금 한 응답을 고쳐 대화 이어 가기</td><td>미검증 자동 점수·순위·학습 완료 판정</td></tr>
+<tr><td>피드백</td><td>초기에는 텍스트 응답의 의미·상황 적합성과 복습할 표현을 안내</td><td>텍스트 입력만으로 사용자의 수형·손 방향이 정확하다고 평가</td></tr>
+<tr><td>턴 제어</td><td>생각할 시간, 일시정지, 응답 중단·재생·재시작</td><td>수어 의미가 끊겼는데도 완료된 응답으로 저장</td></tr>
+<tr><td>복습</td><td>동의한 대화 기록과 학습 표현을 다시 보기</td><td>대화 전체·카메라·좌표의 기본 영구 보관</td></tr>
+</table></div>
+<p>한국어 입력 자체의 아바타 변환과 AI가 생성한 답변의 아바타 변환을 화면에서 구분한다. 사용자는 누가 말한 문장인지와 현재 어떤 동작 구간을 보고 있는지 확인할 수 있어야 한다. 내용 수정·턴 변경 뒤 도착한 오래된 번역이나 모션을 새 답변에 붙이지 않는다.</p>
+<h2>3단계 · 수어로 답하는 양방향 대화</h2>
+<p>실시간 카메라·MediaPipe 추출 구조를 활용하되, 대화용 수어 해석 서버가 연속 표현·문장·발화 끝을 처리하는지 별도로 검증한다. 현재의 수어 검색용 서버도 아직 준비되지 않았으므로 이 기능은 그보다 뒤의 계획이다.</p>
+<p>카메라 수어 응답 → 좌표 시계열 추출 → 자체 추론 서버 의미 후보 → 사용자가 해석 의미를 확인·수정 → AI 대화 에이전트 → 한국어 답변 → 한국수어 번역·모션 → 아바타의 순서로 검토한다. 미검출·낮은 확신·부분 해석에는 다시 보여주기 또는 텍스트 입력을 제공한다. 확신 없는 해석을 정답으로 간주해 대화를 진행하지 않는다.</p>
+<h2>필요한 기술과 콘텐츠</h2>
+<div class="table-scroll"><table>
+<tr><th>구성</th><th>책임</th><th>선행 조건</th></tr>
+<tr><td>대화 에이전트</td><td>상황·턴·목표를 유지하고 답변·힌트 생성</td><td>지원 주제·학습 정책·세션/컨텍스트 계약</td></tr>
+<tr><td>한국어→한국수어 번역</td><td>의미를 수어 표현 계획으로 변환</td><td>농인·한국수어 전문가 검토, 번역 기준과 평가 데이터</td></tr>
+<tr><td>모션·아바타</td><td>표현 계획을 손·얼굴·상체 동작으로 재생</td><td>허가된 리깅·모션 자산, 구간 전환·표정·손가락 품질 검증</td></tr>
+<tr><td>실시간 입력 해석</td><td>우리 팀 추론 파이프라인으로 좌표 시계열을 대화 의미로 해석</td><td>자체 서버 연결, 어휘/문장 범위·입력/응답 규격·발화 구간 합의</td></tr>
+<tr><td>실행 제어</td><td>턴 ID로 텍스트·번역·모션·자막을 맞춤</td><td>취소·타임아웃·오래된 응답 제거·실패 복구</td></tr>
+<tr><td>학습·운영</td><td>검토한 시나리오 제공, 오류 신고·표현 수정·버전 관리</td><td>콘텐츠 담당과 검토 절차·모델/콘텐츠 버전 추적</td></tr>
+</table></div>
+<p>연구 기준선·후보를 제품용으로 확정하고 자체 번역·추론·렌더링 API를 앱에 연결하는 작업이 남아 있다. 구체적인 제품용 LLM·모델 버전·렌더링 엔진·서버 자원과 API 계약은 확정 전이다. 번역과 모션 생성의 대기 시간·비용·모바일 성능을 측정한 뒤 스트리밍과 캐시 범위를 정한다. 학습 자료·모션·아바타 외형·개인 대화의 사용 권한을 각각 확인하고, 사용자 영상 공개 허락을 AI 학습 허락으로 대신하지 않는다.</p>
+<h2>단계별 TODO와 완료 기준</h2>
+<div class="table-scroll"><table>
+<tr><th>단계</th><th>과제</th><th>완료 기준</th></tr>
+<tr><td>사전 검토</td><td>사용자·농인·한국수어 전문가와 학습 상황/표현 선정</td><td>지원/미지원 범위·검토 책임·평가 문장 세트 확정</td></tr>
+<tr><td>A · 아바타 연구</td><td>검토된 문장→아바타 출력 실험</td><td>실제 동작 재생, 이해도·의미 전달·표정·손가락·전환 품질 검토, 실패 표현은 노출 제한</td></tr>
+<tr><td>B · 제한 베타</td><td>한국어 텍스트 입력과 상황별 AI 대화 연결</td><td>한 턴의 텍스트·번역·아바타·자막 일치, 힌트/재시도/중단·네트워크 실패 복구</td></tr>
+<tr><td>C · 양방향 확장</td><td>카메라 수어 응답 연결</td><td>의미 확인·수정·텍스트 대안, 새로 도착한 올바른 턴만 반영, 실제 기기·수어 문장 평가</td></tr>
+<tr><td>운영 준비</td><td>품질/비용/보관 정책과 검토 도구</td><td>오류 표현 수정·버전 관리, 기록 삭제·동의 철회·권한·운영 절차 검증</td></tr>
+</table></div>
+<p>이 기능은 P2 향후 확장으로 분류한다. 현재 MVP의 인증·저장·콘텐츠 검토·실시간 검색 서버·기초 학습을 우선 완성하되 아바타 연구는 별도 실험으로 진행할 수 있다. A의 이해도 검증을 마치기 전 B/C를 학습 완성 기능으로 출시하지 않는다. 수치 목표·가격·예산·출시일은 정하지 않았으며 위 과제를 달성한 것으로 표시하지 않는다.</p>
+<p>평가 항목은 농인 사용자·한국수어 전문가가 확인한 의미 전달과 이해 가능성, 지원 상황의 대화 완료, 재시도·오류 신고, 텍스트/자막/동작 불일치, 턴별 지연과 취소 처리, 세션당 비용이다. 자동 점수만으로 수어 정확도를 인증하지 않는다.</p>
+<h2>현재 상태와 출처</h2>
+<p>이번에 추가한 것은 제품 기획과 논의필요 범위다. 기존 연구 코드·시험 기록을 확인했으며 이 문서 변경으로 새 학습·추론을 실행하거나 앱 메뉴·대화 화면·아바타·서버를 연결하지는 않았다. 위 사용자 흐름은 제품 연결 계획이며 현재 와이어프레임·UI 예시 탭의 구현 화면과 구분한다.</p>
+<p>참고한 스픽의 대화 연습 패턴과 수어역의 한국어→수어 아바타 기획은 구분한다. 스픽이 한국수어 아바타를 제공한다는 주장이 아니다. 기본 용도는 학습·연습이며 사람 통역을 대신하는 서비스로 정의하지 않는다.</p></article></section><section role="tabpanel" tabindex="0" id="panel-ui" aria-labelledby="tab-ui" hidden><div class="board-heading"><div><h2>와이어프레임</h2><p>실제 앱의 구조를 흑백 윤곽선으로 확인합니다. 390×844 · 화면 안에서 스크롤할 수 있습니다.</p></div></div><div class="legend"><span>로컬 구현 ≠ 실제 인증·서버</span><span>예시 콘텐츠는 샘플</span><span>미선택 상세·0건은 실제 빈 상태</span></div><div class="board-controls"><label for="screen-group">화면 묶음</label><select id="screen-group"><option value="signup">시작·회원가입</option><option value="wiki">홈·사전역</option><option value="questions">수어 질문</option><option value="learn">배움역</option><option value="community">소통역</option><option value="profile">마이페이지·활동</option><option value="account">설정·계정</option><option value="admin">운영</option></select><button id="reload-frames" type="button">화면 다시 불러오기</button></div><p class="board-note" id="board-status" role="status"></p><div class="frame-grid" id="frames"></div><p class="board-note">이 프레임은 실제 로컬 앱입니다. 입력·생성·삭제·운영 조치는 이 브라우저의 기록에 반영될 수 있습니다. 서버나 다른 사용자의 데이터에는 연결되지 않습니다. 선택하지 않은 질문·영상 상세는 빈 화면이 정상입니다.</p></section><section role="tabpanel" tabindex="0" id="panel-example" aria-labelledby="tab-example" hidden><div class="board-heading"><div><h2>Astryx · 그린 라임 소프트</h2><p>390×844 · 화면 안에서 직접 눌러볼 수 있습니다.</p></div></div><div class="board-controls"><label for="example-group">화면 묶음</label><select id="example-group"><option value="overview">주요 화면</option><option value="signup">시작·회원가입</option><option value="wiki">홈·사전역</option><option value="questions">수어 질문</option><option value="learn">배움역</option><option value="community">소통역</option><option value="profile">마이페이지·활동</option><option value="account">설정·계정</option><option value="admin">운영</option></select><button id="reload-examples" type="button">화면 다시 불러오기</button></div><p class="board-note" id="example-status" role="status"></p><div class="frame-grid" id="example-frames"></div><p class="board-note">샘플 콘텐츠 · 실제 인증·서버 연결 전 시안입니다. 입력과 활동은 이 브라우저에만 반영됩니다.</p></section><div class="download" aria-label="PDF 내려받기"><a href="pdf/sueoyeok-combined.pdf" download="수어역_통합기획서.pdf">통합 PDF ↓</a><a href="pdf/sueoyeok-planning.pdf" download="수어역_기획서.pdf">기획서 PDF ↓</a><a href="pdf/sueoyeok-wireframes.pdf" download="수어역_와이어프레임.pdf">와이어프레임 PDF ↓</a><a href="pdf/sueoyeok-astryx.pdf" download="수어역_Astryx_UI.pdf">Astryx UI PDF ↓</a></div><div class="download"><a href="01_PRD.md" download>01_PRD ↓</a><a href="02_기능명세서.md" download>02_기능명세서 ↓</a><a href="03_유저플로우.md" download>03_유저플로우 ↓</a><a href="04_향후_TODO_및_수용기준.md" download>04_향후_TODO_및_수용기준 ↓</a><a href="05_원문대조_및_변경기록.md" download>05_원문대조_및_변경기록 ↓</a><a href="06_AI_수어대화_및_아바타.md" download>06_AI_수어대화_및_아바타 ↓</a></div><footer class="footer">근거: 2026.10.21 회의 녹취 2건 · 기준 구현: design-lab 웹 프로토타입<br>구현 범위·수용 기준·실행 검증은 구분합니다. AI 인식·OAuth·메일·푸시·다중 사용자 서버는 연결되지 않았습니다.</footer></main><script>
+const groups=[["signup", "시작·회원가입", [["signup", "가입 1/5"], ["profileSetup", "프로필 2/5"], ["knowledge", "수어 경험 3/5"], ["purpose", "가입 목적 4/5"], ["terms", "약관 5/5"], ["welcome", "가입 완료"], ["login", "로그인"], ["recover", "계정 복구"]]], ["wiki", "홈·사전역", [["home", "홈"], ["wiki", "사전역"], ["term", "표현 상세"], ["signSearch", "수어로 찾기"], ["record", "영상 기록"], ["videoDetail", "영상 상세 · 미선택 상태"]]], ["questions", "수어 질문", [["questions", "질문 목록"], ["questionCompose", "질문 작성"], ["question", "질문 상세 · 미선택 상태"]]], ["learn", "배움역", [["learn", "일상선 20역"]]], ["community", "소통역", [["community", "커뮤니티"], ["compose", "글 작성"], ["post", "게시글·댓글"]]], ["profile", "마이페이지·활동", [["profile", "마이페이지"], ["collection", "내 보관함"], ["notifications", "활동 알림"], ["points", "포인트"], ["wardrobe", "프로필 꾸미기"]]], ["account", "설정·계정", [["settings", "설정"], ["account", "계정 관리"], ["withdraw", "탈퇴 안내"], ["withdrawConfirm", "최종 확인"], ["withdrawDone", "완료"], ["policy", "약관 상세"]]], ["admin", "운영", [["dashboard", "대시보드"], ["members", "회원"], ["posts", "게시글"], ["videos", "영상"], ["questions", "질문"], ["reports", "신고"]]]];
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+function activate(id,update=true){if(!tabs.some(t=>t.dataset.tab===id))id='prd';tabs.forEach(t=>{const on=t.dataset.tab===id;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on});if(update)history.replaceState(null,'','#'+id);if(boards[id]&&!document.getElementById(boards[id].root).children.length)renderFrames(id);requestAnimationFrame(sizeFrames)}
+tabs.forEach((t,i)=>{t.onclick=()=>activate(t.dataset.tab);t.onkeydown=e=>{let next=i;if(e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();tabs[next].focus();activate(tabs[next].dataset.tab)}});
+const boards={ui:{select:'screen-group',root:'frames',status:'board-status',reload:'reload-frames',line:true},example:{select:'example-group',root:'example-frames',status:'example-status',reload:'reload-examples',line:false}};
+const overview=['overview','주요 화면',[['login','로그인'],['signup','회원가입'],['home','홈'],['wiki','사전역'],['learn','배움역'],['profile','마이페이지']]];
+function renderFrames(mode){const board=boards[mode];const select=document.getElementById(board.select);const group=[overview,...groups].find(x=>x[0]===select.value)||groups[0];const root=document.getElementById(board.root);root.replaceChildren();group[2].forEach(([id,label])=>{const admin=group[0]==='admin';const url=admin?'/admin.html?line='+(board.line?1:0)+'#'+id:'/?view=app&system='+(board.line?'seed':'astryx')+'&color=sage&screen='+id+'&line='+(board.line?1:0);const card=document.createElement('section');card.className='frame-card'+(admin?' desktop-card':'');const caption=document.createElement('div');caption.className='frame-caption';const title=document.createElement('strong');title.textContent=label;const code=document.createElement('code');code.textContent=id;title.append(code);const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener';link.textContent='화면 크게 ↗';caption.append(title,link);const wrap=document.createElement('div');wrap.className=admin?'desktop-wrap':'phone-wrap';const iframe=document.createElement('iframe');iframe.title=label+' · '+(board.line?'와이어프레임':admin?'운영 화면':'Astryx 그린 UI 예시');iframe.allow='camera';iframe.loading='lazy';iframe.src=url;wrap.append(iframe);card.append(caption,wrap);root.append(card)});document.getElementById(board.status).textContent=group[1]+' · '+group[2].length+'개 화면'+(group[0]==='learn'?' · 프레임 안에서 아래로 내려 20역 전체를 확인하세요.':'');requestAnimationFrame(sizeFrames)}
+function sizeFrames(){document.querySelectorAll('.phone-wrap').forEach(w=>{if(!w.clientWidth)return;const scale=Math.min(1,w.clientWidth/390);w.style.height=(844*scale)+'px';w.querySelector('iframe').style.transform='scale('+scale+')'})}
+Object.entries(boards).forEach(([mode,board])=>{document.getElementById(board.select).onchange=()=>renderFrames(mode);document.getElementById(board.reload).onclick=()=>renderFrames(mode)});window.addEventListener('resize',sizeFrames);window.addEventListener('hashchange',()=>activate(location.hash.slice(1),false));document.getElementById('print').onclick=e=>{e.preventDefault();window.print()};activate(location.hash.slice(1)||'prd',false);
+</script></body></html>

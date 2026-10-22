@@ -1,0 +1,35 @@
+{
+  "name": "sueoyeok",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 8097",
+    "build": "tsc --noEmit && vite build",
+    "check": "tsc --noEmit",
+    "test:points": "node --test scripts/points.test.mjs",
+    "test:activity": "node --test scripts/activity.test.mjs",
+    "astryx": "node node_modules/@astryxdesign/cli/clients/cli/bin/astryx.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 8098",
+    "test": "node --test scripts/managed-content.test.mjs scripts/questions.test.mjs scripts/activity.test.mjs scripts/points.test.mjs scripts/sign-inference.test.mjs"
+  },
+  "dependencies": {
+    "@astryxdesign/core": "0.7.2",
+    "@astryxdesign/theme-neutral": "0.7.2",
+    "@mediapipe/tasks-vision": "1.1.1",
+    "@seed-design/css": "3.0.3",
+    "@seed-design/react": "3.0.0",
+    "@stylexjs/stylex": "^0.19.0",
+    "lucide-react": "latest",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@astryxdesign/cli": "0.7.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "latest",
+    "typescript": "~6.0.3",
+    "vite": "latest"
+  }
+}

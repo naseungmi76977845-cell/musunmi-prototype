@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/brand/google/google-sans-medium.ttf') format('truetype');
+}
+
+.google-login-button {
+  display: flex;
+  width: 100%;
+  height: 52px;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #747775;
+  border-radius: 12px;
+  background: #fff;
+  color: #1f1f1f;
+  font-family: 'Google Sans', 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.google-login-button img { flex: none; }
+.google-login-button:focus-visible { outline: 2px solid #1f1f1f; outline-offset: 3px; }
+.google-login-button:active { background: #f2f2f2; }
+
+@media (hover: hover) and (pointer: fine) {
+  .google-login-button:hover { background: #f8fafd; }
+}

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "filename": "01_PRD.md",
+      "sha256": "91dbbb64b5527acf72c15d0bcfb93e0ff561737c4d3c3f68af9f5f53cb8f795e"
+    },
+    {
+      "filename": "02_기능명세서.md",
+      "sha256": "ad11afee0d7a43f8f5cc7f3931fd2d828fa81aea075de05d736c87c008dad8ad"
+    },
+    {
+      "filename": "03_유저플로우.md",
+      "sha256": "b75c393f70f12478fab29eb1f97c44f6a40bb5e92572e9deb927652316c5aa09"
+    },
+    {
+      "filename": "04_향후_TODO_및_수용기준.md",
+      "sha256": "59b93c4e286fae57bd513ec113a6076dcd4320c5c6640161584f2b414e8a419f"
+    },
+    {
+      "filename": "05_원문대조_및_변경기록.md",
+      "sha256": "e72763d2a3881e77cff66a2c5992318339a828733650535b8ded4bde5ea6d3c9"
+    },
+    {
+      "filename": "06_AI_수어대화_및_아바타.md",
+      "sha256": "ed5e81ceb285d1f3ea951baa936db7f7f7d9b755cf6367b94eb8e5ba323c0d78"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "sueoyeok-planning.pdf",
+      "pages": 23,
+      "bytes": 299258,
+      "sha256": "0c2bd810f25bb3493e66a0f7fdff6b3828d686b1327ca3b67cb65e296d60055f"
+    },
+    {
+      "filename": "sueoyeok-wireframes.pdf",
+      "pages": 52,
+      "bytes": 4301645,
+      "sha256": "eda870bc0e3126179c0415a0fedfb84950e9ae52505ca3eb008e759e2ae8b5ed"
+    },
+    {
+      "filename": "sueoyeok-astryx.pdf",
+      "pages": 52,
+      "bytes": 4728036,
+      "sha256": "0b87401af42c5f74d33968c99623ccbc7d86307fcf6fffbcea6ad692db32ba03"
+    },
+    {
+      "filename": "sueoyeok-combined.pdf",
+      "pages": 127,
+      "bytes": 9330564,
+      "sha256": "7a236636521a387ee75c3d8f314bf7a52a0ba3aa62c51adf15b44cf3cb4a89f1"
+    }
+  ]
+}

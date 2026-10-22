@@ -1,0 +1,7 @@
+/* Static PDF capture expands the same app components without inner scrolling. */
+html[data-pdf-export=true],html[data-pdf-export=true] body{width:390px;min-width:390px;height:auto;min-height:844px;overflow:visible;background:#fff}
+html[data-pdf-export=true] #root{width:390px;height:auto;min-height:844px}
+html[data-pdf-export=true] .mobile-app{width:390px;height:auto;min-height:844px;overflow:visible}
+html[data-pdf-export=true] .app-content{flex:none;overflow:visible;min-height:600px}
+html[data-pdf-export=true] .app-tabs{position:static}
+html[data-pdf-export=true] *,html[data-pdf-export=true] *::before,html[data-pdf-export=true] *::after{animation:none!important;transition:none!important;caret-color:transparent!important}

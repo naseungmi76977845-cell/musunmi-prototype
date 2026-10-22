@@ -1,0 +1,184 @@
+.auth-panel {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-panel__progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-panel__progress-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.auth-panel__progress-label span:last-child {
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+
+.auth-panel__progress {
+  height: 4px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--line);
+}
+
+.auth-panel__progress > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 160ms ease;
+}
+
+.auth-panel__title {
+  margin: 0;
+  color: inherit;
+  font-size: 27px;
+  font-weight: 750;
+  letter-spacing: -.035em;
+  line-height: 1.4;
+}
+
+.auth-panel__social {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-panel__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.auth-panel__providers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-panel__divider::before,
+.auth-panel__divider::after {
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+  content: '';
+}
+
+.auth-panel__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-panel__password {
+  position: relative;
+  min-width: 0;
+}
+
+.auth-panel__password input {
+  padding-right: 52px;
+}
+
+.auth-panel__password-toggle {
+  position: absolute;
+  z-index: 1;
+  top: 27px;
+  right: 4px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.auth-panel__password-toggle:hover {
+  background: var(--soft);
+  color: var(--brand);
+}
+
+.auth-panel__password-toggle:focus-visible,
+.auth-panel__recover:focus-visible,
+.auth-panel__switch button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.auth-panel__error {
+  margin: -10px 0 0;
+  color: #b32d37;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.auth-panel__recover {
+  align-self: flex-end;
+  min-width: 44px;
+  min-height: 44px;
+  margin: -18px 0 -8px;
+  padding: 4px 0 4px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 650;
+  text-align: right;
+}
+
+.auth-panel__switch {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: auto 0 0;
+  padding: 4px 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.auth-panel__switch button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand);
+  font: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 370px) {
+  .auth-panel {
+    gap: 17px;
+  }
+
+  .auth-panel__social {
+    gap: 14px;
+  }
+
+  .auth-panel__fields {
+    gap: 15px;
+  }
+}
