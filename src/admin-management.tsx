@@ -72,5 +72,3 @@ export function AdminManagement({view,state,onModalChange,onNotice}:{view:Manage
     </div></section></div>,document.body)}
   </>;
 }
-
-

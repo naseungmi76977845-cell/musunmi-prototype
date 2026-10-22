@@ -28,4 +28,3 @@ html[data-line-mode="true"],html.line-mode{color-scheme:light;--brand:#202020;--
 :is(html[data-line-mode="true"],html.line-mode) :is(.seed-checkbox__control,.auth-progress-track,.study-station-symbol){border:1px solid #666!important}
 :is(html[data-line-mode="true"],html.line-mode) .auth-panel__progress{border:1px solid #888!important}
 :is(html[data-line-mode="true"],html.line-mode) .auth-panel__progress>span{background:#444!important}
-

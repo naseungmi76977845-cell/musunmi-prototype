@@ -104,4 +104,3 @@ export async function createLandmarkExtractor(signal?:AbortSignal):Promise<Landm
   if(signal?.aborted){engine.close();throw cancelled();}
   return engine;
 }
-
