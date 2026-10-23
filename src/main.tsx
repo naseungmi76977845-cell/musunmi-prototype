@@ -23,7 +23,7 @@ function Frame({system,color,screen,onNavigate,outline=lineMode}:{system:SystemN
  return <article className="preview"><div className="preview-label"><div><b>{label}</b><span>{palettes[color].name}</span></div><a href={open} target="_blank" rel="noreferrer" aria-label={`${label} ${palettes[color].name} 화면 크게 보기`}><ExternalLink size={15}/></a></div><div className="phone"><iframe ref={ref} allow="camera" src={src} title={`${label} ${palettes[color].name} 모바일 시안`} onLoad={()=>ref.current?.contentWindow?.postMessage({type:'sua-go',screen},location.origin)}/></div></article>
 }
 function Gallery(){
- const [color,setColor]=useState<ColorName>(selectedColor&&selectedColor in palettes?selectedColor as ColorName:'sage');const[screen,setScreen]=useState<ScreenId>(isScreen(params.get('screen'))?params.get('screen') as ScreenId:'signup');
+ const [color,setColor]=useState<ColorName>(selectedColor&&selectedColor in palettes?selectedColor as ColorName:'forest');const[screen,setScreen]=useState<ScreenId>(isScreen(params.get('screen'))?params.get('screen') as ScreenId:'signup');
  const[mode,setMode]=useState<'compare'|'colors'|'flow'>(params.get('mode')==='colors'?'colors':params.get('mode')==='flow'?'flow':'compare');const[system,setSystem]=useState<SystemName>(params.get('system')==='seed'?'seed':'astryx');
  const[mobileSystem,setMobileSystem]=useState<SystemName>('astryx');
  const index=screens.findIndex(([id])=>id===screen);
@@ -40,4 +40,4 @@ function Gallery(){
 const view=params.get('view');
 // Explicit preview URLs keep their signup fallback; the public app opens at login.
 const initialScreen=isScreen(params.get('screen'))?params.get('screen')as ScreenId:view==='app'?'signup':'login';
-createRoot(document.getElementById('root')!).render(<React.StrictMode>{view==='gallery'?<Gallery/>:<Suspense fallback={<div className="preview-loading" aria-label="화면 불러오기"/>}><MobileApp system={params.get('system')==='seed'?'seed':'astryx'} color={selectedColor&&selectedColor in palettes?selectedColor as ColorName:'sage'} initialScreen={initialScreen}/></Suspense>}</React.StrictMode>);
+createRoot(document.getElementById('root')!).render(<React.StrictMode>{view==='gallery'?<Gallery/>:<Suspense fallback={<div className="preview-loading" aria-label="화면 불러오기"/>}><MobileApp system={params.get('system')==='seed'?'seed':'astryx'} color={selectedColor&&selectedColor in palettes?selectedColor as ColorName:'forest'} initialScreen={initialScreen}/></Suspense>}</React.StrictMode>);

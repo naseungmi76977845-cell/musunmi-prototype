@@ -2,7 +2,7 @@
 
 **[Vercel 테스트 앱 열기 ↗](https://sueoyeok.vercel.app/)** · [기획서 보기 ↗](https://sueoyeok.vercel.app/planning/)
 
-수어역 모바일 웹 앱의 코드 협업 기준 저장소입니다. 기본 화면은 Meta Astryx의 실제 React 컴포넌트와 그린·라임 소프트(sage) 테마를 사용하는 로그인 화면입니다. Vercel은 이 앱을 브라우저와 모바일 기기에서 테스트하는 배포 환경으로 사용합니다. 별도 비교 페이지에는 왼쪽 `그림 라인`(실제 SEED, outline line=1), 오른쪽 `Astryx`를 유지합니다.
+수어역 모바일 웹 앱의 코드 협업 기준 저장소입니다. 기본 화면은 Meta Astryx의 실제 React 컴포넌트와 원래 그린·라임(forest) 테마를 사용하는 로그인 화면입니다. Vercel은 이 앱을 브라우저와 모바일 기기에서 테스트하는 배포 환경으로 사용합니다. 별도 비교 페이지에는 왼쪽 `그림 라인`(실제 SEED, outline line=1), 오른쪽 `Astryx`를 유지합니다.
 
 ## 실행
 
@@ -19,8 +19,8 @@ npm run dev
 
 - `/` — Astryx 그린 앱 로그인
 - `/?view=gallery` — 그림 라인·Astryx 디자인 비교 갤러리
-- `/?view=app&system=astryx&color=sage&screen=home` — Astryx 앱 홈
-- `/?view=app&system=seed&color=sage&screen=home&line=1` — 그림 라인 앱 홈
+- `/?view=app&system=astryx&color=forest&screen=home` — Astryx 앱 홈
+- `/?view=app&system=seed&color=forest&screen=home&line=1` — 그림 라인 앱 홈
 - `/planning/index.html` — 기획·리서치 문서
 - `/admin.html` — 별도 콘텐츠 관리 시안
 

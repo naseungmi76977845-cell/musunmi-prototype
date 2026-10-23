@@ -1,6 +1,6 @@
 # 수어역 테스트 앱
 
-기준 UI는 Meta Astryx의 실제 React 컴포넌트와 그린·라임 소프트(sage) 테마입니다. 기본 주소는 비교 갤러리 없이 앱 로그인부터 열립니다.
+기준 UI는 Meta Astryx의 실제 React 컴포넌트와 원래 그린·라임(forest) 테마입니다. 기본 주소는 비교 갤러리 없이 앱 로그인부터 열립니다.
 
 테스트 주소: https://sueoyeok.vercel.app/ · [기획서](https://sueoyeok.vercel.app/planning/)
 
