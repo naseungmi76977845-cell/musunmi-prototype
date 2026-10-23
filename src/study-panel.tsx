@@ -7,26 +7,26 @@ type StudyWord={id:string;title:string;category:string;hint:string};
 const topicIcons:Record<string,LucideIcon>={일상:Sunrise,마음:Heart,사람:Users,장소:MapPin};
 
 const stops=[
-  {id:'hello',title:'첫인사역',hint:'안녕하세요'},
-  {id:'thanks',title:'고마움역',hint:'감사합니다'},
-  {id:'friend',title:'친구역',hint:'친구'},
-  {id:'school',title:'학교역',hint:'학교'},
-  {id:'meet',title:'반가움역',hint:'반갑습니다'},
-  {id:'family',title:'가족역',hint:'가족'},
-  {id:'happy',title:'기쁨역',hint:'기쁘다'},
-  {id:'again',title:'다시역',hint:'다시'},
-  {id:'yes',title:'대답역',hint:'네'},
-  {id:'no',title:'거절역',hint:'아니요'},
-  {id:'sorry',title:'미안역',hint:'미안합니다'},
-  {id:'love',title:'사랑역',hint:'사랑합니다'},
-  {id:'home',title:'집역',hint:'집'},
-  {id:'work',title:'회사역',hint:'회사'},
-  {id:'meal',title:'식사역',hint:'밥'},
-  {id:'water',title:'물역',hint:'물'},
-  {id:'today',title:'오늘역',hint:'오늘'},
-  {id:'tomorrow',title:'내일역',hint:'내일'},
-  {id:'goodbye',title:'배웅역',hint:'안녕히 가세요'},
-  {id:'help',title:'부탁역',hint:'도와주세요'},
+  {id:'hello',title:'첫인사',hint:'안녕하세요'},
+  {id:'thanks',title:'고마움',hint:'감사합니다'},
+  {id:'friend',title:'친구',hint:'친구'},
+  {id:'school',title:'학교',hint:'학교'},
+  {id:'meet',title:'반가움',hint:'반갑습니다'},
+  {id:'family',title:'가족',hint:'가족'},
+  {id:'happy',title:'기쁨',hint:'기쁘다'},
+  {id:'again',title:'다시',hint:'다시'},
+  {id:'yes',title:'대답',hint:'네'},
+  {id:'no',title:'거절',hint:'아니요'},
+  {id:'sorry',title:'미안',hint:'미안합니다'},
+  {id:'love',title:'사랑',hint:'사랑합니다'},
+  {id:'home',title:'집',hint:'집'},
+  {id:'work',title:'회사',hint:'회사'},
+  {id:'meal',title:'식사',hint:'밥'},
+  {id:'water',title:'물',hint:'물'},
+  {id:'today',title:'오늘',hint:'오늘'},
+  {id:'tomorrow',title:'내일',hint:'내일'},
+  {id:'goodbye',title:'배웅',hint:'안녕히 가세요'},
+  {id:'help',title:'부탁',hint:'도와주세요'},
 ];
 const stationPositions=stops.map((stop,i)=>({...stop,x:[58,58,130,130,202,202,130,130][i%8],y:52+i*98}));
 const terminal=stationPositions[stationPositions.length-1];
@@ -34,7 +34,8 @@ const mapHeight=terminal.y+160;
 const trackPath=stationPositions.reduce((path,station,i)=>{
   if(i===0)return `M${station.x} 20 V${station.y}`;
   const previous=stationPositions[i-1];
-  return path+(station.x===previous.x?` V${station.y}`:` L${station.x} ${previous.y+Math.abs(station.x-previous.x)} V${station.y}`);
+  // Keep diagonal turns in the gap between labels, clear of both station rows.
+  return path+(station.x===previous.x?` V${station.y}`:` V${previous.y+36} L${station.x} ${station.y-36} V${station.y}`);
 },'')+` V${terminal.y+34}`;
 
 export function StudyPanel({words,bookmarks,onSelect}:{kit:Kit;words:StudyWord[];bookmarks:string[];onSelect:(id:string)=>void;onBrowse:(category?:string)=>void}) {
@@ -42,7 +43,7 @@ export function StudyPanel({words,bookmarks,onSelect}:{kit:Kit;words:StudyWord[]
 
   return <div className="study-panel">
     <section className="study-journey" aria-labelledby="study-journey-title">
-      <div className="study-line-board"><span className="study-line-number">1</span><div><h1 id="study-journey-title">일상선</h1><span>첫인사역 → {terminal.title}</span></div><TrainFront size={24} aria-hidden="true"/></div>
+      <div className="study-line-board"><span className="study-line-number">1</span><div><h1 id="study-journey-title">일상선</h1><span>{stops[0].title} → {terminal.title}</span></div><TrainFront size={24} aria-hidden="true"/></div>
       <div className="study-transit-map" style={{height:mapHeight}}>
         <svg className="study-transit-tracks" viewBox={`0 0 320 ${mapHeight}`} preserveAspectRatio="none" aria-hidden="true">
           <path className="study-main-track" d={trackPath}/>
