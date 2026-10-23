@@ -1,5 +1,7 @@
 # 수어역
 
+**[Vercel 테스트 앱 열기 ↗](https://sueoyeok.vercel.app/)** · [기획서 보기 ↗](https://sueoyeok.vercel.app/planning/)
+
 수어역 모바일 웹 앱의 코드 협업 기준 저장소입니다. 기본 화면은 Meta Astryx의 실제 React 컴포넌트와 그린·라임 소프트(sage) 테마를 사용하는 로그인 화면입니다. Vercel은 이 앱을 브라우저와 모바일 기기에서 테스트하는 배포 환경으로 사용합니다. 별도 비교 페이지에는 왼쪽 `그림 라인`(실제 SEED, outline line=1), 오른쪽 `Astryx`를 유지합니다.
 
 ## 실행
