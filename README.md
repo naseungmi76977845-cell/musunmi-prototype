@@ -1,6 +1,6 @@
 # 수어역
 
-수어역 모바일 웹 시제품의 코드 협업 기준 저장소입니다. 당근 SEED Design과 Meta Astryx의 실제 React 컴포넌트 키트를 사용해 같은 화면 흐름을 비교합니다. 현재 기본 갤러리는 왼쪽 `그림 라인`(SEED, outline line=1), 오른쪽 `Astryx`(sage 색상)이며, 모바일 앱 화면의 기본 시스템은 Astryx입니다.
+수어역 모바일 웹 앱의 코드 협업 기준 저장소입니다. 기본 화면은 Meta Astryx의 실제 React 컴포넌트와 그린·라임 소프트(sage) 테마를 사용하는 로그인 화면입니다. Vercel은 이 앱을 브라우저와 모바일 기기에서 테스트하는 배포 환경으로 사용합니다. 별도 비교 페이지에는 왼쪽 `그림 라인`(실제 SEED, outline line=1), 오른쪽 `Astryx`를 유지합니다.
 
 ## 실행
 
@@ -15,7 +15,8 @@ npm run dev
 
 ## 화면
 
-- `/` — 디자인 비교 갤러리
+- `/` — Astryx 그린 앱 로그인
+- `/?view=gallery` — 그림 라인·Astryx 디자인 비교 갤러리
 - `/?view=app&system=astryx&color=sage&screen=home` — Astryx 앱 홈
 - `/?view=app&system=seed&color=sage&screen=home&line=1` — 그림 라인 앱 홈
 - `/planning/index.html` — 기획·리서치 문서
@@ -35,6 +36,8 @@ npm run build
 Vercel 프로젝트를 `Hariuncle/sueoyeok` GitHub 저장소에 연결하고 Production Branch를 `main`으로 지정해야 자동 배포가 활성화됩니다. 연결 후 `main`의 커밋·머지는 운영 배포, 다른 브랜치와 PR은 미리보기 배포를 만듭니다. 파일 추가만으로 계정 연결이 완료되지는 않습니다. 토큰을 GitHub 저장소에 넣을 필요는 없습니다.
 
 배포 후 `/`, `/planning/`, `/planning/pdf/sueoyeok-combined.pdf`, `/admin.html`과 앱 화면을 확인합니다. 기존 `chatgpt.site`는 별도 배포이므로 Vercel의 업데이트가 해당 주소에 반영되지는 않습니다.
+
+테스트 흐름과 현재 연결 범위는 [테스트 앱 안내](docs/test-app.md)를 참고합니다.
 
 ## 범위
 
