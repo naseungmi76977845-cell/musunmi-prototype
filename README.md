@@ -31,9 +31,11 @@ npm run build
 
 ## Vercel 배포
 
+테스트 앱: **https://sueoyeok.vercel.app/** · [기획서](https://sueoyeok.vercel.app/planning/) · [Vercel 프로젝트](https://vercel.com/x9520207-4396s-projects/sueoyeok)
+
 저장소 루트의 `vercel.json`에 Vite 정적 배포 설정을 관리합니다. Node.js 24에서 `npm ci`로 설치하고 `npm test && npm run build`가 통과한 `dist`를 배포합니다. 기획서, PDF, 별도 관리자 HTML 경로를 유지하며 `/admin`도 관리자 화면으로 연결합니다.
 
-Vercel 프로젝트를 `Hariuncle/sueoyeok` GitHub 저장소에 연결하고 Production Branch를 `main`으로 지정해야 자동 배포가 활성화됩니다. 연결 후 `main`의 커밋·머지는 운영 배포, 다른 브랜치와 PR은 미리보기 배포를 만듭니다. 파일 추가만으로 계정 연결이 완료되지는 않습니다. 토큰을 GitHub 저장소에 넣을 필요는 없습니다.
+Vercel 프로젝트 `sueoyeok`은 `Hariuncle/sueoyeok` GitHub 저장소와 연결되어 있습니다. Production Branch는 `main`입니다. `main`의 커밋·머지는 위 테스트 주소를 갱신하고, 다른 브랜치와 PR은 미리보기 배포를 만듭니다. GitHub 앱 접근은 수어역 저장소 하나로 제한했습니다. 토큰은 GitHub 저장소에 저장하지 않습니다.
 
 배포 후 `/`, `/planning/`, `/planning/pdf/sueoyeok-combined.pdf`, `/admin.html`과 앱 화면을 확인합니다. 기존 `chatgpt.site`는 별도 배포이므로 Vercel의 업데이트가 해당 주소에 반영되지는 않습니다.
 

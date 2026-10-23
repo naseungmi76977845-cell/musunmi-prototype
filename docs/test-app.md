@@ -2,6 +2,8 @@
 
 기준 UI는 Meta Astryx의 실제 React 컴포넌트와 그린·라임 소프트(sage) 테마입니다. 기본 주소는 비교 갤러리 없이 앱 로그인부터 열립니다.
 
+테스트 주소: https://sueoyeok.vercel.app/ · [기획서](https://sueoyeok.vercel.app/planning/)
+
 ## 확인 흐름
 
 1. `/`에서 로그인 화면과 카카오·Google 버튼을 확인합니다. 현재 이메일 로그인은 화면 흐름 테스트용이며 실제 계정을 인증하지 않습니다. 실제 사용하는 비밀번호를 입력하지 않습니다.
