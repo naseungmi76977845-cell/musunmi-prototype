@@ -44,12 +44,18 @@
 .auth-login__symbol {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   margin-bottom: 2px;
   border-radius: 14px;
-  background: #3f704c;
-  color: #fff;
+  overflow: hidden;
+  background: #000;
+}
+
+.auth-login__symbol .sua-brand-mark {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 0;
 }
 
 .auth-login__brand h1 {

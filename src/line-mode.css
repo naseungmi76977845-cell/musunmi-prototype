@@ -22,7 +22,7 @@ html[data-line-mode="true"],html.line-mode{color-scheme:light;--brand:#202020;--
 :is(html[data-line-mode="true"],html.line-mode) :focus-visible{outline:2px solid #111!important;outline-offset:3px}
 @media print{:is(html[data-line-mode="true"],html.line-mode) .mobile-app{height:844px!important}}
 
-:is(html[data-line-mode="true"],html.line-mode) .sua-brand-mark{background:#222!important}
+:is(html[data-line-mode="true"],html.line-mode) .sua-brand-mark{filter:grayscale(1) contrast(1.15)!important}
 :is(html[data-line-mode="true"],html.line-mode) .google-login-button img{filter:grayscale(1) contrast(2)}
 :is(html[data-line-mode="true"],html.line-mode) .seed-kit-field-control{border:1px solid #777!important;border-radius:12px}
 :is(html[data-line-mode="true"],html.line-mode) :is(.seed-checkbox__control,.auth-progress-track,.study-station-symbol){border:1px solid #666!important}
