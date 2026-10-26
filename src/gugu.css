@@ -16,44 +16,53 @@
 }
 .gugu-hat {
   position: absolute;
-  top: 2%;
-  left: 50%;
-  width: 42%;
-  height: 18%;
-  transform: translateX(-54%) rotate(-8deg);
-  background:
-    linear-gradient(180deg, #2f5a3c 0 62%, #dceca6 62% 78%, #2f5a3c 78%);
+  top: 0;
+  left: 48%;
+  width: 46%;
+  height: 20%;
+  transform: translateX(-58%) rotate(-6deg);
+  background: #3f704c;
   border: 1.5px solid #284b34;
-  border-radius: 4px 4px 2px 2px;
-  box-shadow: 0 1px 0 color-mix(in srgb, #284b34 20%, transparent);
+  border-radius: 6px 6px 3px 3px;
+  box-shadow: 0 1px 0 color-mix(in srgb, #284b34 18%, transparent);
 }
 .gugu-hat::before {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: -28%;
-  width: 128%;
-  height: 38%;
+  bottom: -32%;
+  width: 132%;
+  height: 40%;
   transform: translateX(-50%);
   background: #284b34;
   border-radius: 2px;
 }
+.gugu-hat::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  width: 42%;
+  height: 28%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background: #dceca6;
+}
 .gugu-badge {
   position: absolute;
-  right: 4%;
-  bottom: 28%;
+  right: 6%;
+  bottom: 30%;
   display: grid;
   place-items: center;
-  min-width: 28px;
-  height: 16px;
-  padding: 0 4px;
+  min-width: 26px;
+  height: 15px;
+  padding: 0 3px;
   border: 1px solid #284b34;
-  border-radius: 4px;
-  background: #fafbf8;
+  border-radius: 3px;
+  background: #fff;
   color: #284b34;
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 750;
   letter-spacing: -.02em;
   font-variant-numeric: tabular-nums;
-  box-shadow: 0 1px 0 color-mix(in srgb, #284b34 12%, transparent);
 }

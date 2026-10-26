@@ -37,14 +37,14 @@
   box-shadow: none;
 }
 
-.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.home-station-search,.home-board,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button) {
+.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.home-hero-search,.home-today,.home-dest,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button) {
   transition: transform var(--motion-press) var(--motion-ease),
     background-color var(--motion-state) ease,
     box-shadow var(--motion-state) ease,
     color var(--motion-state) ease;
   transform-origin: center;
 }
-.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.home-search,.home-station-search,.home-board,.kakao-login-button,.google-login-button):active:not(:disabled) {
+.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.home-search,.home-hero-search,.home-today,.home-dest,.kakao-login-button,.google-login-button):active:not(:disabled) {
   transform: scale(.985);
   box-shadow: none;
 }

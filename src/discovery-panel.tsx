@@ -1,7 +1,10 @@
 import type {ReactNode} from 'react';
-import {ArrowRight,BookOpen,Bookmark,ChevronRight,Heart,MapPin,Search,Sunrise,Users,Video,X} from 'lucide-react';
+import {ArrowRight,BookOpen,Bookmark,ChevronRight,GraduationCap,Heart,MapPin,MessageCircle,Search,Sunrise,Users,Video,X} from 'lucide-react';
 import type {Kit} from './contracts';
+import {BrandMark} from './brand';
 import {Gugu} from './gugu';
+import {GreetingArt} from './greeting-art';
+import {HomeHeroArt} from './home-hero-art';
 import {matchesExpression,type Expression} from './expressions';
 import './discovery-panel.css';
 import './home-station.css';
@@ -20,77 +23,71 @@ export function ExpressionRows({words,onSelect}:{words:Expression[];onSelect:(id
  })}</div>;
 }
 
-const lineStops=[
- {id:'wiki',code:'S01',name:'사전역',hint:'수어 검색 · 영상 사전',line:'wiki',x:'16%',y:'58%',on:'wiki'} as const,
- {id:'learn',code:'S02',name:'배움역',hint:'수어 학습 · 기록',line:'learn',x:'84%',y:'58%',on:'learn'} as const,
- {id:'community',code:'S03',name:'소통역',hint:'커뮤니티 · 교류',line:'community',x:'84%',y:'20%',on:'community'} as const,
+const destinations=[
+ {id:'wiki',name:'사전역',hint:'궁금한 수어를 찾아보세요',tone:'wiki',Icon:BookOpen,on:'wiki'} as const,
+ {id:'learn',name:'배움역',hint:'오늘의 수어를 배워보세요',tone:'learn',Icon:GraduationCap,on:'learn'} as const,
+ {id:'community',name:'소통역',hint:'수어로 이야기를 나눠보세요',tone:'community',Icon:MessageCircle,on:'community'} as const,
 ];
 
-export function HomePanel({onWiki,onHello,onLearn,onCommunity,latestStory}:{onWiki:()=>void;onHello:()=>void;onLearn:()=>void;onRecord:()=>void;onCommunity:()=>void;latestStory:ReactNode}) {
+export function HomePanel({onWiki,onHello,onLearn,onCommunity}:{onWiki:()=>void;onHello:()=>void;onLearn:()=>void;onRecord:()=>void;onCommunity:()=>void;latestStory?:ReactNode}) {
  const go={wiki:onWiki,learn:onLearn,community:onCommunity} as const;
  return <div className="home-station">
-  <section className="home-gugu-welcome" aria-label="구구 역무원 안내">
-   <div className="home-gugu-bubble">
-    <span className="home-gugu-role">구구 역무원</span>
-    <strong>수어역에 오신 걸 환영해요!</strong>
-    <p>오늘은 어떤 수어를 배워볼까요? 원하는 역으로 이동해 보세요.</p>
-   </div>
-   <Gugu size={86} attendant/>
-  </section>
-
-  <section className="home-line-map" aria-labelledby="home-line-title">
-   <div className="home-line-map-head">
-    <h2 id="home-line-title">수어역 노선</h2>
-    <span>환승 · S00</span>
-   </div>
-   <div className="home-line-canvas">
-    <svg className="home-line-tracks" viewBox="0 0 320 236" preserveAspectRatio="none" aria-hidden="true">
-     <path className="track-wiki" d="M160 137 H52" fill="none" strokeWidth="10" strokeLinecap="round"/>
-     <path className="track-learn" d="M160 137 H268" fill="none" strokeWidth="10" strokeLinecap="round"/>
-     <path className="track-community" d="M160 137 V47 H268" fill="none" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/>
-     <circle className="track-hub" cx="160" cy="137" r="8" fill="var(--brand)" stroke="none"/>
-     <path d="M250 137 h12 M250 47 h12 M70 137 h-12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity=".28"/>
-     <path d="M256 133 l8 4 -8 4 M256 43 l8 4 -8 4 M66 133 l-8 4 8 4" fill="currentColor" opacity=".28"/>
-    </svg>
-    <div className="home-stop home-stop-hub" style={{left:'50%',top:'58%'}} aria-current="true">
-     <span className="home-stop-mark" aria-hidden="true">S00</span>
-     <span className="home-stop-copy"><b>수어역</b><small>지금 여기 · 환승</small></span>
+  <section className="home-hero" aria-label="수어역 안내">
+   <HomeHeroArt/>
+   <div className="home-hero-inner">
+    <div className="home-hero-sign">
+     <span className="home-hero-sign-mark"><BrandMark size={22}/></span>
+     <span className="home-hero-sign-copy">
+      <b>수어역 <small>SUEO STATION</small></b>
+      <span>모든 소통이 만나는 곳</span>
+     </span>
+     <ArrowRight size={16} aria-hidden="true"/>
     </div>
-    {lineStops.map(stop=><button key={stop.id} className="home-stop" data-line={stop.line} style={{left:stop.x,top:stop.y}} onClick={go[stop.on]} aria-label={`${stop.code} ${stop.name}, ${stop.hint}`}>
-     <span className="home-stop-mark" aria-hidden="true">{stop.code}</span>
-     <span className="home-stop-copy"><b>{stop.name}</b><small>{stop.hint}</small></span>
-    </button>)}
+    <div className="home-hero-welcome">
+     <p className="home-hero-bubble">안녕하세요! 수어역에 오신 걸 환영해요!</p>
+     <Gugu size={92} attendant/>
+    </div>
    </div>
-   <div className="home-line-legend" aria-hidden="true">
-    <span><i className="lg-wiki"/>사전역</span>
-    <span><i className="lg-learn"/>배움역</span>
-    <span><i className="lg-community"/>소통역</span>
+   <button className="home-hero-search" onClick={onWiki}><Search size={18} aria-hidden="true"/><span>궁금한 수어를 검색해 보세요</span></button>
+  </section>
+
+  <section aria-labelledby="home-now-title">
+   <div className="home-section-head"><h2 id="home-now-title">지금, 수어역에서</h2></div>
+   <div className="home-destinations">
+    {destinations.map(item=>{
+     const Icon=item.Icon;
+     return <button key={item.id} className={`home-dest home-dest-${item.tone}`} onClick={go[item.on]} aria-label={`${item.name}. ${item.hint}`}>
+      <span className="home-dest-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.9}/></span>
+      <b>{item.name}</b>
+      <p>{item.hint}</p>
+      <span className="home-dest-go" aria-hidden="true"><ArrowRight size={14}/></span>
+     </button>;
+    })}
    </div>
   </section>
 
-  <button className="home-station-search" onClick={onWiki}><span aria-hidden="true"><Search size={16}/></span><span>수어 검색 · 사전역</span><ArrowRight size={16}/></button>
-
-  <button className="home-board" onClick={onHello} aria-label="오늘의 수어 안내, 안녕하세요. 표현 배우러 가기">
-   <div className="home-board-top"><span>오늘의 수어 안내</span><em>S02 배움역</em></div>
-   <div className="home-board-body">
-    <span className="home-board-stop"><span>S02</span><small>배움역</small></span>
-    <span className="home-board-copy"><span>오늘의 표현</span><strong>안녕하세요</strong><p>마음을 여는 첫인사</p></span>
-    <span className="home-board-go">배우러 가기 <ArrowRight size={15}/></span>
+  <section aria-labelledby="home-today-title">
+   <div className="home-section-head">
+    <h2 id="home-today-title">오늘의 표현</h2>
+    <button type="button" onClick={onWiki}>더보기</button>
    </div>
-  </button>
-
-  <section className="home-notice" aria-labelledby="home-notice-title">
-   <Gugu size={64} attendant/>
-   <div className="home-notice-copy">
-    <span id="home-notice-title">구구의 역 안내</span>
-    <p>오늘은 인사 표현부터 시작해 볼까요?</p>
-    <button type="button" className="home-notice-action" onClick={onLearn}>배움역으로 이동 <ArrowRight size={14}/></button>
-   </div>
+   <button className="home-today" onClick={onHello} aria-label="오늘의 표현 안녕하세요, 마음을 여는 첫인사">
+    <span className="home-today-art word-art greeting-art"><GreetingArt/></span>
+    <span className="home-today-copy"><small>일상 · 인사</small><strong>안녕하세요</strong><p>마음을 여는 첫인사</p></span>
+    <span className="home-today-go" aria-hidden="true"><ArrowRight size={16}/></span>
+   </button>
   </section>
 
-  <section>
-   <div className="section-head"><h2>함께 나누는 이야기</h2><button aria-label="소통역 보기" onClick={onCommunity}><ArrowRight size={17}/></button></div>
-   {latestStory}
+  <section aria-labelledby="home-guide-title">
+   <div className="home-section-head">
+    <h2 id="home-guide-title">구구의 안내</h2>
+    <button type="button" onClick={onLearn}>더보기</button>
+   </div>
+   <div className="home-guide">
+    <Gugu size={58} attendant/>
+    <p className="home-guide-copy">오늘은 인사 표현부터 시작해 볼까요?</p>
+    <button type="button" className="home-guide-action" onClick={onLearn}>배움역으로 이동 <ArrowRight size={13}/></button>
+   </div>
   </section>
  </div>;
 }
