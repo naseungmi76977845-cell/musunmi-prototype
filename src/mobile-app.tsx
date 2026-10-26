@@ -19,7 +19,8 @@ import {ExpressionDetail} from './expression-detail';
 import {PointsPanel,WardrobePanel} from './points-panel';
 import {getBalance,getDecoration,initialPoints,pointsReducer,rewardRules,type RewardKey} from './points';
 import {ProfileSetupPanel,KnowledgePanel,PurposePanel,TermsPanel,RecoverPanel,WithdrawPanel,type UserType,type KnowledgeLevel} from './flow-panels';
-import {BrandLogo,BrandMark} from './brand';
+import {BrandMark} from './brand';
+import {StationNameplate} from './station-nameplate';
 import {NotificationPanel,OwnPostsPanel,UserVideosPanel,VideoDetailPanel} from './activity-panels';
 import {notificationReducer,type NoticeTarget,type AppNotification} from './activity';
 import {contentIsVisible,memberCanPublish,saveLocalMember,ensureLocalMember,saveManagedPost,removeManagedPost,addManagedVideo,removeManagedVideo,withdrawManagedData,getManagedSnapshot,beginNewLocalMembership} from './managed-content';
@@ -164,12 +165,12 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
  const ticketStop=ticketGateTo?words.find(item=>item.id===ticketGateTo):undefined;
  return <Provider color={color}><div className={`mobile-app system-${system}`} style={{'--brand':p.brand,'--soft':p.soft,'--accent':p.accent,'--brand-hover':p.hover}as CSSProperties} data-screen={screen}><div className="status-bar"><span>9:41</span><div><span className="signal"><i/><i/><i/><i/></span><svg viewBox="0 0 20 15" width="16" aria-hidden="true"><path d="M2 5q8-7 16 0M5 8q5-4 10 0M9 12h2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg><span className="battery"><i/></span></div></div>
  {(!tabScreen||screen==='home'||screen==='profile')&&
-  <header className={screen==='profile'?'app-header app-header-actions':'app-header'}>
-   {screen==='home'&&<div className="app-wordmark"><BrandLogo/></div>}
+  <header className={screen==='home'?'app-header app-header-station':screen==='profile'?'app-header app-header-actions':'app-header'}>
+   {screen==='home'&&<StationNameplate/>}
    {!tabScreen&&<button className="icon-button" onClick={previous} aria-label="뒤로"><ArrowLeft size={22}/></button>}
    {(screen==='home'||screen==='profile')&&<div className="app-header-tools"><button className="icon-button notification-bell" aria-label={`알림, 읽지 않은 ${notifications.filter(item=>!item.read).length}개`} onClick={openNotifications}><Bell size={22}/>{notifications.some(item=>!item.read)&&<span className="notification-dot"/>}</button><button className="icon-button" aria-label="설정" onClick={()=>go('settings')}><Settings size={22}/></button></div>}
   </header>}
  {member?.status==='suspended'&&<div className="account-restricted" role="status">이용이 정지된 계정이에요.</div>}<main key={screen} className={`app-content page-${screen}`} ref={content}>{body}</main>{toast&&<div className="app-toast" role="status">{toast}<button aria-label="닫기" onClick={()=>setToast('')}><X size={15}/></button></div>}
  {ticketGateTo&&<LearnTicketGate kit={kit} stationTitle={ticketStop?.title||'다음 역'} stationHint={ticketStop?.hint||''} available={canSpendTicket(learnTicket,ticketGateTo)} onCancel={()=>setTicketGateTo(null)} onConfirm={confirmLearnTicket}/>}
- {tabScreen?<nav className="app-tabs" aria-label="주요 메뉴">{([['home','홈',Home],['wiki','사전역',BookOpen],['learn','배움역',GraduationCap],['community','소통역',MessageCircle],['profile','마이페이지',UserRound]]as const).map(([id,label,Icon])=><button key={id} aria-current={screen===id?'page':undefined} onClick={()=>go(id)}><span><Icon size={23} strokeWidth={screen===id?2.2:1.7}/></span><b>{label}</b></button>)}</nav>:<div className="safe-bottom"/>}<div className="home-indicator"><span/></div></div></Provider>
+ {tabScreen?<nav className="app-tabs app-tabs-line" aria-label="주요 메뉴">{([['home','홈','S00',Home],['wiki','사전역','S01',BookOpen],['learn','배움역','S02',GraduationCap],['community','소통역','S03',MessageCircle],['profile','마이페이지','MY',UserRound]]as const).map(([id,label,code,Icon])=><button key={id} data-line={id} aria-current={screen===id?'page':undefined} onClick={()=>go(id)}><span className="app-tab-mark"><Icon size={20} strokeWidth={screen===id?2.3:1.7}/><i aria-hidden="true">{code}</i></span><b>{label}</b></button>)}</nav>:<div className="safe-bottom"/>}<div className="home-indicator"><span/></div></div></Provider>
 }
