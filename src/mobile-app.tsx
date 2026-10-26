@@ -29,7 +29,7 @@ import {useManagedContent,useLocalVideos} from './use-managed-content';
 
 type Story={id:string;title:string;body:string;category:string;author:string;own?:boolean};
 type DetailOrigin={screen:ScreenId;wordId:string;videoId:string|null;postId:string};
-const guides:Story[]=[{id:'guide-1',title:'같은 표현도 지역마다 다를 수 있나요?',body:'같은 뜻을 전해도 지역과 상황에 따라 표현이 달라질 수 있어요. 표현과 함께 사용 맥락도 살펴보세요.',category:'수어 Q&A',author:'수어역'},{id:'guide-2',title:'서로의 표현이 모이는 위키',body:'궁금한 표현을 찾아보고, 내가 쓰는 수어도 기록해 보세요.',category:'표현 나눔',author:'수어역'}];
+const guides:Story[]=[{id:'guide-1',title:'같은 표현도 지역마다 다를 수 있나요?',body:'같은 뜻을 전해도 지역과 상황에 따라 표현이 달라질 수 있어요. 표현과 함께 사용 맥락도 살펴보세요.',category:'수어 Q&A',author:'수어역'},{id:'guide-2',title:'~다라는 표현은 어떻게 하나요?',body:'비슷한 뜻을 가진 표현을 언제 쓰는지 궁금할 때, 맥락과 함께 물어보면 좋아요.',category:'표현 나눔',author:'수어역'}];
 const goals=['수어를 더 잘하고 싶어요','모르는 수어를 찾아보고 싶어요','제가 아는 수어를 나누고 싶어요','다른 사람들과 소통하고 싶어요'];
 type Form={email:string;password:string;nickname:string;userType:UserType|'';knowledge:KnowledgeLevel|'';goals:string[];terms:boolean;privacy:boolean;marketing:boolean;query:string;category:string;wordId:string;recordTitle:string;recordBody:string;rights:boolean;direction:boolean;dialect:string;composeTitle:string;composeBody:string;composeCategory:string;feedCategory:string;comment:string;reason:string;withdrawAgreed:boolean;confirmPassword:string};
 const initialForm=():Form=>({email:'',password:'',nickname:'',userType:'',knowledge:'',goals:[],terms:false,privacy:false,marketing:false,query:'',category:'전체',wordId:'hello',recordTitle:'안녕하세요',recordBody:'',rights:false,direction:false,dialect:'잘 모르겠어요',composeTitle:'',composeBody:'',composeCategory:'수어 Q&A',feedCategory:'전체',comment:'',reason:'',withdrawAgreed:false,confirmPassword:''});
