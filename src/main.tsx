@@ -7,6 +7,7 @@ import './gallery.css';
 import './line-mode.css';
 import './pdf-export.css';
 import {BrandLogo} from './brand';
+import {DesignLab} from './design-lab';
 const MobileApp=lazy(()=>import('./mobile-app'));
 const params=new URLSearchParams(location.search);
 const selectedColor=params.get('color');
@@ -40,4 +41,4 @@ function Gallery(){
 const view=params.get('view');
 // Explicit preview URLs keep their signup fallback; the public app opens at login.
 const initialScreen=isScreen(params.get('screen'))?params.get('screen')as ScreenId:view==='app'?'signup':'login';
-createRoot(document.getElementById('root')!).render(<React.StrictMode>{view==='gallery'?<Gallery/>:<Suspense fallback={<div className="preview-loading" aria-label="화면 불러오기"/>}><MobileApp system={params.get('system')==='seed'?'seed':'astryx'} color={selectedColor&&selectedColor in palettes?selectedColor as ColorName:'forest'} initialScreen={initialScreen}/></Suspense>}</React.StrictMode>);
+createRoot(document.getElementById('root')!).render(<React.StrictMode>{view==='design'?<DesignLab/>:view==='gallery'?<Gallery/>:<Suspense fallback={<div className="preview-loading" aria-label="화면 불러오기"/>}><MobileApp system={params.get('system')==='seed'?'seed':'astryx'} color={selectedColor&&selectedColor in palettes?selectedColor as ColorName:'forest'} initialScreen={initialScreen}/></Suspense>}</React.StrictMode>);
