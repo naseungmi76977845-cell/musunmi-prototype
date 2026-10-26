@@ -14,7 +14,8 @@
   min-width: 0;
 }
 
-.home-banner {
+.home-banner,
+.wiki-banner {
   margin: 0 -22px;
   padding: 0;
   overflow: hidden;
@@ -29,8 +30,18 @@
   object-fit: cover;
   object-position: center center;
 }
+.wiki-station {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+.page-wiki {
+  background: #fafbf8;
+}
 @media (max-width: 370px) {
-  .home-banner { margin: 0 -18px; }
+  .home-banner,
+  .wiki-banner { margin: 0 -18px; }
 }
 
 .home-search {
