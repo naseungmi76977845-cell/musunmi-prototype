@@ -5,10 +5,12 @@
   "buildCommand": "npm test && npm run build",
   "outputDirectory": "dist",
   "redirects": [
-    { "source": "/planning", "destination": "/planning/index.html", "permanent": true }
+    { "source": "/planning", "destination": "/planning/index.html", "permanent": true },
+    { "source": "/design", "destination": "/design/index.html", "permanent": false }
   ],
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/planning/", "destination": "/planning/index.html" }
+    { "source": "/planning/", "destination": "/planning/index.html" },
+    { "source": "/design/", "destination": "/design/index.html" }
   ]
 }

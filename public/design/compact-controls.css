@@ -1,0 +1,9 @@
+/* Slightly tighter spacing above tabs and form controls. */
+:root{--field-label-gap:6px;--field-group-gap:20px;--form-section-gap:20px}
+.content>.chips{margin-top:14px}
+.content>.initials{margin-top:12px}
+.content .form input[type=text],.content .form textarea{padding:12px 16px;min-height:52px}
+.content .form textarea{min-height:136px}
+.content .search{padding:12px 18px;min-height:52px}
+.content .form .chips>.check{min-height:44px}
+.content .upload-form{margin-top:20px}
