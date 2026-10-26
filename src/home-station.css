@@ -15,20 +15,22 @@
 }
 
 .home-banner {
-  margin: 0;
+  margin: 0 -22px;
   padding: 0;
-  border-radius: 16px;
   overflow: hidden;
-  background: #f3eee4;
+  background: #f4f1ea;
   line-height: 0;
 }
 .home-banner-image {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1179 / 661;
-  object-fit: contain;
-  object-position: center top;
+  aspect-ratio: 1024 / 682;
+  object-fit: cover;
+  object-position: center center;
+}
+@media (max-width: 370px) {
+  .home-banner { margin: 0 -18px; }
 }
 
 .home-search {

@@ -35,8 +35,8 @@ export function HomePanel({onWiki,onHello,onLearn,onCommunity}:{onWiki:()=>void;
     className="home-banner-image"
     src={homeBanner}
     alt="수어역 역명판과 구구 역무원이 있는 지하철역 환영 장면"
-    width={1179}
-    height={661}
+    width={1024}
+    height={682}
     decoding="async"
    />
   </section>
