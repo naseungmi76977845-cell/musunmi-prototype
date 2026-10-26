@@ -140,7 +140,7 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
  const storyItem=(p:Story)=><button key={p.id} className="story-row" onClick={()=>openPost(p.id)}><span className="story-meta"><span className="avatar small">{p.author.slice(0,1)}</span>{p.author}<span>{p.category}</span></span><h3>{p.title}</h3><p>{p.body}</p><span className="story-bottom"><MessageCircle size={15}/>{comments[p.id]?.length?`댓글 ${comments[p.id].length}`:'이야기 나누기'}{p.author==='수어역'&&<small>수어역 안내</small>}</span></button>;
  let body:ReactNode;
  switch(screen){
- case 'signup':case 'login':body=<AuthPanel key={screen} mode={screen} kit={kit} email={data.email} password={data.password} errors={errors} onEmailChange={v=>update('email',v)} onPasswordChange={v=>update('password',v)} onSubmit={()=>{if(screen==='signup'){continueSignup();return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)||data.password.length<8){setErrors({login:'이메일과 비밀번호를 확인해 주세요.'});return}update('password','');go('home')}} onSwitch={()=>{update('password','');go(screen==='signup'?'login':'signup')}} onKakao={()=>setToast('카카오 로그인을 준비하고 있어요.')} onGoogle={()=>setToast('Google 로그인을 준비하고 있어요.')} onRecover={()=>{update('password','');go('recover')}}/>;break;
+ case 'signup':case 'login':{const pendingLogin=()=>setToast('로그인 기능을 준비하고 있어요! 지금은 회원가입으로 시작해 주세요.');body=<AuthPanel key={screen} mode={screen} kit={kit} email={data.email} password={data.password} errors={errors} onEmailChange={v=>update('email',v)} onPasswordChange={v=>update('password',v)} onSubmit={()=>{if(screen==='signup'){continueSignup();return}pendingLogin()}} onSwitch={()=>{update('password','');go(screen==='signup'?'login':'signup')}} onKakao={pendingLogin} onGoogle={pendingLogin} onPendingLogin={pendingLogin} onRecover={()=>{update('password','');go('recover')}}/>;break;}
 
  case 'profileSetup':body=<ProfileSetupPanel kit={kit} nickname={data.nickname} userType={data.userType} typeError={errors.userType} onUserType={v=>{update('userType',v);setErrors(e=>({...e,userType:''}))}} editing={editingProfile} error={errors.nickname} onNickname={v=>update('nickname',v)} onEditKnowledge={()=>go('knowledge')} onEditPurpose={()=>go('purpose')} onContinue={saveProfile}/>;break;
  case 'knowledge':body=<KnowledgePanel kit={kit} level={data.knowledge} editing={editingProfile} onLevel={v=>update('knowledge',v)} onContinue={saveKnowledge}/>;break;
@@ -177,7 +177,7 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
  const p=palettes[color];
  const ticketStop=ticketGateTo?words.find(item=>item.id===ticketGateTo):undefined;
  return <Provider color={color}><div className={`mobile-app system-${system}`} style={{'--brand':p.brand,'--soft':p.soft,'--accent':p.accent,'--brand-hover':p.hover}as CSSProperties} data-screen={screen}><div className="status-bar"><span>9:41</span><div><span className="signal"><i/><i/><i/><i/></span><svg viewBox="0 0 20 15" width="16" aria-hidden="true"><path d="M2 5q8-7 16 0M5 8q5-4 10 0M9 12h2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg><span className="battery"><i/></span></div></div>
- {(!tabScreen||screen==='home'||screen==='profile')&&
+ {screen!=='login'&&(!tabScreen||screen==='home'||screen==='profile')&&
   <header className={screen==='profile'?'app-header app-header-actions':'app-header'}>
    {screen==='home'&&<div className="app-wordmark"><BrandLogo/></div>}
    {!tabScreen&&<button className="icon-button" onClick={previous} aria-label="뒤로"><ArrowLeft size={22}/></button>}

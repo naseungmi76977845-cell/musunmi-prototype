@@ -7,6 +7,263 @@
   gap: 20px;
 }
 
+/* Login welcome: station attendant hands a ticket (image asset). */
+.page-login {
+  background: #fafbf8;
+}
+
+.page-login .app-content,
+.mobile-app[data-screen="login"] .app-content.page-login {
+  background: #fafbf8;
+}
+
+.auth-login {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  width: 100%;
+  padding:
+    max(8px, env(safe-area-inset-top, 0px))
+    0
+    max(8px, env(safe-area-inset-bottom, 0px));
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.auth-login__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.auth-login__symbol {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 2px;
+  border-radius: 14px;
+  background: #3f704c;
+  color: #fff;
+}
+
+.auth-login__brand h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  color: #24543a;
+}
+
+.auth-login__brand p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  color: #7a857d;
+  text-transform: uppercase;
+}
+
+.auth-login__hero {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 0;
+  width: 100%;
+}
+
+.auth-login__gugu {
+  display: block;
+  width: min(62vw, 236px);
+  max-width: 65%;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.auth-login__welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 18em;
+  text-align: center;
+}
+
+.auth-login__welcome strong {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  color: #24543a;
+  word-break: keep-all;
+}
+
+.auth-login__welcome span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #7a857d;
+  font-weight: 500;
+}
+
+.auth-login__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.auth-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 54px;
+  padding: 0 16px;
+  border: 1px solid #e1e5e0;
+  border-radius: 14px;
+  background: #fff;
+  color: #263d32;
+  text-align: left;
+}
+
+.auth-login-btn > svg:first-child,
+.auth-login-btn__google,
+.auth-login-btn__kakao-mark {
+  flex: none;
+}
+
+.auth-login-btn > svg:last-child {
+  flex: none;
+  color: #7a857d;
+}
+
+.auth-login-btn__copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.auth-login-btn__copy b {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.auth-login-btn__copy small {
+  font-size: 11px;
+  font-weight: 500;
+  color: #7a857d;
+  line-height: 1.3;
+}
+
+.auth-login-btn--kakao {
+  border-color: #fee500;
+  background: #fee500;
+  color: #191919;
+}
+
+.auth-login-btn--kakao > svg:last-child {
+  color: #191919;
+}
+
+.auth-login-btn--kakao .auth-login-btn__copy small {
+  color: #5c5c5c;
+}
+
+.auth-login-btn__kakao-mark {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: #191919;
+}
+
+.auth-login-btn__google {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.auth-login-btn:focus-visible {
+  outline: 2px solid #3f704c;
+  outline-offset: 2px;
+}
+
+.auth-login__signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 0;
+  padding: 4px 0 2px;
+  text-align: center;
+  color: #7a857d;
+  font-size: 14px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.auth-login__signup button {
+  min-height: 44px;
+  padding: 4px 2px;
+  border: 0;
+  background: transparent;
+  color: #3f704c;
+  font: inherit;
+  font-weight: 700;
+}
+
+.auth-login__signup button:focus-visible {
+  outline: 2px solid #3f704c;
+  outline-offset: 2px;
+}
+
+@media (max-height: 760px) {
+  .auth-login {
+    gap: 12px;
+  }
+
+  .auth-login__gugu {
+    width: min(48vw, 180px);
+  }
+
+  .auth-login__welcome strong {
+    font-size: 20px;
+  }
+
+  .auth-login-btn {
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-login__gugu {
+    max-width: 58%;
+  }
+
+  .auth-login__welcome strong {
+    font-size: 20px;
+  }
+}
+
 .auth-panel__progress-wrap {
   display: flex;
   flex-direction: column;
