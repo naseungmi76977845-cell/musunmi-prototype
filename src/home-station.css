@@ -184,12 +184,17 @@
   .wiki-category-card small { font-size: 9px; }
 }
 
+.home-banner + .home-search {
+  margin-top: -10px;
+}
+
 .home-search {
   display: flex;
   align-items: center;
   gap: 10px;
   width: 100%;
   min-height: 48px;
+  margin-top: 0;
   padding: 0 16px;
   border: 1px solid #e5e7e9;
   border-radius: 14px;
