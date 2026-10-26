@@ -1,10 +1,9 @@
 import type {ReactNode} from 'react';
-import {ArrowRight,BookOpen,Bookmark,ChevronRight,GraduationCap,Heart,MapPin,MessageCircle,Search,Sunrise,Users,Video,X} from 'lucide-react';
+import {BookOpen,Bookmark,ChevronRight,GraduationCap,Heart,MapPin,MessageCircle,Search,Sunrise,Users,Video,X} from 'lucide-react';
 import type {Kit} from './contracts';
 import {BrandMark} from './brand';
 import {Gugu} from './gugu';
 import {GreetingArt} from './greeting-art';
-import {HomeHeroArt} from './home-hero-art';
 import {matchesExpression,type Expression} from './expressions';
 import './discovery-panel.css';
 import './home-station.css';
@@ -24,70 +23,52 @@ export function ExpressionRows({words,onSelect}:{words:Expression[];onSelect:(id
 }
 
 const destinations=[
- {id:'wiki',name:'사전역',hint:'궁금한 수어를 찾아보세요',tone:'wiki',Icon:BookOpen,on:'wiki'} as const,
- {id:'learn',name:'배움역',hint:'오늘의 수어를 배워보세요',tone:'learn',Icon:GraduationCap,on:'learn'} as const,
- {id:'community',name:'소통역',hint:'수어로 이야기를 나눠보세요',tone:'community',Icon:MessageCircle,on:'community'} as const,
+ {id:'wiki',name:'사전역',hint:'수어 검색 및 영상 사전',Icon:BookOpen,on:'wiki'} as const,
+ {id:'learn',name:'배움역',hint:'단계별 수어 학습',Icon:GraduationCap,on:'learn'} as const,
+ {id:'community',name:'소통역',hint:'커뮤니티 및 교류',Icon:MessageCircle,on:'community'} as const,
 ];
 
 export function HomePanel({onWiki,onHello,onLearn,onCommunity}:{onWiki:()=>void;onHello:()=>void;onLearn:()=>void;onRecord:()=>void;onCommunity:()=>void;latestStory?:ReactNode}) {
  const go={wiki:onWiki,learn:onLearn,community:onCommunity} as const;
  return <div className="home-station">
-  <section className="home-hero" aria-label="수어역 안내">
-   <HomeHeroArt/>
-   <div className="home-hero-inner">
-    <div className="home-hero-sign">
-     <span className="home-hero-sign-mark"><BrandMark size={22}/></span>
-     <span className="home-hero-sign-copy">
-      <b>수어역 <small>SUEO STATION</small></b>
-      <span>모든 소통이 만나는 곳</span>
-     </span>
-     <ArrowRight size={16} aria-hidden="true"/>
-    </div>
-    <div className="home-hero-welcome">
-     <p className="home-hero-bubble">안녕하세요! 수어역에 오신 걸 환영해요!</p>
-     <Gugu size={92} attendant/>
-    </div>
+  <section className="home-welcome" aria-label="수어역 환영">
+   <div className="home-welcome-plate">
+    <span className="home-welcome-plate-mark"><BrandMark size={18}/></span>
+    <span><b>수어역</b><small>SUEO STATION</small></span>
    </div>
-   <button className="home-hero-search" onClick={onWiki}><Search size={18} aria-hidden="true"/><span>궁금한 수어를 검색해 보세요</span></button>
-  </section>
-
-  <section aria-labelledby="home-now-title">
-   <div className="home-section-head"><h2 id="home-now-title">지금, 수어역에서</h2></div>
-   <div className="home-destinations">
-    {destinations.map(item=>{
-     const Icon=item.Icon;
-     return <button key={item.id} className={`home-dest home-dest-${item.tone}`} onClick={go[item.on]} aria-label={`${item.name}. ${item.hint}`}>
-      <span className="home-dest-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.9}/></span>
-      <b>{item.name}</b>
-      <p>{item.hint}</p>
-      <span className="home-dest-go" aria-hidden="true"><ArrowRight size={14}/></span>
-     </button>;
-    })}
+   <div className="home-welcome-body">
+    <p className="home-welcome-bubble">수어역에 오신 걸 환영해요!</p>
+    <Gugu size={78} attendant/>
    </div>
   </section>
 
-  <section aria-labelledby="home-today-title">
-   <div className="home-section-head">
-    <h2 id="home-today-title">오늘의 표현</h2>
-    <button type="button" onClick={onWiki}>더보기</button>
-   </div>
-   <button className="home-today" onClick={onHello} aria-label="오늘의 표현 안녕하세요, 마음을 여는 첫인사">
+  <button type="button" className="home-search" onClick={onWiki}>
+   <Search size={18} aria-hidden="true"/>
+   <span>궁금한 수어를 검색해 보세요</span>
+  </button>
+
+  <section className="home-features" aria-label="주요 기능">
+   {destinations.map(item=>{
+    const Icon=item.Icon;
+    return <button key={item.id} type="button" className="home-feature" onClick={go[item.on]} aria-label={`${item.name}. ${item.hint}`}>
+     <span className="home-feature-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.9}/></span>
+     <b>{item.name}</b>
+     <p>{item.hint}</p>
+    </button>;
+   })}
+  </section>
+
+  <section className="home-today-section" aria-labelledby="home-today-title">
+   <h2 id="home-today-title">오늘의 표현</h2>
+   <button type="button" className="home-today" onClick={onHello} aria-label="오늘의 표현 안녕하세요, 마음을 여는 첫인사">
     <span className="home-today-art word-art greeting-art"><GreetingArt/></span>
-    <span className="home-today-copy"><small>일상 · 인사</small><strong>안녕하세요</strong><p>마음을 여는 첫인사</p></span>
-    <span className="home-today-go" aria-hidden="true"><ArrowRight size={16}/></span>
+    <span className="home-today-copy">
+     <small>일상 · 인사</small>
+     <strong>안녕하세요</strong>
+     <p>마음을 여는 첫인사</p>
+    </span>
+    <ChevronRight size={18} aria-hidden="true"/>
    </button>
-  </section>
-
-  <section aria-labelledby="home-guide-title">
-   <div className="home-section-head">
-    <h2 id="home-guide-title">구구의 안내</h2>
-    <button type="button" onClick={onLearn}>더보기</button>
-   </div>
-   <div className="home-guide">
-    <Gugu size={58} attendant/>
-    <p className="home-guide-copy">오늘은 인사 표현부터 시작해 볼까요?</p>
-    <button type="button" className="home-guide-action" onClick={onLearn}>배움역으로 이동 <ArrowRight size={13}/></button>
-   </div>
   </section>
  </div>;
 }
@@ -99,7 +80,7 @@ export function WikiPanel({kit,query,category,words,bookmarks,recent,savedOnly,a
  const recentWords=recent.map(id=>words.find(w=>w.id===id)).filter((w):w is Expression=>Boolean(w));
  return <>
   <div className="dp-search"><Field label="수어 검색" value={query} onChange={onQuery} placeholder="표현, 뜻, 초성으로 검색"/>{query&&<button className="icon-button" aria-label="검색어 지우기" onClick={()=>onQuery('')}><X size={17}/></button>}</div>
-  <button className="dp-sign-search" onClick={onSignSearch}><Video size={19} aria-hidden="true"/><b>수어로 찾기</b><ArrowRight size={16} aria-hidden="true"/></button>
+  <button className="dp-sign-search" onClick={onSignSearch}><Video size={19} aria-hidden="true"/><b>수어로 찾기</b><ChevronRight size={16} aria-hidden="true"/></button>
   {questionSlot}
   {!query.trim()&&category==='전체'&&!savedOnly&&recentWords.length>0&&<section className="dp-recent"><div><h2>최근 본 표현</h2><button onClick={onClearRecent}>지우기</button></div><div className="app-chips">{recentWords.map(w=><Chip key={w.id} onClick={()=>onSelect(w.id)}>{w.title}</Chip>)}</div></section>}
   <div className="app-chips dp-category" aria-label="표현 카테고리">{['전체','일상','마음','사람','장소'].map(c=><Chip key={c} selected={category===c} onClick={()=>onCategory(c)}>{c}</Chip>)}</div>

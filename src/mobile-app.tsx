@@ -164,7 +164,7 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
  const ticketStop=ticketGateTo?words.find(item=>item.id===ticketGateTo):undefined;
  return <Provider color={color}><div className={`mobile-app system-${system}`} style={{'--brand':p.brand,'--soft':p.soft,'--accent':p.accent,'--brand-hover':p.hover}as CSSProperties} data-screen={screen}><div className="status-bar"><span>9:41</span><div><span className="signal"><i/><i/><i/><i/></span><svg viewBox="0 0 20 15" width="16" aria-hidden="true"><path d="M2 5q8-7 16 0M5 8q5-4 10 0M9 12h2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg><span className="battery"><i/></span></div></div>
  {(!tabScreen||screen==='home'||screen==='profile')&&
-  <header className={screen==='home'?'app-header app-header-home':screen==='profile'?'app-header app-header-actions':'app-header'}>
+  <header className={screen==='profile'?'app-header app-header-actions':'app-header'}>
    {screen==='home'&&<div className="app-wordmark"><BrandLogo/></div>}
    {!tabScreen&&<button className="icon-button" onClick={previous} aria-label="뒤로"><ArrowLeft size={22}/></button>}
    {(screen==='home'||screen==='profile')&&<div className="app-header-tools"><button className="icon-button notification-bell" aria-label={`알림, 읽지 않은 ${notifications.filter(item=>!item.read).length}개`} onClick={openNotifications}><Bell size={22}/>{notifications.some(item=>!item.read)&&<span className="notification-dot"/>}</button><button className="icon-button" aria-label="설정" onClick={()=>go('settings')}><Settings size={22}/></button></div>}
