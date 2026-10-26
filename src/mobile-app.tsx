@@ -22,6 +22,7 @@ import {ProfileSetupPanel,KnowledgePanel,PurposePanel,TermsPanel,RecoverPanel,Wi
 import {BrandLogo,BrandMark} from './brand';
 import {NotificationPanel,OwnPostsPanel,UserVideosPanel,VideoDetailPanel} from './activity-panels';
 import {CommunityBoard} from './community-board';
+import {SplashScreen} from './splash-screen';
 import {notificationReducer,type NoticeTarget,type AppNotification} from './activity';
 import {contentIsVisible,memberCanPublish,saveLocalMember,ensureLocalMember,saveManagedPost,removeManagedPost,addManagedVideo,removeManagedVideo,withdrawManagedData,getManagedSnapshot,beginNewLocalMembership} from './managed-content';
 import {useManagedContent,useLocalVideos} from './use-managed-content';
@@ -54,6 +55,7 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
  const[recentWords,setRecentWords]=useState<string[]>([]);const[wikiSavedOnly,setWikiSavedOnly]=useState(false);const[wikiAlphabetical,setWikiAlphabetical]=useState(false);
  const[collectionKind,setCollectionKind]=useState<'recordings'|'posts'|'bookmarks'|'scraps'>('bookmarks');
  const[learnTicket,setLearnTicket]=useState<LearnTicketState>(()=>loadLearnTicket());
+ const[bootSplash,setBootSplash]=useState(()=>{try{return sessionStorage.getItem('sua-boot-splash')!=='1'}catch{return true}});
  const[ticketGateTo,setTicketGateTo]=useState<string|null>(null);
  const file=useRef<HTMLInputElement>(null);const draftFile=useRef<File|null>(null);const video=useRef<HTMLVideoElement>(null);const content=useRef<HTMLElement>(null);
  const termBack=useRef<ScreenId>('wiki');const previousScreen=useRef<ScreenId>(initialScreen);
@@ -118,6 +120,17 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
  async function saveRecording(){if(busy||!draftFile.current||!data.recordTitle.trim()||!data.rights||!canContribute())return;setBusy(true);try{const match=words.find(w=>w.title===data.recordTitle.trim());const item=await addManagedVideo({wordId:match?.id||null,title:data.recordTitle.trim(),body:data.recordBody.trim(),direction:data.direction,dialect:data.dialect,author:nick},draftFile.current);if(!item){setErrors({video:'영상을 저장하지 못했어요. 저장 공간을 확인해 주세요.'});return}earnPoints('recording');addNotice(`video:${item.id}`,'video','수어 영상을 올렸어요',item.title,{type:'video',id:item.id});setClip(null);draftFile.current=null;setFileName('');update('rights',false);update('recordBody','');update('direction',false);update('dialect','잘 모르겠어요');setCollectionKind('recordings');go('collection')}finally{setBusy(false)}}
  async function deleteRecording(id:string){if(busy)return;setBusy(true);try{if(!await removeManagedVideo(id)){setToast('영상을 삭제하지 못했어요.');return}dispatchNotifications({type:'removeTarget',target:{type:'video',id}});detailHistory.current=detailHistory.current.filter(origin=>!(origin.screen==='videoDetail'&&origin.videoId===id));setSelectedVideoId(null);setCollectionKind('recordings');returnFromDetail(videoBack.current==='term'?'term':'collection')}finally{setBusy(false)}}
  function deleteStory(id:string){if(!removeManagedPost(id)){setToast('글을 삭제하지 못했어요.');return}dispatchNotifications({type:'removeTarget',target:{type:'post',id}});setSaved(a=>a.filter(p=>p!==id));setLiked(a=>a.filter(p=>p!==id));setComments(c=>{const next={...c};delete next[id];return next});go('community')}
+ if(bootSplash){
+  const palette=palettes[color];
+  return <div className={`mobile-app system-${system}`} style={{'--brand':palette.brand,'--soft':palette.soft,'--accent':palette.accent,'--brand-hover':palette.hover}as CSSProperties} data-screen="splash">
+   <SplashScreen ready={Boolean(kit)} onDone={()=>{
+    try{sessionStorage.setItem('sua-boot-splash','1')}catch{/* ignore */}
+    setBootSplash(false);
+    const active=getManagedSnapshot().members.find(m=>m.id===getLocalActorId()&&m.status==='active'&&m.nickname.trim());
+    if(active)go('home');
+   }}/>
+  </div>;
+ }
  if(!kit)return <div className="mobile-loading" aria-label="화면 불러오기"/>;
  const {Provider,Button,Field,Check:CheckBox,Chip}=kit;
  const row=(label:string,action:()=>void,detail?:string,danger=false)=><button className={`app-row${danger?' destructive':''}`} onClick={action}><span>{label}</span>{detail&&<small>{detail}</small>}<ChevronRight size={18}/></button>;
