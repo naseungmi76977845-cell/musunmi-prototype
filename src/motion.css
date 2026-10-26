@@ -37,14 +37,14 @@
   box-shadow: none;
 }
 
-.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.home-today,.home-feature,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button) {
+.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.home-today,.home-feature,.community-memo,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button) {
   transition: transform var(--motion-press) var(--motion-ease),
     background-color var(--motion-state) ease,
     box-shadow var(--motion-state) ease,
     color var(--motion-state) ease;
   transform-origin: center;
 }
-.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.home-search,.home-today,.home-feature,.kakao-login-button,.google-login-button):active:not(:disabled) {
+.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.home-search,.home-today,.home-feature,.community-memo,.kakao-login-button,.google-login-button):active:not(:disabled) {
   transform: scale(.985);
   box-shadow: none;
 }
@@ -105,7 +105,7 @@
     transition: none !important;
     scroll-behavior: auto !important;
   }
-  .mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button),
+  .mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.dp-expression,.story-row,.app-row,.pp-row,.icon-button,.kakao-login-button,.google-login-button,.home-search,.community-memo,.reaction-row>button,.own-actions>button,.text-action,.pp-edit,.auth-panel__switch>button),
   .mobile-app .app-tabs>button>span { transform: none !important; }
   .mobile-app :is(.seed-kit-button,.astryx-button,.seed-kit-chip,.astryx-chip) { scale: 1 !important;transform: none !important; }
 }
