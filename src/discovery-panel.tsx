@@ -1,8 +1,6 @@
 import type {ReactNode} from 'react';
 import {BookOpen,Bookmark,ChevronRight,GraduationCap,Heart,MapPin,MessageCircle,Search,Sunrise,Users,Video,X} from 'lucide-react';
 import type {Kit} from './contracts';
-import {BrandMark} from './brand';
-import {Gugu} from './gugu';
 import {GreetingArt} from './greeting-art';
 import {matchesExpression,type Expression} from './expressions';
 import './discovery-panel.css';
@@ -31,15 +29,15 @@ const destinations=[
 export function HomePanel({onWiki,onHello,onLearn,onCommunity}:{onWiki:()=>void;onHello:()=>void;onLearn:()=>void;onRecord:()=>void;onCommunity:()=>void;latestStory?:ReactNode}) {
  const go={wiki:onWiki,learn:onLearn,community:onCommunity} as const;
  return <div className="home-station">
-  <section className="home-welcome" aria-label="수어역 환영">
-   <div className="home-welcome-plate">
-    <span className="home-welcome-plate-mark"><BrandMark size={18}/></span>
-    <span><b>수어역</b><small>SUEO STATION</small></span>
-   </div>
-   <div className="home-welcome-body">
-    <p className="home-welcome-bubble">수어역에 오신 걸 환영해요!</p>
-    <Gugu size={78} attendant/>
-   </div>
+  <section className="home-banner" aria-label="수어역 환영">
+   <img
+    className="home-banner-image"
+    src="/brand/sueoyeok/home-banner.jpg"
+    alt="수어역 역명판과 구구 역무원이 있는 지하철역 환영 장면"
+    width={1179}
+    height={661}
+    decoding="async"
+   />
   </section>
 
   <button type="button" className="home-search" onClick={onWiki}>

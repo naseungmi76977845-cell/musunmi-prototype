@@ -14,73 +14,21 @@
   min-width: 0;
 }
 
-.home-welcome {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 16px 16px 14px;
-  border-radius: 18px;
-  background: linear-gradient(165deg, #edf4e9 0%, #f7f3ea 55%, #faf8f3 100%);
+.home-banner {
+  margin: 0;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3eee4;
+  line-height: 0;
 }
-
-.home-welcome-plate {
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  gap: 8px;
-  padding: 8px 12px 8px 8px;
-  border-radius: 12px;
-  background: #3f704c;
-  color: #fff;
-}
-.home-welcome-plate-mark {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  flex: none;
-  border-radius: 8px;
-  background: #fff;
-  color: #3f704c;
-}
-.home-welcome-plate > span:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  line-height: 1.15;
-}
-.home-welcome-plate b {
-  font-size: 14px;
-  font-weight: 750;
-  letter-spacing: -.02em;
-}
-.home-welcome-plate small {
-  color: color-mix(in srgb, #fff 70%, transparent);
-  font-size: 9px;
-  font-weight: 650;
-  letter-spacing: .05em;
-}
-
-.home-welcome-body {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 10px;
-  min-height: 72px;
-}
-.home-welcome-bubble {
-  flex: 1;
-  min-width: 0;
-  margin: 0 0 10px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: #fff;
-  color: var(--station-ink);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -.02em;
-  line-height: 1.4;
-  box-shadow: 0 1px 0 color-mix(in srgb, #202620 6%, transparent);
+.home-banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 210px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .home-search {
@@ -200,8 +148,8 @@
 .home-today:focus-visible { outline: 2px solid #3f704c; outline-offset: 2px; }
 
 @media (max-width: 370px) {
+  .home-banner-image { max-height: 188px; }
   .home-feature { min-height: 118px; padding: 12px 10px; }
   .home-feature b { font-size: 13px; }
   .home-feature p { font-size: 10px; }
-  .home-welcome-bubble { font-size: 13px; }
 }
