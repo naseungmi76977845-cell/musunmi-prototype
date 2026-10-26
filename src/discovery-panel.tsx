@@ -3,6 +3,7 @@ import {BookOpen,Bookmark,ChevronRight,GraduationCap,Heart,MapPin,MessageCircle,
 import type {Kit} from './contracts';
 import {GreetingArt} from './greeting-art';
 import {matchesExpression,type Expression} from './expressions';
+import homeBanner from './assets/home-banner.jpg';
 import './discovery-panel.css';
 import './home-station.css';
 
@@ -32,7 +33,7 @@ export function HomePanel({onWiki,onHello,onLearn,onCommunity}:{onWiki:()=>void;
   <section className="home-banner" aria-label="수어역 환영">
    <img
     className="home-banner-image"
-    src="/brand/sueoyeok/home-banner.jpg"
+    src={homeBanner}
     alt="수어역 역명판과 구구 역무원이 있는 지하철역 환영 장면"
     width={1179}
     height={661}

@@ -26,9 +26,9 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 210px;
+  aspect-ratio: 1179 / 661;
   object-fit: contain;
-  object-position: center;
+  object-position: center top;
 }
 
 .home-search {
