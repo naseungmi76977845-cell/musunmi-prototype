@@ -1,5 +1,5 @@
 import type {ReactNode} from 'react';
-import {BookOpen,Bookmark,ChevronRight,GraduationCap,Heart,MapPin,MessageCircle,Search,Sunrise,Users,Video,X} from 'lucide-react';
+import {ArrowRight,BookOpen,Bookmark,ChevronRight,GraduationCap,Heart,Home,LayoutGrid,MapPin,MessageCircle,Search,Sprout,Sunrise,TrainFront,Users,UtensilsCrossed,Video,X} from 'lucide-react';
 import type {Kit} from './contracts';
 import {GreetingArt} from './greeting-art';
 import {matchesExpression,type Expression} from './expressions';
@@ -10,6 +10,17 @@ import './home-station.css';
 
 export type {Expression} from './expressions';
 const categoryIcons={일상:Sunrise,마음:Heart,사람:Users,장소:MapPin};
+
+const wikiCategories=[
+ {id:'전체',label:'전체',hint:'모든 수어',tone:'all',Icon:LayoutGrid},
+ {id:'일상',label:'일상',hint:'인사 · 생활',tone:'daily',Icon:Sprout},
+ {id:'마음',label:'마음',hint:'감정 · 생각',tone:'heart',Icon:Heart},
+ {id:'사람',label:'사람',hint:'가족 · 직업',tone:'people',Icon:Users},
+ {id:'장소',label:'장소',hint:'학교 · 병원',tone:'place',Icon:Home},
+ {id:'교육',label:'교육',hint:'수업 · 공부',tone:'edu',Icon:GraduationCap},
+ {id:'음식',label:'음식',hint:'식사 · 카페',tone:'food',Icon:UtensilsCrossed},
+ {id:'문화/취미',label:'문화/취미',hint:'취미 · 여가',tone:'culture',Icon:TrainFront},
+] as const;
 
 export function ExpressionRows({words,onSelect}:{words:Expression[];onSelect:(id:string)=>void}) {
  return <div className="dp-expression-list">{words.map(w=>{
@@ -74,10 +85,11 @@ export function HomePanel({onWiki,onHello,onLearn,onCommunity}:{onWiki:()=>void;
 }
 
 export function WikiPanel({kit,query,category,words,bookmarks,recent,savedOnly,alphabetical,questionSlot,onQuery,onCategory,onSelect,onRecord,onSignSearch,onSavedOnly,onSort,onClearRecent}:{kit:Kit;query:string;category:string;words:Expression[];bookmarks:string[];recent:string[];savedOnly:boolean;alphabetical:boolean;questionSlot?:ReactNode;onQuery:(value:string)=>void;onCategory:(value:string)=>void;onSelect:(id:string)=>void;onRecord:()=>void;onSignSearch:()=>void;onSavedOnly:()=>void;onSort:(value:boolean)=>void;onClearRecent:()=>void}) {
- const{Field,Chip,Button}=kit;
+ const{Chip,Button}=kit;
  const list=words.filter(w=>(category==='전체'||w.category===category)&&(!savedOnly||bookmarks.includes(w.id))&&matchesExpression(w,query));
  if(alphabetical)list.sort((a,b)=>a.title.localeCompare(b.title,'ko'));
  const recentWords=recent.map(id=>words.find(w=>w.id===id)).filter((w):w is Expression=>Boolean(w));
+ const showAll=()=>{onCategory('전체');document.getElementById('wiki-results')?.scrollIntoView({behavior:'smooth',block:'start'})};
  return <div className="wiki-station">
   <section className="home-banner wiki-banner" aria-label="사전역 안내">
    <img
@@ -89,13 +101,50 @@ export function WikiPanel({kit,query,category,words,bookmarks,recent,savedOnly,a
     decoding="async"
    />
   </section>
-  <div className="dp-search"><Field label="수어 검색" value={query} onChange={onQuery} placeholder="궁금한 수어를 검색해 보세요"/>{query&&<button className="icon-button" aria-label="검색어 지우기" onClick={()=>onQuery('')}><X size={17}/></button>}</div>
+
+  <label className="wiki-search">
+   <Search size={18} aria-hidden="true"/>
+   <input
+    type="search"
+    value={query}
+    onChange={e=>onQuery(e.target.value)}
+    placeholder="찾고 싶은 수어를 입력해 보세요"
+    aria-label="수어 검색"
+   />
+   {query
+    ? <button type="button" className="wiki-search-clear" aria-label="검색어 지우기" onClick={()=>onQuery('')}><X size={16}/></button>
+    : <span className="wiki-search-go" aria-hidden="true"><ArrowRight size={16}/></span>}
+  </label>
+
+  <section className="wiki-category-panel" aria-labelledby="wiki-category-title">
+   <div className="wiki-category-head">
+    <h2 id="wiki-category-title">카테고리로 찾아보기</h2>
+    <button type="button" onClick={showAll}>전체 보기 <ChevronRight size={14}/></button>
+   </div>
+   <div className="wiki-category-grid" role="group" aria-label="표현 카테고리">
+    {wikiCategories.map(item=>{
+     const Icon=item.Icon;
+     const selected=category===item.id;
+     return <button
+      key={item.id}
+      type="button"
+      className={`wiki-category-card wiki-cat-${item.tone}${selected?' is-selected':''}`}
+      aria-pressed={selected}
+      onClick={()=>onCategory(item.id)}
+     >
+      <span className="wiki-category-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.9}/></span>
+      <b>{item.label}</b>
+      <small>{item.hint}</small>
+     </button>;
+    })}
+   </div>
+  </section>
+
   <button className="dp-sign-search" onClick={onSignSearch}><Video size={19} aria-hidden="true"/><b>수어로 찾기</b><ChevronRight size={16} aria-hidden="true"/></button>
   {questionSlot}
   {!query.trim()&&category==='전체'&&!savedOnly&&recentWords.length>0&&<section className="dp-recent"><div><h2>최근 본 표현</h2><button onClick={onClearRecent}>지우기</button></div><div className="app-chips">{recentWords.map(w=><Chip key={w.id} onClick={()=>onSelect(w.id)}>{w.title}</Chip>)}</div></section>}
-  <div className="app-chips dp-category" aria-label="표현 카테고리">{['전체','일상','마음','사람','장소'].map(c=><Chip key={c} selected={category===c} onClick={()=>onCategory(c)}>{c}</Chip>)}</div>
   <div className="dp-library-tools"><button className="dp-saved-filter" aria-pressed={savedOnly} onClick={onSavedOnly}><Bookmark size={16} fill={savedOnly?'currentColor':'none'}/>저장한 표현<span>{bookmarks.length}</span></button><select aria-label="표현 정렬" value={alphabetical?'alphabetical':'default'} onChange={e=>onSort(e.target.value==='alphabetical')}><option value="default">기본순</option><option value="alphabetical">가나다순</option></select></div>
-  <div className="dp-results" role="status" aria-live="polite"><h2>{query.trim()?'검색 결과':savedOnly?'저장한 표현':category==='전체'?'표현 모아보기':category}</h2><span>{list.length}개</span></div>
+  <div id="wiki-results" className="dp-results" role="status" aria-live="polite"><h2>{query.trim()?'검색 결과':savedOnly?'저장한 표현':category==='전체'?'표현 모아보기':category}</h2><span>{list.length}개</span></div>
   {list.length?<ExpressionRows words={list} onSelect={onSelect}/>:<div className="dp-empty">{savedOnly?<Bookmark size={31}/>:<Search size={31}/>}<h3>{savedOnly&&!bookmarks.length?'저장한 표현이 없어요':'찾는 표현이 없어요'}</h3><Button kind="secondary" onClick={()=>{onQuery('');onCategory('전체');if(savedOnly)onSavedOnly()}}>전체 표현 보기</Button></div>}
   <Button kind="secondary" onClick={onRecord}>수어 기록하기</Button>
  </div>;
