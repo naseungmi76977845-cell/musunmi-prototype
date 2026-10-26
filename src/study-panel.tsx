@@ -38,8 +38,9 @@ const trackPath=stationPositions.reduce((path,station,i)=>{
   return path+(station.x===previous.x?` V${station.y}`:` V${previous.y+36} L${station.x} ${station.y-36} V${station.y}`);
 },'')+` V${terminal.y+34}`;
 
-export function StudyPanel({words,bookmarks,onSelect}:{kit:Kit;words:StudyWord[];bookmarks:string[];onSelect:(id:string)=>void;onBrowse:(category?:string)=>void}) {
+export function StudyPanel({words,bookmarks,onSelect,onBoard}:{kit:Kit;words:StudyWord[];bookmarks:string[];onSelect:(id:string)=>void;onBrowse:(category?:string)=>void;onBoard?:(id:string)=>void}) {
   const savedWords=words.filter(word=>bookmarks.includes(word.id));
+  const openStation=(id:string)=>{(onBoard??onSelect)(id)};
 
   return <div className="study-panel">
     <section className="study-journey" aria-labelledby="study-journey-title">
@@ -51,9 +52,9 @@ export function StudyPanel({words,bookmarks,onSelect}:{kit:Kit;words:StudyWord[]
         </svg>
         <ol className="study-stations">
           {stationPositions.map(({id,title,hint,x,y},i)=><li key={id} className={`study-station${i===stationPositions.length-1?' study-station-terminal':''}`} style={{left:`calc(${x/3.2}% - 14px)`,top:y-28}}>
-            <button onClick={()=>onSelect(id)} aria-label={`${title} · ${hint} 살펴보기`}>
+            <button onClick={()=>openStation(id)} aria-label={`${title} · ${hint} 살펴보기`}>
               <span className="study-station-symbol" aria-hidden="true">{i===0&&<i/>}</span>
-              <span className="study-station-copy"><span><b>{title}</b>{i===0&&<em>출발</em>}{i===stationPositions.length-1&&<em>종착</em>}</span><small>{hint}</small></span>
+              <span className="study-station-copy"><span><b>{title}</b>{i===0&&<em>출발</em>}{i===1&&<em>티켓</em>}{i===stationPositions.length-1&&<em>종착</em>}</span><small>{hint}</small></span>
             </button>
           </li>)}
         </ol>

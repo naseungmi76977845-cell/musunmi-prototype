@@ -1,0 +1,187 @@
+.learn-ticket-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 22px 40px;
+  background: color-mix(in srgb, #1a2420 42%, transparent);
+  animation: learn-ticket-veil 180ms var(--motion-ease, cubic-bezier(.2,.7,.2,1)) both;
+}
+.learn-ticket-dismiss {
+  position: absolute;
+  top: 54px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: color-mix(in srgb, white 88%, transparent);
+  color: #24302a;
+}
+.learn-ticket-dismiss:disabled { opacity: .45; }
+.learn-ticket-card {
+  width: min(100%, 320px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px 22px 22px;
+  border-radius: calc(var(--card-radius, 16px) + 4px);
+  background: #fff;
+  box-shadow: 0 18px 40px color-mix(in srgb, #142018 22%, transparent);
+  animation: learn-ticket-rise 210ms var(--motion-ease, cubic-bezier(.2,.7,.2,1)) both;
+}
+.learn-ticket-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+.learn-ticket-card h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -.03em;
+  color: #20272a;
+}
+.learn-ticket-card > p {
+  margin: 0;
+  color: var(--muted, #6b7570);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.learn-ticket-pass {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  margin: 10px 0 4px;
+  min-height: 118px;
+  filter: drop-shadow(0 8px 0 color-mix(in srgb, var(--brand) 10%, transparent));
+  transform-origin: center;
+}
+.learn-ticket-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background: var(--soft);
+  color: var(--brand);
+}
+.learn-ticket-stub {
+  width: 86px;
+  flex: none;
+  align-items: center;
+  text-align: center;
+  padding: 14px 10px;
+  border-radius: 14px 0 0 14px;
+}
+.learn-ticket-line {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.learn-ticket-stub b { font-size: 13px; font-weight: 750; }
+.learn-ticket-stub small { font-size: 9px; letter-spacing: .04em; opacity: .75; }
+.learn-ticket-body {
+  flex: 1;
+  padding: 16px 18px;
+  border-radius: 0 14px 14px 0;
+  background: linear-gradient(160deg, var(--accent), color-mix(in srgb, var(--soft) 55%, white));
+}
+.learn-ticket-body small { font-size: 10px; font-weight: 650; opacity: .8; }
+.learn-ticket-body strong { font-size: 22px; font-weight: 750; letter-spacing: -.03em; color: #20272a; }
+.learn-ticket-body em { font-size: 12px; font-style: normal; color: var(--muted, #6b7570); }
+.learn-ticket-perforation {
+  position: relative;
+  width: 12px;
+  flex: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 5px,
+    color-mix(in srgb, var(--brand) 28%, white) 5px 7px
+  ),
+  var(--soft);
+}
+.learn-ticket-perforation::before,
+.learn-ticket-perforation::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+}
+.learn-ticket-perforation::before { top: -8px; }
+.learn-ticket-perforation::after { bottom: -8px; }
+
+.learn-ticket-pass.is-tearing .learn-ticket-stub {
+  animation: learn-ticket-stub-tear 920ms var(--motion-ease, cubic-bezier(.2,.7,.2,1)) both;
+}
+.learn-ticket-pass.is-tearing .learn-ticket-body {
+  animation: learn-ticket-body-tear 920ms var(--motion-ease, cubic-bezier(.2,.7,.2,1)) both;
+}
+.learn-ticket-pass.is-tearing .learn-ticket-perforation {
+  animation: learn-ticket-perf-fade 420ms ease both;
+}
+
+.learn-ticket-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.learn-ticket-status {
+  margin: 8px 0 0;
+  text-align: center;
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+@keyframes learn-ticket-veil {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes learn-ticket-rise {
+  from { opacity: 0; transform: translateY(10px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes learn-ticket-stub-tear {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  28% { transform: translate(-4px, 1px) rotate(-2deg); }
+  55% { transform: translate(-38px, 18px) rotate(-12deg); }
+  100% { transform: translate(-72px, 64px) rotate(-22deg); opacity: 0; }
+}
+@keyframes learn-ticket-body-tear {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  28% { transform: translate(4px, -1px) rotate(2deg); }
+  55% { transform: translate(34px, 22px) rotate(10deg); }
+  100% { transform: translate(58px, 70px) rotate(18deg); opacity: 0; }
+}
+@keyframes learn-ticket-perf-fade {
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learn-ticket-gate,
+  .learn-ticket-card,
+  .learn-ticket-pass.is-tearing .learn-ticket-stub,
+  .learn-ticket-pass.is-tearing .learn-ticket-body,
+  .learn-ticket-pass.is-tearing .learn-ticket-perforation {
+    animation: none !important;
+  }
+}

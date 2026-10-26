@@ -14,7 +14,7 @@
     "test:activity": "node --test scripts/activity.test.mjs",
     "astryx": "node node_modules/@astryxdesign/cli/clients/cli/bin/astryx.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 8098",
-    "test": "node --test scripts/managed-content.test.mjs scripts/questions.test.mjs scripts/activity.test.mjs scripts/points.test.mjs scripts/sign-inference.test.mjs"
+    "test": "node --test scripts/managed-content.test.mjs scripts/questions.test.mjs scripts/activity.test.mjs scripts/points.test.mjs scripts/sign-inference.test.mjs scripts/learn-ticket.test.mjs"
   },
   "dependencies": {
     "@astryxdesign/core": "0.7.2",
