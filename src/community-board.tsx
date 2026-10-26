@@ -58,7 +58,7 @@ export function CommunityBoard({
           </div>
         ) : (
           <div className="community-board-notes" role="list">
-            {pinned.map(post => {
+            {pinned.map((post, index) => {
               const tone = memoTone(post.category);
               const commentCount = comments[post.id]?.length ?? 0;
               const isLiked = liked.includes(post.id);
@@ -69,7 +69,7 @@ export function CommunityBoard({
                   key={post.id}
                   type="button"
                   role="listitem"
-                  className={`community-memo community-memo-${tone}`}
+                  className={`community-memo community-memo-${tone} community-memo-tilt-${index % 3}`}
                   onClick={() => onOpen(post.id)}
                   aria-label={`${categoryLabel(post.category)}. ${post.title}. ${showHeart ? '공감함' : `댓글 ${commentCount}`}`}
                 >

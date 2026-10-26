@@ -44,7 +44,7 @@
     color var(--motion-state) ease;
   transform-origin: center;
 }
-.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.home-search,.home-today,.home-feature,.community-memo,.kakao-login-button,.google-login-button):active:not(:disabled) {
+.mobile-app :is(.featured-word,.dp-shortcut,.pp-saved-card,.home-search,.home-today,.home-feature,.kakao-login-button,.google-login-button):active:not(:disabled) {
   transform: scale(.985);
   box-shadow: none;
 }
