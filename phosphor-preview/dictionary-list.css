@@ -1,0 +1,12 @@
+/* Dictionary rows: inset content with a photo thumbnail per expression. */
+.dictionary-list{margin-top:10px}
+.content[data-screen="dictionary"] .dictionary-row{display:flex;align-items:center;gap:20px;width:100%;min-height:116px;padding:16px 8px;border-bottom:1px solid #e5ece8;border-radius:0;text-align:left;background:#fff}
+.content[data-screen="dictionary"] .dictionary-row:hover{background:#f5faf7}
+.dictionary-thumbnail{display:block;width:76px;height:84px;flex:0 0 76px;overflow:hidden;border-radius:10px;background:#eef4f0}
+.dictionary-thumbnail img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.dictionary-row-copy{flex:1;min-width:0}
+.content[data-screen="dictionary"] .dictionary-row .kicker{font-size:12px;line-height:18px;font-weight:500;color:#63806e}
+.content[data-screen="dictionary"] .dictionary-row strong{margin:3px 0 4px;font-size:16px;line-height:24px;color:var(--deep-green);font-weight:700}
+.content[data-screen="dictionary"] .dictionary-row p{margin:0;font-size:14px;line-height:20px;color:#77877e;word-break:keep-all;overflow-wrap:break-word}
+.content[data-screen="dictionary"] .dictionary-row>svg{width:16px;height:16px;flex:0 0 16px;color:#8fa297}
+@media(max-width:380px){.content[data-screen="dictionary"] .dictionary-row{padding:14px 6px;gap:16px}.dictionary-thumbnail{width:64px;height:76px;flex-basis:64px}}

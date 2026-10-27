@@ -1,0 +1,233 @@
+/* Login welcome: compact header + ticket Gugu + refined auth buttons. */
+.phone:has(.content[data-screen="login"]) .app-head {
+  min-height: 48px;
+  height: 48px;
+  padding: 0 16px;
+}
+
+.phone:has(.content[data-screen="login"]) .app-head .brand {
+  font-size: 17px;
+  gap: 7px;
+}
+
+.phone:has(.content[data-screen="login"]) .app-head .brand .brand-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+}
+
+.content[data-screen="login"] {
+  background: #fff;
+  padding: 8px 24px max(18px, env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+}
+
+.auth-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.auth-login__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin: 8px 0 18px;
+}
+
+.auth-login__gugu {
+  display: block;
+  width: min(48%, 188px);
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+  user-select: none;
+  pointer-events: none;
+}
+
+.auth-login__welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 20em;
+  text-align: center;
+}
+
+.auth-login__welcome strong {
+  font-size: clamp(18px, 5.4vw, 23px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+  color: #24543a;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.auth-login__welcome span {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #7a857d;
+  font-weight: 500;
+}
+
+.auth-login__pending {
+  margin: 0 0 14px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #9aa39c;
+}
+
+.auth-login__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.auth-login-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+  padding: 0 48px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  color: #1f2a24;
+  text-align: center;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.auth-login-btn__icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.auth-login-btn__icon svg,
+.auth-login-btn__icon img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.auth-login-btn__label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.auth-login-btn--email,
+.auth-login-btn--google {
+  border-color: #e5e7eb;
+  background: #fff;
+  color: #1f2a24;
+}
+
+.auth-login-btn--email .auth-login-btn__icon {
+  color: #4b5563;
+}
+
+.auth-login-btn--kakao {
+  border-color: #fee500;
+  background: #fee500;
+  color: #191919;
+}
+
+.auth-login-btn--kakao .auth-login-btn__icon {
+  color: #191919;
+}
+
+.auth-login-btn__google-mark {
+  object-fit: contain;
+}
+
+.auth-login-btn:focus-visible {
+  outline: 2px solid #3f704c;
+  outline-offset: 2px;
+}
+
+.auth-login-btn:active {
+  transform: scale(0.985);
+}
+
+.auth-login__signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 18px;
+  padding: 4px 0 8px;
+  text-align: center;
+  color: #8a938b;
+  font-size: 13px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.auth-login__signup button {
+  min-height: 40px;
+  padding: 4px 2px;
+  border: 0;
+  background: transparent;
+  color: #2f7a4a;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.auth-login__signup button:focus-visible {
+  outline: 2px solid #3f704c;
+  outline-offset: 2px;
+}
+
+@media (max-height: 740px) {
+  .auth-login__hero { margin: 4px 0 12px; gap: 12px; }
+  .auth-login__gugu { width: min(42%, 160px); }
+  .auth-login__pending { margin-bottom: 10px; }
+  .auth-login__signup { margin-top: 14px; }
+}
+
+@media (max-width: 360px) {
+  .auth-login__welcome strong { white-space: normal; }
+  .auth-login__gugu { width: min(46%, 168px); }
+  .auth-login-btn { padding: 0 44px; font-size: 13.5px; }
+  .auth-login-btn__icon { left: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-login-btn:active { transform: none; }
+}

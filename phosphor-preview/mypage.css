@@ -1,0 +1,347 @@
+/* My page (= Sueoyeok profile) for activity screen */
+.content[data-screen="activity"] {
+  --pp-brand: #04713e;
+  --pp-soft: #edf4e9;
+  --pp-muted: #737d75;
+  --pp-line: #e5ebe7;
+  --pp-card-radius: 16px;
+  background: #fff;
+  gap: 0;
+}
+
+.pp-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 0 12px;
+}
+
+.pp-panel button {
+  -webkit-tap-highlight-color: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pp-panel button:focus-visible {
+  outline: 2px solid var(--pp-brand);
+  outline-offset: 3px;
+}
+
+.pp-identity {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 4px 0 0;
+}
+
+.pp-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--pp-soft);
+  color: var(--pp-brand);
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.pp-identity-copy {
+  min-width: 0;
+}
+
+.pp-identity-copy h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+  font-weight: 750;
+  color: #202620;
+  overflow-wrap: anywhere;
+}
+
+.pp-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: var(--pp-muted);
+  font-size: 12px;
+}
+
+.pp-edit svg {
+  width: 13px;
+  height: 13px;
+}
+
+.pp-guest {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0 0;
+}
+
+.pp-guest p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--pp-muted);
+}
+
+.pp-rewards {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--pp-line);
+  border-radius: var(--pp-card-radius);
+  overflow: hidden;
+}
+
+.pp-points,
+.pp-decorate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 58px;
+  padding: 12px 16px;
+  border: 0;
+  background: transparent;
+}
+
+.pp-points {
+  background: var(--pp-soft);
+}
+
+.pp-points > span,
+.pp-decorate > span {
+  flex: 1;
+  font-size: 13px;
+  color: #202620;
+}
+
+.pp-points > b {
+  font-size: 20px;
+  color: var(--pp-brand);
+  font-variant-numeric: tabular-nums;
+}
+
+.pp-points small {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pp-decorate > svg:first-child {
+  width: 17px;
+  height: 17px;
+  color: var(--pp-brand);
+}
+
+.pp-points > svg:last-child,
+.pp-decorate > svg:last-child {
+  width: 16px;
+  height: 16px;
+  color: var(--pp-muted);
+}
+
+.pp-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+  padding: 0;
+  margin: -10px 0 0;
+}
+
+.pp-goals li {
+  max-width: 100%;
+  padding: 5px 9px;
+  border: 1px solid var(--pp-line);
+  border-radius: 7px;
+  color: var(--pp-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.pp-section h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #202620;
+}
+
+.pp-saved-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pp-saved-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  min-height: 148px;
+  padding: 18px 16px 16px;
+  border: 0;
+  border-radius: var(--pp-card-radius);
+  background: var(--pp-soft);
+  color: var(--pp-brand);
+}
+
+.pp-saved-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.pp-saved-label {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pp-saved-value {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding-right: 18px;
+}
+
+.pp-saved-value > span {
+  margin-left: 3px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pp-card-chevron {
+  position: absolute;
+  right: 14px;
+  bottom: 18px;
+  width: 16px;
+  height: 16px;
+}
+
+.pp-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 64px;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid var(--pp-line);
+  background: none;
+}
+
+.pp-row-icon {
+  display: flex;
+  flex: 0 0 22px;
+  color: var(--pp-muted);
+}
+
+.pp-row-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.pp-row-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  color: #202620;
+}
+
+.pp-row-count {
+  flex-shrink: 0;
+  color: var(--pp-muted);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pp-count-unit {
+  margin-left: 2px;
+  font-size: 11px;
+}
+
+.pp-row > svg:last-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--pp-muted);
+}
+
+.pp-footer-rows {
+  padding-top: 4px;
+}
+
+.pp-footer-rows .pp-row {
+  border-bottom: 0;
+}
+
+.pp-list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.pp-list-head h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 750;
+  color: #202620;
+}
+
+.pp-list-head span {
+  font-size: 12px;
+  color: var(--pp-muted);
+}
+
+.phone:has(.content[data-screen="activity"]:not([data-list])) .app-head {
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.phone:has(.content[data-screen="activity"]:not([data-list])) .app-head .brand {
+  display: none;
+}
+
+.phone:has(.content[data-screen="activity"][data-list]) .app-head {
+  justify-content: flex-start;
+}
+
+@media (max-width: 370px) {
+  .pp-avatar {
+    flex-basis: 68px;
+    width: 68px;
+    height: 68px;
+    font-size: 24px;
+  }
+
+  .pp-identity-copy h1 {
+    font-size: 22px;
+  }
+
+  .pp-saved-card {
+    min-height: 136px;
+    padding: 16px 14px;
+  }
+}

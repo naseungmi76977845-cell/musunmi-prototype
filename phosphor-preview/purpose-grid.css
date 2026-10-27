@@ -1,0 +1,17 @@
+/* Photo-backed signup choices, arranged as a two-by-two grid. */
+.purpose-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 0}
+.purpose-grid .purpose{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;gap:0;width:100%;height:196px;min-width:0;margin:0;padding:0;overflow:hidden;border:0;border-radius:16px;background:#04713e;text-align:left;box-shadow:none}
+.purpose-grid .purpose-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2;transition:transform .2s}
+.purpose-grid .purpose:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,34,23,.02) 10%,rgba(4,34,23,.12) 35%,rgba(4,34,23,.76) 65%,rgba(4,34,23,.96) 100%);z-index:-1;pointer-events:none}
+.purpose-grid .purpose .purpose-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:0;padding:0 14px 6px;margin:0;background:transparent;color:#fff}
+.purpose-grid .purpose .purpose-heading b{color:#fff;margin:0;font-size:16px;line-height:24px;font-weight:750;white-space:nowrap}
+.purpose-grid .purpose .purpose-icon,.purpose-grid .purpose.selected .purpose-icon{display:flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;height:24px;border-radius:0;background:transparent;color:#fff}
+.purpose-grid .purpose .purpose-icon svg{width:23px;height:23px;color:#fff}
+.purpose-grid .purpose .purpose-description,.purpose-grid .purpose.selected .purpose-description{position:relative;display:block;min-height:54px;margin:0;padding:0 14px 14px;background:transparent;color:#f1f8f3;font-size:14px;line-height:20px;font-weight:400;word-break:keep-all;overflow-wrap:break-word}
+.purpose-grid .purpose:hover{background:#04713e}.purpose-grid .purpose:hover .purpose-heading{background:transparent}.purpose-grid .purpose:hover .purpose-photo{transform:scale(1.025)}
+.purpose-grid .purpose.selected{border:0;box-shadow:0 0 0 3px #00b85f}
+.purpose-card-check{position:absolute;right:12px;top:12px;display:flex;align-items:center;justify-content:center;width:25px;height:25px;border:1.5px solid #ffffffa8;border-radius:50%;background:#173b2c33;color:#fff;transition:background .15s,border-color .15s}
+.purpose-card-check svg{width:17px;height:17px;opacity:0}.purpose[aria-pressed=true] .purpose-card-check{background:#00b85f;border-color:#00b85f}.purpose[aria-pressed=true] .purpose-card-check svg{opacity:1}
+.content[data-screen="purpose"]>.primary.full{margin-top:28px}
+@media(max-width:380px){.purpose-grid{gap:10px}.purpose-grid .purpose{height:190px}.purpose-grid .purpose .purpose-heading{padding-left:12px;padding-right:12px}.purpose-grid .purpose .purpose-description{padding-left:12px;padding-right:12px;font-size:14px;line-height:20px}}
+@media(prefers-reduced-motion:reduce){.purpose-grid .purpose-photo,.purpose-card-check{transition:none}}
