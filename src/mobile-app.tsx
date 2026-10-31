@@ -1,6 +1,6 @@
 import {useCallback,useEffect,useReducer,useRef,useState,type CSSProperties,type ReactNode} from 'react';
 import {ArrowLeft,ArrowRight,Bell,BookOpen,Bookmark,Check,ChevronRight,CircleCheck,GraduationCap,Hand,Heart,Home,ImagePlus,LockKeyhole,LogOut,MessageCircle,Plus,Search,Settings,ShieldCheck,Trash2,UserRound,Video,VideoOff,X} from 'lucide-react';
-import {palettes,type ColorName,type Kit,type SystemName} from './contracts';
+import {paletteVars,type ColorName,type Kit,type SystemName} from './contracts';
 import {isScreen,type ScreenId} from './screens';
 import './mobile.css';
 import './motion.css';
@@ -121,8 +121,7 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
  async function deleteRecording(id:string){if(busy)return;setBusy(true);try{if(!await removeManagedVideo(id)){setToast('영상을 삭제하지 못했어요.');return}dispatchNotifications({type:'removeTarget',target:{type:'video',id}});detailHistory.current=detailHistory.current.filter(origin=>!(origin.screen==='videoDetail'&&origin.videoId===id));setSelectedVideoId(null);setCollectionKind('recordings');returnFromDetail(videoBack.current==='term'?'term':'collection')}finally{setBusy(false)}}
  function deleteStory(id:string){if(!removeManagedPost(id)){setToast('글을 삭제하지 못했어요.');return}dispatchNotifications({type:'removeTarget',target:{type:'post',id}});setSaved(a=>a.filter(p=>p!==id));setLiked(a=>a.filter(p=>p!==id));setComments(c=>{const next={...c};delete next[id];return next});go('community')}
  if(bootSplash){
-  const palette=palettes[color];
-  return <div className={`mobile-app system-${system}`} style={{'--brand':palette.brand,'--soft':palette.soft,'--accent':palette.accent,'--brand-hover':palette.hover}as CSSProperties} data-screen="splash">
+  return <div className={`mobile-app system-${system}`} style={paletteVars(color) as CSSProperties} data-screen="splash">
    <SplashScreen ready={Boolean(kit)} onDone={()=>{
     try{sessionStorage.setItem('sua-boot-splash','1')}catch{/* ignore */}
     setBootSplash(false);
@@ -174,9 +173,8 @@ export default function MobileApp({system,color,initialScreen}:{system:SystemNam
 
  case 'policy':body=<>{heading(policy)}<article className="policy-body"><h2>콘텐츠와 개인정보</h2><p>내가 촬영했거나 사용할 권한이 있는 영상을 등록해 주세요. 다른 사람의 표현과 경험을 존중해 주세요.</p><h2>기록 관리</h2><p>프로필과 콘텐츠는 설정에서 관리할 수 있어요. 탈퇴 전에는 삭제되는 기록을 확인해 주세요.</p></article><Button kind="secondary" onClick={()=>go(policyBack)}>돌아가기</Button></>;break;
  }
- const p=palettes[color];
  const ticketStop=ticketGateTo?words.find(item=>item.id===ticketGateTo):undefined;
- return <Provider color={color}><div className={`mobile-app system-${system}`} style={{'--brand':p.brand,'--soft':p.soft,'--accent':p.accent,'--brand-hover':p.hover}as CSSProperties} data-screen={screen}><div className="status-bar"><span>9:41</span><div><span className="signal"><i/><i/><i/><i/></span><svg viewBox="0 0 20 15" width="16" aria-hidden="true"><path d="M2 5q8-7 16 0M5 8q5-4 10 0M9 12h2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg><span className="battery"><i/></span></div></div>
+ return <Provider color={color}><div className={`mobile-app system-${system}`} style={paletteVars(color) as CSSProperties} data-screen={screen}><div className="status-bar"><span>9:41</span><div><span className="signal"><i/><i/><i/><i/></span><svg viewBox="0 0 20 15" width="16" aria-hidden="true"><path d="M2 5q8-7 16 0M5 8q5-4 10 0M9 12h2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg><span className="battery"><i/></span></div></div>
  {screen!=='login'&&(!tabScreen||screen==='home'||screen==='profile')&&
   <header className={screen==='profile'?'app-header app-header-actions':'app-header'}>
    {screen==='home'&&<div className="app-wordmark"><BrandLogo/></div>}

@@ -128,7 +128,7 @@
 }
 
 .community-memo:focus-visible {
-  outline: 2px solid #3f704c;
+  outline: 2px solid var(--brand);
   outline-offset: 3px;
 }
 
@@ -253,7 +253,7 @@
   width: 18px;
   height: 18px;
   border: 2px solid #d5d3c9;
-  border-top-color: #3f704c;
+  border-top-color: var(--brand);
   border-radius: 50%;
   animation: community-board-spin 0.8s linear infinite;
 }

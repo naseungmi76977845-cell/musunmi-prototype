@@ -9,12 +9,12 @@
 
 /* Login welcome: station attendant hands a ticket (image asset). */
 .page-login {
-  background: #fafbf8;
+  background: var(--bg, #F6F5F2);
 }
 
 .page-login .app-content,
 .mobile-app[data-screen="login"] .app-content.page-login {
-  background: #fafbf8;
+  background: var(--bg, #F6F5F2);
 }
 
 .auth-login {
@@ -208,7 +208,7 @@
 }
 
 .auth-login-btn:focus-visible {
-  outline: 2px solid #3f704c;
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
@@ -232,13 +232,13 @@
   padding: 4px 2px;
   border: 0;
   background: transparent;
-  color: #3f704c;
+  color: var(--brand);
   font: inherit;
   font-weight: 700;
 }
 
 .auth-login__signup button:focus-visible {
-  outline: 2px solid #3f704c;
+  outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 

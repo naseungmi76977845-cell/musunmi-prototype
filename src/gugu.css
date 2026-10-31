@@ -21,7 +21,7 @@
   width: 46%;
   height: 20%;
   transform: translateX(-58%) rotate(-6deg);
-  background: #3f704c;
+  background: var(--brand);
   border: 1.5px solid #284b34;
   border-radius: 6px 6px 3px 3px;
   box-shadow: 0 1px 0 color-mix(in srgb, #284b34 18%, transparent);

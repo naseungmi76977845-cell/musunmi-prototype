@@ -1,8 +1,18 @@
-import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState, type CSSProperties} from 'react';
+import {Check, Link2} from 'lucide-react';
+import {
+  isColorName,
+  palettes,
+  rememberColor,
+  resolveColor,
+  type ColorName,
+} from './contracts';
 import {isScreen, screens, type ScreenId} from './screens';
 import './design-lab.css';
 
 type Group = {title: string; ids: ScreenId[]};
+
+const themes = Object.keys(palettes) as ColorName[];
 
 const groups: Group[] = [
   {title: '시작·가입', ids: ['login', 'signup', 'profileSetup', 'knowledge', 'purpose', 'terms', 'welcome']},
@@ -53,22 +63,51 @@ function pad(n: number) {
   return String(n).padStart(2, '0');
 }
 
+function themeUrl(theme: ColorName, screen: ScreenId) {
+  const url = new URL(location.href);
+  url.search = '';
+  url.searchParams.set('view', 'design');
+  url.searchParams.set('theme', theme);
+  url.searchParams.set('screen', screen);
+  return url.toString();
+}
+
 export function DesignLab() {
   const params = new URLSearchParams(location.search);
   const start = isScreen(params.get('screen')) ? (params.get('screen') as ScreenId) : 'login';
   const [screen, setScreen] = useState<ScreenId>(start);
+  const [theme, setTheme] = useState<ColorName>(() => resolveColor(params));
+  const [copied, setCopied] = useState(false);
   const frame = useRef<HTMLIFrameElement>(null);
   const flat = useMemo(() => groups.flatMap(g => g.ids), []);
   const total = flat.length;
   const index = Math.max(0, flat.indexOf(screen === 'policy' ? 'settings' : screen));
+  const palette = palettes[theme];
+
+  const syncUrl = useCallback((nextScreen: ScreenId, nextTheme: ColorName) => {
+    const url = new URL(location.href);
+    url.searchParams.set('view', 'design');
+    url.searchParams.set('screen', nextScreen);
+    url.searchParams.set('theme', nextTheme);
+    url.searchParams.delete('color');
+    history.replaceState(null, '', url);
+  }, []);
 
   const go = useCallback((next: ScreenId) => {
     setScreen(next);
-    const url = new URL(location.href);
-    url.searchParams.set('view', 'design');
-    url.searchParams.set('screen', next);
-    history.replaceState(null, '', url);
-  }, []);
+    syncUrl(next, theme);
+  }, [syncUrl, theme]);
+
+  const selectTheme = useCallback((next: ColorName) => {
+    setTheme(next);
+    rememberColor(next);
+    syncUrl(screen, next);
+  }, [screen, syncUrl]);
+
+  useEffect(() => {
+    rememberColor(theme);
+    syncUrl(screen, theme);
+  }, [theme, screen, syncUrl]);
 
   useEffect(() => {
     frame.current?.contentWindow?.postMessage({type: 'sua-go', screen}, location.origin);
@@ -86,18 +125,67 @@ export function DesignLab() {
     return () => removeEventListener('message', onMessage);
   }, [go, screen]);
 
-  const appSrc = `/?view=app&system=astryx&color=forest&screen=${encodeURIComponent(screen)}`;
+  useEffect(() => {
+    const onPop = () => {
+      const next = new URLSearchParams(location.search);
+      if (isScreen(next.get('screen'))) setScreen(next.get('screen') as ScreenId);
+      const color = next.get('theme') || next.get('color');
+      if (isColorName(color)) setTheme(color);
+    };
+    addEventListener('popstate', onPop);
+    return () => removeEventListener('popstate', onPop);
+  }, []);
+
+  const copyLink = async () => {
+    const link = themeUrl(theme, screen);
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1600);
+    } catch {
+      window.prompt('테마 링크를 복사하세요', link);
+    }
+  };
+
+  const appSrc = `/?view=app&system=astryx&color=${theme}&theme=${theme}&screen=${encodeURIComponent(screen)}`;
   const title = names[screen] || screen;
   const scope = scopes[screen] || '실제 앱 화면을 프로토타입 프레임에서 살펴봅니다.';
 
   return (
-    <div className="design-lab">
+    <div
+      className="design-lab"
+      style={{
+        '--dl-green': palette.brand,
+        '--dl-deep': palette.hover,
+        '--dl-pale': palette.surface,
+        '--dl-bg': palette.bg,
+        '--dl-accent': palette.accent,
+        '--dl-ink': palette.ink,
+      } as CSSProperties}
+    >
       <header className="dl-top">
-        <div>
+        <div className="dl-brand">
           <strong>디자인 프로토타입</strong>
-          <small>수어역 · 실제 앱</small>
+          <small>수어역 · 브랜드 컬러 비교</small>
         </div>
-        <span className="dl-pill">클릭해서 둘러보세요</span>
+        <div className="dl-themes" role="group" aria-label="브랜드 테마">
+          {themes.map(id => (
+            <button
+              key={id}
+              type="button"
+              className={theme === id ? 'active' : undefined}
+              aria-pressed={theme === id}
+              onClick={() => selectTheme(id)}
+            >
+              <i style={{background: palettes[id].brand}} aria-hidden="true"/>
+              {palettes[id].short}
+            </button>
+          ))}
+        </div>
+        <button type="button" className="dl-copy" onClick={() => void copyLink()}>
+          {copied ? <Check size={15} aria-hidden="true"/> : <Link2 size={15} aria-hidden="true"/>}
+          {copied ? '복사됨' : '테마 링크 복사'}
+        </button>
         <label className="dl-jump">
           <span className="dl-sr">화면 바로가기</span>
           <select
@@ -116,7 +204,13 @@ export function DesignLab() {
         <aside className="dl-rail dl-left" aria-label="화면 목록">
           <div className="dl-eyebrow">DESIGN PREVIEW</div>
           <h1>수어역<span>APP</span></h1>
-          <p>실제 앱 화면을 선택해 둘러보세요.</p>
+          <p>실제 앱 화면을 선택해 둘러보세요. 색상만 바뀌고 화면·기능은 같습니다.</p>
+          <div className="dl-swatch" aria-hidden="true">
+            <span style={{background: palette.brand}} title="메인"/>
+            <span style={{background: palette.bg}} title="아이보리"/>
+            <span style={{background: palette.surface}} title="서피스"/>
+            <span style={{background: palette.accent}} title="액센트"/>
+          </div>
           <div className="dl-groups">
             {groups.map(group => (
               <div className="dl-group" key={group.title}>
@@ -148,8 +242,9 @@ export function DesignLab() {
             <span className="dl-status-icons">····</span>
           </div>
           <iframe
+            key={theme}
             ref={frame}
-            title={`${title} 모바일 시안`}
+            title={`${title} · ${palette.name} 모바일 시안`}
             allow="camera"
             src={appSrc}
             onLoad={() => frame.current?.contentWindow?.postMessage({type: 'sua-go', screen}, location.origin)}
@@ -158,19 +253,24 @@ export function DesignLab() {
 
         <aside className="dl-rail dl-right" aria-label="프로토타입 안내">
           <div className="dl-note">
-            <div className="dl-eyebrow">PROTOTYPE SCOPE</div>
-            <div className="dl-number">{total} <span>screens</span></div>
-            <p>실제 앱 · {pad(index + 1)} / {pad(total)}</p>
+            <div className="dl-eyebrow">COLOR THEME</div>
+            <div className="dl-number">{palette.short}</div>
+            <p>메인 {palette.brand} · 배경 {palette.bg}</p>
             <div className="dl-line"/>
             <h3>{title}</h3>
             <p>{scope}</p>
-            <div className="dl-route"><i/><span>sueoyeok.vercel.app 앱 화면</span></div>
+            <div className="dl-route"><i/><span>?theme={theme}</span></div>
+          </div>
+          <div className="dl-note">
+            <h3>비교 안내</h3>
+            <p>딥그린 / 미디엄그린 / 프레시그린 세 가지를 같은 화면에서 전환해 보세요.</p>
+            <p>테마 링크를 복사하면 팀원이 같은 색상으로 바로 열 수 있어요.</p>
+            <p>새로고침해도 선택한 테마가 유지됩니다.</p>
           </div>
           <div className="dl-note">
             <h3>프리뷰 이용 안내</h3>
             <p>이 화면은 배포된 실제 앱을 폰 프레임에 담아 보여 줍니다.</p>
             <p>작성한 내용과 저장한 표현은 이 브라우저에만 남습니다.</p>
-            <p>카메라·로그인 등 일부 기능은 시연용으로 제한될 수 있어요.</p>
           </div>
         </aside>
       </div>

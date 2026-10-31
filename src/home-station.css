@@ -1,9 +1,9 @@
 .page-home {
-  --station-ink: #202620;
-  --station-muted: #737d75;
-  --station-soft: #edf4e9;
+  --station-ink: var(--ink, #1A2420);
+  --station-muted: var(--muted, #5E6B64);
+  --station-soft: var(--surface, #E8F0EB);
   gap: 20px;
-  background: #fafbf8;
+  background: var(--bg, #F6F5F2);
   color: var(--station-ink);
 }
 
@@ -37,7 +37,7 @@
   min-width: 0;
 }
 .page-wiki {
-  background: #fafbf8;
+  background: var(--bg, #F6F5F2);
 }
 
 .wiki-search {
@@ -53,7 +53,7 @@
   box-shadow: 0 8px 20px color-mix(in srgb, #1d2a20 8%, transparent);
   color: #737d75;
 }
-.wiki-search > svg { flex: none; color: #3f704c; }
+.wiki-search > svg { flex: none; color: var(--brand); }
 .wiki-search input {
   flex: 1;
   min-width: 0;
@@ -75,10 +75,10 @@
   border: 0;
   border-radius: 50%;
   background: transparent;
-  color: #3f704c;
+  color: var(--brand);
   padding: 0;
 }
-.wiki-search:focus-within { outline: 2px solid #3f704c; outline-offset: 2px; }
+.wiki-search:focus-within { outline: 2px solid var(--brand); outline-offset: 2px; }
 
 .wiki-category-panel {
   display: flex;
@@ -139,7 +139,7 @@
   margin-bottom: 4px;
   border-radius: 10px;
   background: #fff;
-  color: #3f704c;
+  color: var(--brand);
 }
 .wiki-category-card b {
   font-size: 13px;
@@ -151,10 +151,10 @@
   font-size: 10px;
   line-height: 1.35;
 }
-.wiki-cat-all { background: #3f704c; border-color: #3f704c; color: #fff; }
+.wiki-cat-all { background: var(--brand); border-color: var(--brand); color: #fff; }
 .wiki-cat-all .wiki-category-icon { background: color-mix(in srgb, #fff 18%, transparent); color: #fff; }
 .wiki-cat-all small { color: color-mix(in srgb, #fff 78%, transparent); }
-.wiki-cat-daily { background: #edf4e9; }
+.wiki-cat-daily { background: var(--surface, #E8F0EB); }
 .wiki-cat-heart { background: #f8eeee; }
 .wiki-cat-heart .wiki-category-icon { color: #b85c5c; }
 .wiki-cat-people { background: #eef3f8; }
@@ -168,11 +168,11 @@
 .wiki-cat-culture { background: #eef3f8; }
 .wiki-cat-culture .wiki-category-icon { color: #4f6f93; }
 .wiki-category-card.is-selected {
-  outline: 2px solid #3f704c;
+  outline: 2px solid var(--brand);
   outline-offset: 1px;
 }
-.wiki-cat-all.is-selected { outline-color: #284b34; }
-.wiki-category-card:focus-visible { outline: 2px solid #3f704c; outline-offset: 2px; }
+.wiki-cat-all.is-selected { outline-color: var(--brand-hover, var(--brand)); }
+.wiki-category-card:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .wiki-category-card:active { transform: scale(.98); }
 
 @media (max-width: 370px) {
@@ -204,7 +204,7 @@
   text-align: left;
 }
 .home-search > span { flex: 1; }
-.home-search:focus-visible { outline: 2px solid #3f704c; outline-offset: 2px; }
+.home-search:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 
 .home-features {
   display: grid;
@@ -231,7 +231,7 @@
   height: 36px;
   border-radius: 11px;
   background: var(--station-soft);
-  color: #3f704c;
+  color: var(--brand);
 }
 .home-feature b {
   font-size: 14px;
@@ -244,7 +244,7 @@
   font-size: 11px;
   line-height: 1.45;
 }
-.home-feature:focus-visible { outline: 2px solid #3f704c; outline-offset: 2px; }
+.home-feature:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .home-feature:active { background: #f7faf7; }
 
 .home-today-section {
@@ -282,7 +282,7 @@
 }
 .home-today-copy { flex: 1; min-width: 0; }
 .home-today-copy small {
-  color: #3f704c;
+  color: var(--brand);
   font-size: 11px;
   font-weight: 650;
 }
@@ -303,7 +303,7 @@
   flex: none;
   color: var(--station-muted);
 }
-.home-today:focus-visible { outline: 2px solid #3f704c; outline-offset: 2px; }
+.home-today:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 
 @media (max-width: 370px) {
   .home-banner-image { max-height: 188px; }

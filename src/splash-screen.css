@@ -130,7 +130,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #3f704c;
+  background: var(--brand);
   animation: app-splash-dot 1.2s ease-in-out infinite;
 }
 
